@@ -23,10 +23,11 @@ quickbundle-javawebsecurity
 		A5-安全配置错误
 		A6-敏感信息泄漏
 		混淆编译规范及工具
+		Linux主机加固、中间件加固
 		涵盖SSL、PKI配置模板
 
 * 针对运维阶段，编写一套ruby脚本做自动化的配置漏洞检查，并以主流漏洞扫描器(如AppScan、Acunetix WVS等)做辅助验证。
-适用场景：对安全有要求的企业应用、互联网应用后端。
+* 将以上成果部署一套到靶机，持续攻防测试并持续改进。
 
 		
 quickbundle-phonegapsecurity
