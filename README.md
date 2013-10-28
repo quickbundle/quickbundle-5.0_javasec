@@ -6,7 +6,7 @@ quickbundle-javawebsecurity
 ------------------------------------------------
 对JavaEE标准版，以“Build Security In”的思想彻底重构之后的注重安全的Java Web应用框架。适用场景：对安全有要求的企业应用、互联网应用后端。
 ### 特性
-* 以JavaEE标准版(quickbundle-rmwebdemo)为基础 [【参考】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)
+* 以JavaEE标准版(quickbundle-rmwebdemo)为基础 [【参考】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)，以OWASP Java Project[【参考】](https://www.owasp.org/index.php/Category:OWASP_Java_Project)做安全方面的重构。
 * 集成Spring Security 3.1[【参考】](http://docs.spring.io/spring-security/site/features.html)，兼容数据安全中间件Ralasafe v2[【参考】](http://http://www.ralasafe.cn/)
 * 以WebGoat-5.4[【参考】](https://www.owasp.org/index.php/Webgoat)为样本全面修复可能存在缺陷的写法，并针对OWASP Top 10[【参考】](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)做框架代码安全加固，重点是：
 
