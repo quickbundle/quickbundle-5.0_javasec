@@ -6,7 +6,7 @@ quickbundle-javawebsecurity
 ------------------------------------------------
 对JavaEE标准版，以“Build Security In”的思想彻底重构之后的注重安全的Java Web应用框架。适用场景：对安全有要求的企业应用、互联网应用后端。
 ### 特性
-* 以JavaEE标准版(quickbundle-rmwebdemo)为基础 [【参考】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)，以OWASP Java Project[【参考】](https://www.owasp.org/index.php/Category:OWASP_Java_Project)做安全方面的重构。
+* 以JavaEE标准版(quickbundle-rmwebdemo)为基础 [【参考】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)，以OWASP Java Project[【参考】](https://www.owasp.org/index.php/Category:OWASP_Java_Project)为指导做安全方面的深度重构。
 * 集成Spring Security 3.1[【参考】](http://docs.spring.io/spring-security/site/features.html)，兼容数据安全中间件Ralasafe v2[【参考】](http://http://www.ralasafe.cn/)
 * 以WebGoat-5.4[【参考】](https://www.owasp.org/index.php/Webgoat)为样本全面修复可能存在缺陷的写法，并针对OWASP Top 10[【参考】](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)做框架代码安全加固，重点是：
 
@@ -26,8 +26,8 @@ quickbundle-javawebsecurity
 		Linux主机加固、中间件加固
 		涵盖SSL、PKI配置模板
 
-* 针对运维阶段，编写一套ruby脚本做自动化的配置漏洞检查，并以主流漏洞扫描器(如AppScan、Acunetix WVS等)做辅助验证。
-* 将以上成果部署一套到靶机，持续攻防测试并持续改进。
+* 针对运维阶段，编写一套ruby脚本做自动化的配置漏洞检查，并以主流漏洞扫描器(如AppScan、Acunetix WVS等)做辅助验证。并部署一套重构后的安全应用框架实例到靶机，持续攻防测试并持续改进。
+* 将上述应用安全框架成果，提炼到基于MDA的代码生成器模板中，方便最终用户(应用开发者)快速构建并生成代码。
 
 		
 quickbundle-phonegapsecurity
