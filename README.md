@@ -32,9 +32,10 @@ quickbundle-javawebsecurity
 		
 quickbundle-phonegapsecurity
 ------------------------------------------------
+适用场景：对安全有要求的跨平台移动解决方案。
 ### 特性
 * 以phonegap版(quickbundle-phonegapdemo)为基础 [【引用】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)
 * 针对2013 OWASP Mobile Top 10[【参考】](https://www.owasp.org/index.php/OWASP_Mobile_Security_Project#tab=Top_Ten_Mobile_Risks)做框架代码安全加固。
 * 形成混淆编译的操作工具及规范[【参考】](http://bbs.pediy.com/showthread.php?t=137112)。
 
-适用场景：对安全有要求的跨平台移动解决方案。
+
