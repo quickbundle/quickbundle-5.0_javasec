@@ -25,7 +25,7 @@ quickbundle-javawebsecurity
 		A6-敏感信息泄漏
 		混淆编译规范及工具
 		Linux主机加固、中间件加固
-		涵盖SSL、PKI配置模板
+		涵盖SSL、PKI的安全配置模板
 
 * 针对运维阶段，编写一套ruby脚本做自动化的配置漏洞检查，并以主流漏洞扫描器(如AppScan、Acunetix WVS等)做辅助验证。并部署一套重构后的安全应用框架实例到靶机，持续攻防测试并持续改进。
 * 将上述应用安全框架成果，提炼到基于MDA的代码生成器模板[【引用】](https://github.com/quickbundle/qb-core/tree/master/eclipse-plugin)中，并发布为Eclipse plugin形式(支持Eclipse3.7及以上)，“逐鹿安全应用框架”的用户(应用开发者)可以快速构建并生成Java应用代码。
