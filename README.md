@@ -16,7 +16,7 @@ quickbundle-javawebsecurity
 		A4-不安全的直接对象引用
 		A7-功能级访问控制缺失
 		A8-跨站请求伪造-CSRF
-		ESAPI-2.1
+		ESAPI-2.1加固
 
 * 针对设计和开发阶段，整理一套以"Build Security In"为指导的风险分析规范，以及按具体业务做设计的方法论体系。
 * 针对集成部署阶段，形成一套混淆编译规范及工具[【参考】](http://tools.pediy.com/decompilers.htm)，形成一套完整的安全实施过程模板，重点是：
