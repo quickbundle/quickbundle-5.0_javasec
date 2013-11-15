@@ -8,7 +8,7 @@ quickbundle-javawebsecurity
 ### 特性
 * 以JavaEE标准版(quickbundle-rmwebdemo)为基础 [【引用】](https://github.com/quickbundle/qb-archetype/blob/master/README.md)，以OWASP Java Project[【参考】](https://www.owasp.org/index.php/Category:OWASP_Java_Project)为指导做安全方面的深度重构。
 * 集成Spring Security 3.1[【参考】](http://docs.spring.io/spring-security/site/features.html)，兼容数据安全中间件Ralasafe v2[【参考】](http://http://www.ralasafe.cn/)
-* 导入ESAPI-2.1的安全规范写法，并以WebGoat-5.4[【参考】](https://www.owasp.org/index.php/Webgoat)为样本全面修复可能存在的安全缺陷，并针对OWASP Top 10[【参考】](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)做框架代码安全加固，重点是：
+* 导入ESAPI-2.1的安全规范写法并精心定制，并以WebGoat-5.4[【参考】](https://www.owasp.org/index.php/Webgoat)为样本全面修复可能存在的安全缺陷，并针对OWASP Top 10[【参考】](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)做框架代码安全加固，重点是：
 
 		A1-注入
 		A2-失效的身份认证及会话管理
