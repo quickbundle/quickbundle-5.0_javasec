@@ -1,0 +1,11 @@
+*.class
+
+target/*
+bin/*
+.settings/*
+.project
+.classpath
+.pydevproject
+WebContent/WEB-INF/classes
+WebContent/WEB-INF/lib
+WebContent/upload/*

@@ -1,0 +1,108 @@
+BODY {
+	FONT-SIZE: 9pt
+}
+TABLE {
+	FONT-SIZE: 9pt
+}
+TD {
+	FONT-SIZE: 9pt
+}
+P {
+	FONT-SIZE: 9pt
+}
+FONT {
+	FONT-SIZE: 9pt
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	LEFT: 1px; POSITION: relative; TOP: 2px; TEXT-DECORATION: none; crosshair: 
+}
+.f A:link {
+	COLOR: #02689d; TEXT-DECORATION: none
+}
+.f A:visited {
+	COLOR: #02689d; TEXT-DECORATION: none
+}
+.f A:hover {
+	LEFT: 1px; COLOR: #02689d; POSITION: relative; TOP: 2px; TEXT-DECORATION: underline; crosshair: 
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #eaebed; SCROLLBAR-HIGHLIGHT-COLOR: #eaebed; SCROLLBAR-SHADOW-COLOR: #eaebed; SCROLLBAR-ARROW-COLOR: #0080ff; SCROLLBAR-DARKSHADOW-COLOR: #e3e3e3; SCROLLBAR-BASE-COLOR: #f9f9f9
+}
+.button1 {
+	BORDER-RIGHT: 0px; BACKGROUND-POSITION: center 50%; BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-IMAGE: url(../images/back4.gif); BORDER-LEFT: 0px; WIDTH: 50px; COLOR: #003366; PADDING-TOP: 2pt; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.button2 {
+	BORDER-RIGHT: 0px; BACKGROUND-POSITION: center 50%; BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-IMAGE: url(../images/back5.jpg); BORDER-LEFT: 0px; WIDTH: 50px; COLOR: #003366; PADDING-TOP: 2pt; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.button {
+	BORDER-RIGHT: 0px; BACKGROUND-POSITION: center 50%; BORDER-TOP: 0px; FONT-SIZE: 9pt; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-IMAGE: url(../images/back5.jpg); BORDER-LEFT: 0px; WIDTH: 50px; COLOR: #003366; PADDING-TOP: 2pt; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+INPUT {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #666666 1px solid; COLOR: #000000; BORDER-BOTTOM: #666666 1px solid; TEXT-DECORATION: none
+}
+.input2 {
+	BORDER-RIGHT: #666666 0px solid; BORDER-TOP: #666666 0px solid; FONT-SIZE: 9pt; BORDER-LEFT: #666666 0px solid; COLOR: #000000; BORDER-BOTTOM: #666666 0px solid; TEXT-DECORATION: none
+}
+.input3 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #000000; BORDER-BOTTOM: rgb(192,192,192) 0px solid; BACKGROUND-COLOR: #cccdcf
+}
+.input4 {
+	BORDER-RIGHT: #e8e8e8 1px solid; BORDER-TOP: #e8e8e8 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #e8e8e8 1px solid; COLOR: #000000; BORDER-BOTTOM: #e8e8e8 1px solid; BACKGROUND-COLOR: #e8e8e8; TEXT-DECORATION: none
+}
+.input5 {
+	FONT-SIZE: 9pt
+}
+.input6 {
+	BORDER-RIGHT: #e8e8e8 0px solid; BORDER-TOP: #e8e8e8 0px solid; FONT-SIZE: 9pt; BORDER-LEFT: #e8e8e8 0px solid; COLOR: #000000; BORDER-BOTTOM: #e8e8e8 0px solid; BACKGROUND-COLOR: #dddddd; TEXT-DECORATION: none
+}
+.list {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 98%; BORDER-BOTTOM: medium none; BACKGROUND-COLOR: #b6b6b6; TEXT-ALIGN: center
+}
+.titlewhite {
+	COLOR: #ffffff
+}
+.loginfont {
+	COLOR: #3061a6
+}
+.titlename {
+	FONT-WEIGHT: bold; FONT-SIZE: 24px; COLOR: #0000cc; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.biankuang {
+	BORDER-RIGHT: #8cbbf1 1px solid; BORDER-TOP: #d7ebfb 1px solid; FONT-WEIGHT: bolder; BACKGROUND-IMAGE: url(hengwen.gif); BORDER-LEFT: #ffffff 1px solid; COLOR: #0160af; BORDER-BOTTOM: #8cbbf1 1px solid
+}
+.anniu {
+	BORDER-RIGHT: #ffffff thin; BORDER-TOP: #ffffff thin; BORDER-LEFT: #ffffff thin; BORDER-BOTTOM: #ffffff thin
+}
+.danyuange {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #c7e0f9 0px solid; BORDER-LEFT: #c7e0f9 0px solid; BORDER-BOTTOM: #c7e0f9 1px solid
+}
+.table-border {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: 0px; BORDER-LEFT: #c7e0f9 1px solid; BORDER-BOTTOM: #c7e0f9 1px solid
+}
+.table-border1 {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #c7e0f9 1px solid; BORDER-LEFT: #c7e0f9 1px solid; BORDER-BOTTOM: #c7e0f9 1px solid; BACKGROUND-COLOR: #e1e9ff
+}
+.table2 {
+	BORDER-RIGHT: #c7e0f9 2px solid; BORDER-TOP: #c7e0f9 2px solid; BORDER-LEFT: #c7e0f9 2px solid; COLOR: #0000a0; BORDER-BOTTOM: #c7e0f9 2px solid
+}
+.ZITICL {
+	COLOR: #0000a0
+}
+.biankuang3 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+.zitiline {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.listTR {
+	FONT-SIZE: 12px; COLOR: #000000; HEIGHT: 20px; TEXT-ALIGN: center
+}
+table1 {
+	BORDER-LEFT-COLOR: #1c61c3; BORDER-BOTTOM-COLOR: #1c61c3; BORDER-TOP-COLOR: #1c61c3; BORDER-RIGHT-COLOR: #1c61c3
+}

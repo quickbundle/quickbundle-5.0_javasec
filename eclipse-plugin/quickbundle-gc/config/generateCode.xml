@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules rulesVersion="5.0.0-20141211">
+	<database pdmPath="" dbProductName="MySQL" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/rmdemo?jdbcCompliantTruncation=false" userName="root" password="" catalog="" schemaPattern="" tableNamePattern="">
+		<!--定义目标表名xml的路径-->
+		<tableTos>
+			<tableTo xmlName="RM_FUNCTION_NODE.xml">RM_FUNCTION_NODE</tableTo>
+		</tableTos>
+	</database>
+    <codegen baseProjectPath="" toTableNameKeyword="TableName">
+       <mvms contextName="JavaEE标准版">
+           <mvm>
+               <contextName>JavaEE标准版</contextName>
+               <codegenConfig>mvm-JavaEE-standard.xml</codegenConfig>
+               <framework>jQuery-1.6 + Html + SpringMVC-3.2 + Spring-3.2 + MyBatis-3.2</framework>
+               <configProjectClass>org.quickbundle.mda.gc.project.JavaEEStandardProject</configProjectClass>
+           </mvm>
+       </mvms>
+    </codegen>
+	<project>
+		<javaPackageName>com.helloworld</javaPackageName>
+		<javaPackageDir>com/helloworld</javaPackageDir>
+		<jspSourcePath>helloworld</jspSourcePath>
+		<webAppName>webapp</webAppName>
+		<authorName>白小勇</authorName>
+	</project>
+	<dataType>
+		<!--定义数据库类型-->
+		<dbTypes>
+			<dbType defaultDriver="com.mysql.jdbc.Driver" defaultUrl="jdbc:mysql://localhost/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;jdbcCompliantTruncation=false&amp;autoReconnect=true">MySQL</dbType>
+			<dbType defaultDriver="oracle.jdbc.driver.OracleDriver" defaultUrl="jdbc:oracle:thin:@localhost:1521:test">Oracle</dbType>
+			<dbType defaultDriver="com.ibm.db2.jcc.DB2Driver" defaultDriver.old="COM.ibm.db2.jdbc.app.DB2Driver" defaultUrl="jdbc:db2://localhost:50000/test">db2</dbType>
+			<dbType defaultDriver="net.sourceforge.jtds.jdbc.Driver" defaultUrl="jdbc:jtds:sqlserver://localhost:1433/test;charset=GBK">SQL Server</dbType>
+			<dbType defaultDriver="org.h2.Driver" defaultUrl="jdbc:h2:tcp://localhost/~/test">H2</dbType>
+			<dbType defaultDriver="com.sybase.jdbc2.jdbc.SybDriver" defaultUrl="jdbc:sybase:Tds:localhost:2638/">Sybase</dbType>
+			<dbType defaultDriver="com.informix.jdbc.IfxDriver" defaultUrl="jdbc:informix-sqli://localhost:1533/test:INFORMIXSERVER=myserver">informix</dbType>
+			<dbType defaultDriver="org.postgresql.Driver" defaultUrl="jdbc:postgresql://localhost/test">PostgreSQL</dbType>
+			<!-- 
+			<dbType defaultDriver="sun.jdbc.odbc.JdbcOdbcDriver" defaultUrl="jdbc:odbc:Driver={MicroSoft Access Driver (*.mdb)};DBQ=yourApplicationRealPath/Data/ReportDemo.mdb">access(*)</dbType>
+			 -->
+			<dbType defaultDriver="undefined driver" defaultUrl="undefined url">other</dbType>
+		</dbTypes>
+		<!--定义关键字的过滤类型-->
+		<filterTypes>
+			<filterType>default</filterType>
+			<filterType>lowerCase</filterType>
+			<filterType>minus</filterType>
+			<filterType>specify</filterType>
+		</filterTypes>
+		<!--定义人性化展现的类型-->
+		<humanDisplayTypes>
+			<humanDisplayType>default</humanDisplayType>
+			<humanDisplayType>rm.dictionary.select</humanDisplayType>
+			<humanDisplayType>rm.dictionary.checkbox</humanDisplayType>
+			<humanDisplayType>rm.fckEditor</humanDisplayType>
+			<humanDisplayType>rm.listReference</humanDisplayType>
+			<humanDisplayType>rm.orgReference</humanDisplayType>
+			<humanDisplayType>rm.affix</humanDisplayType>
+		</humanDisplayTypes>
+		<!--定义默认列的表显示名称（即汉化），isBuild是默认是否选中-->
+		<deployInterprets>
+			<deployInterpret isBuild="false" displayName="数据可用状态">usable_status</deployInterpret>
+			<deployInterpret isBuild="false" displayName="创建日期">create_date</deployInterpret>
+			<deployInterpret isBuild="false" displayName="创建IP">create_ip</deployInterpret>
+			<deployInterpret isBuild="false" displayName="创建用户ID">create_user_id</deployInterpret>
+			<deployInterpret isBuild="false" displayName="创建用户名称">create_user_id_name</deployInterpret>
+			<deployInterpret isBuild="false" displayName="修改日期">modify_date</deployInterpret>
+			<deployInterpret isBuild="false" displayName="修改IP">modify_ip</deployInterpret>
+			<deployInterpret isBuild="false" displayName="修改用户ID">modify_user_id</deployInterpret>
+			<deployInterpret isBuild="false" displayName="修改用户名称">modify_user_id_name</deployInterpret>
+			<deployInterpret isBuild="false" displayName="主键">id</deployInterpret>
+			<deployInterpret isBuild="false" displayName="排序编码">order_code</deployInterpret>
+			<deployInterpret isBuild="false" displayName="时间戳">ts</deployInterpret>
+			<deployInterpret isBuild="false" displayName="删除标志">dr</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段1">attribute1</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段2">attribute2</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段3">attribute3</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段4">attribute4</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段5">attribute5</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段6">attribute6</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段7">attribute7</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段8">attribute8</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段9">attribute9</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段10">attribute10</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段11">attribute11</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段12">attribute12</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段13">attribute13</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段14">attribute14</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段15">attribute15</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段16">attribute16</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段17">attribute17</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段18">attribute18</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段19">attribute19</deployInterpret>
+			<deployInterpret isBuild="false" displayName="扩展字段20">attribute20</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项1">vuserdef1</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项2">vuserdef2</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项3">vuserdef3</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项4">vuserdef4</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项5">vuserdef5</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项6">vuserdef6</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项7">vuserdef7</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项8">vuserdef8</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项9">vuserdef9</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项10">vuserdef10</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项11">vuserdef11</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项12">vuserdef12</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项13">vuserdef13</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项14">vuserdef14</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项15">vuserdef15</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项16">vuserdef16</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项17">vuserdef17</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项18">vuserdef18</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项19">vuserdef19</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项20">vuserdef20</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项1">def1</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项2">def2</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项3">def3</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项4">def4</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项5">def5</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项6">def6</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项7">def7</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项8">def8</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项9">def9</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项10">def10</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项11">def11</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项12">def12</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项13">def13</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项14">def14</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项15">def15</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项16">def16</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项17">def17</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项18">def18</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项19">def19</deployInterpret>
+			<deployInterpret isBuild="false" displayName="自定义项20">def20</deployInterpret>
+		</deployInterprets>
+	</dataType>
+	<!-- 个人化配置 -->
+	<profileConfig>
+		<!-- 关键列正则匹配 -->
+		<keyColumnMatch>^title$|^name$</keyColumnMatch>
+	</profileConfig>
+	<customBundleCode>
+		<!-- 可定制的组件列表 -->
+		<bundle code="main" name="标准维护" null="true" checked="true">传统Form提交方式的增删改查标准维护，是其它功能的基础。不选则只生成Service层以下的后台代码</bundle>
+		<bundle code="ajax" name="Ajax页" null="true" checked="true" depend="main">ExeJS风格的CRUD</bundle>
+		<bundle code="importExport" name="导出导入页" null="true" checked="true" depend="main">Excel导出、导入功能</bundle>
+		<bundle code="reference" name="参照页" null="true" checked="true" depend="main">作为列表查询的参照页</bundle>
+		<bundle code="statistic" name="统计页" null="true" checked="true" depend="main">图表统计、二维表格统计</bundle>
+	</customBundleCode>
+</rules>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd">
+
+	<description>Spring公共配置 </description>
+
+	<!-- Configurer that replaces ${...} placeholders with values from properties files -->
+	<!-- (in this case, mail and JDBC related properties) -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:config/mail.properties</value>
+				<value>classpath:config/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 使用annotation自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
+	<context:component-scan base-package="org.quickbundle,hello.helloworld" name-generator="org.quickbundle.third.spring.context.annotation.RmAnnotationBeanNameGenerator">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+	</context:component-scan>
+    
+    <!-- scan for mappers and let them be autowired 
+    	<property name="annotationClass" value="org.springside.examples.showcase.repository.mybatis.MyBatisRepository"/>
+    -->
+    <bean id="BeanNameGenerator" class="org.quickbundle.third.spring.context.annotation.RmAnnotationBeanNameGenerator"></bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.quickbundle,hello.helloworld" />
+    	<property name="nameGenerator" ref="BeanNameGenerator" />
+    	<property name="annotationClass" value="org.quickbundle.third.mybatis.MyBatisDao"/>
+    </bean>
+
+    <!-- define the SqlSessionFactory 
+    	<property name="mapperLocations" value="classpath:/mybatis/*Mapper.xml" />
+    	<property name="typeAliasesPackage" value="org.quickbundle.modules.demo.domain" />
+    -->
+    <bean id="ScrollableStatementHandlerInterceptor" class="org.quickbundle.third.mybatis.ScrollableStatementHandlerInterceptor" />
+    <bean id="ScrollableResultSetHandlerInterceptor" class="org.quickbundle.third.mybatis.ScrollableResultSetHandlerInterceptor" />
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="mapperLocations" value="classpath*:**/*Dao.xml" />
+        <property name="dataSource" ref="dataSource" />
+		<property name="plugins">
+	        <array>
+	            <ref bean="ScrollableStatementHandlerInterceptor"/>
+	            <ref bean="ScrollableResultSetHandlerInterceptor"/>
+	        </array>
+    	</property>
+	    <property name="configurationProperties">
+	        <props>
+	            <prop key="dialect">${mybatis.dialect}</prop>
+	        </props>
+	    </property>
+    </bean>
+
+	<!-- JSR303 Validator定义 -->
+ 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
+	<!-- MailSender used by EmailAdvice -->
+	<!--
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.host}"/>
+	</bean>
+	-->
+
+	<!-- Local Apache Commons DBCP DataSource that refers to a combined database -->
+	<!-- (see dataAccessContext-jta.xml for an alternative) -->
+	<!-- The placeholders are resolved from jdbc.properties through -->
+	<!-- the PropertyPlaceholderConfigurer in applicationContext.xml -->
+	
+	<!-- DBCP单数据源
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="initialSize" value="${jdbc.minPoolSize}"/>
+		<property name="minIdle" value="${jdbc.minPoolSize}"/>
+		<property name="maxIdle" value="${jdbc.maxPoolSize}"/>
+		<property name="maxActive" value="${jdbc.maxPoolSize}"/>
+		<property name="maxOpenPreparedStatements" value="${jdbc.maxPoolSize}"/>
+	</bean>
+	 -->
+	
+	<!-- C3P0单数据源 <property name="breakAfterAcquireFailure" value="true"/>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="initialPoolSize" value="${jdbc.minPoolSize}"/>
+		<property name="minPoolSize" value="${jdbc.minPoolSize}"/>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
+	</bean>
+	 -->
+	 
+	<!-- BoneCP单数据源 http://jolbox.com/index.html?page=http://jolbox.com/configuration-spring.html 
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="idleConnectionTestPeriod" value="60"/>
+		<property name="idleMaxAge" value="240"/>
+		<property name="maxConnectionsPerPartition" value="${jdbc.minPoolSize}"/>
+		<property name="minConnectionsPerPartition" value="${jdbc.maxPoolSize}"/>
+		<property name="partitionCount" value="3"/>
+		<property name="acquireIncrement" value="5"/>
+		<property name="statementsCacheSize" value="100"/>
+		<property name="releaseHelperThreads" value="3"/>
+	</bean>
+    -->
+	 
+	<!-- Proxool单数据源 http://proxool.sourceforge.net/properties.html -->
+    <bean id="dataSource" class="org.quickbundle.third.proxool.RmProxoolDataSource" lazy-init="true">
+        <property name="driver" value="${jdbc.driverClassName}"/>
+        <property name="driverUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+	    <property name="minimumConnectionCount" value="${jdbc.minPoolSize}"/>
+	    <property name="maximumConnectionCount" value="${jdbc.maxPoolSize}"/>
+	    
+	    <property name="alias" value="QB-RM"/>
+	    <property name="houseKeepingSleepTime" value="30000"/>
+	    <property name="houseKeepingTestSql" value="${jdbc.validateTestSql}"/>
+	    <property name="maximumActiveTime" value="3600000"/>
+	    <property name="maximumConnectionLifetime" value="14400000"/>
+	    <property name="overloadWithoutRefusalLifetime" value="60000"/>
+	    <property name="prototypeCount" value="0"/>
+	    <property name="recentlyStartedThreshold" value="60000"/>
+	    <property name="simultaneousBuildThrottle" value="10"/>
+	    <property name="statistics" value="1h,1d,7d,30d"/>
+	    <property name="testBeforeUse" value="false"/>
+	    <property name="testAfterUse" value="false"/>
+	    <property name="trace" value="true"/>
+	    <property name="verbose" value="false"/>
+    </bean>
+
+	
+	<!-- Transaction manager for a single JDBC DataSource -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+
+	<!-- for hibernate config 
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+			</props>
+		</property>
+	</bean>
+	-->
+
+	<!-- ========================= ASPECT CONFIGURATION ======================== 
+			This definition creates auto-proxy infrastructure based on the given pointcut,
+			expressed in AspectJ pointcut language. Here: applying the advice named
+			"txAdvice" to all methods on classes named PetStoreImpl.
+	-->
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* com.*..*Service.*(..))
+							 ||execution(* org.quickbundle.*..*Service.*(..))" advice-ref="txAdvice" order="0"/>
+	</aop:config>
+	
+	<!--
+		Transaction advice definition, based on method name patterns.
+		Defaults to PROPAGATION_REQUIRED for all methods whose name starts with
+		"insert" or "update", and to PROPAGATION_REQUIRED with read-only hint
+		for all other methods.  timeout="600000" propagation="NOT_SUPPORTED" 
+	-->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*"/>
+			<tx:method name="update*"/>
+			<tx:method name="delete*"/>
+			<tx:method name="do*"/>
+			<tx:method name="execute*" />
+			<tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<!--启动spring注解功能-->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" order="1"/>
+	
+	<!-- 方法的执行情况记录日志 -->
+	<aop:config proxy-target-class="true">
+		<aop:aspect ref="RmLogMethod">
+			<aop:pointcut id="allService"
+				expression="execution(* com.*..*Service.*(..))
+						  ||execution(* org.quickbundle.*..*Service.*(..))"/>
+		    <aop:before method="beforeMethod" pointcut-ref="allService"/>
+		    <aop:after-returning method="afterReturningMethod" pointcut-ref="allService" returning="r"/>
+		    <aop:after-throwing method="afterThrowingMethod" pointcut-ref="allService" throwing="t"/>
+		</aop:aspect>
+	</aop:config>
+	<bean id="RmLogMethod" class="org.quickbundle.project.listener.RmLogMethod"/>
+
+	<!-- production环境 -->
+ 	<beans profile="production">
+ 		<context:property-placeholder ignore-unresolvable="true"
+			location="classpath*:/application.properties" />	
+		
+		<!-- 数据源配置, 使用DBCP数据库连接池 -->
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<!-- Connection Info -->
+			<property name="driverClassName" value="${jdbc.driver}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+		
+			<!-- Connection Pooling Info -->
+			<property name="maxActive" value="${dbcp.maxActive}" />
+			<property name="maxIdle" value="${dbcp.maxIdle}" />
+			<property name="defaultAutoCommit" value="false" />
+			<!-- 连接Idle一个小时后超时 -->
+			<property name="timeBetweenEvictionRunsMillis" value="3600000" />
+			<property name="minEvictableIdleTimeMillis" value="3600000" />
+		</bean>
+		
+		<!-- 数据源配置,使用应用服务器的数据库连接池 -->
+		<!--<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/ExampleDB" />-->
+	</beans>
+	
+	<!-- local development环境 -->
+	<beans profile="development">
+		<context:property-placeholder ignore-resource-not-found="true"
+			location="classpath*:/application.properties,
+          			  classpath*:/application.development.properties" />	
+
+		<!-- DBCP连接池 -->
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${jdbc.driver}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+			<property name="defaultAutoCommit" value="false" />
+		</bean>
+	</beans>
+	
+	<!-- functional test 环境 -->
+	<beans profile="functional">
+		<context:property-placeholder ignore-resource-not-found="true"
+			location="classpath*:/application.properties,
+          			  classpath*:/application.functional.properties,
+          			  classpath*:/application.functional-local.properties" />	
+
+		<!-- DBCP连接池 -->
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${jdbc.driver}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+			<property name="defaultAutoCommit" value="false" />
+		</bean>
+
+		<!-- 初始化数据表结构 -->
+		<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
+			<jdbc:script location="classpath:sql/h2/schema.sql" />
+		</jdbc:initialize-database>	
+	</beans>
+	
+	<!-- unit test环境 -->
+	<beans profile="test">
+	 	<context:property-placeholder ignore-resource-not-found="true"
+			location="classpath*:/application.properties,
+          			  classpath*:/application.test.properties" />	
+		
+		<!-- Simple连接池 -->
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+			<property name="driverClass" value="${jdbc.driver}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+		</bean>
+
+		<!-- 初始化数据表结构 与默认数据-->
+		<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
+			<jdbc:script location="classpath:sql/h2/schema.sql" />
+			<jdbc:script location="classpath:data/import-data.sql" encoding="UTF-8"/>
+		</jdbc:initialize-database>
+	</beans>
+</beans>

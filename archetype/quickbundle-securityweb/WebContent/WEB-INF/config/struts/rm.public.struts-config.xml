@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ========== Data Sources Configuration ============================== -->
+	<data-sources/>
+
+	<!-- ========== Form Beans Configuration ============================== -->
+	<form-beans/>
+	
+	<!-- ========== Global Exceptions Configuration ============================== -->
+	<global-exceptions >
+        <exception
+	         handler="org.quickbundle.third.struts.action.RmExceptionHandler"
+	         key="GLOBAL_ERROR_CODE"
+	         scope="request"
+	         path="/jsp/common/err.jsp"
+	         type="java.lang.Exception" />	 
+	</global-exceptions>
+	
+	<!-- ========== Global Forwards Configuration ============================== -->
+	<global-forwards>
+		<forward name="failure" path="/jsp/common/err.jsp" redirect="false"/>
+		<forward name="unknown-error" path="/jsp/common/err.jsp"/>
+		<forward name="error" path="/jsp/common/err.jsp"/>
+		<forward name="MessageAgentError" path="/jsp/common/err.jsp"/>
+		<forward name="MessageAgentErrorAjax" path="/jsp/common/errAjax.jsp"/>
+		<forward name="listPage" path="/jsp/common/errAjax.jsp"/>
+		<forward name="toQueryAll" path="/jsp/common/errAjax.jsp"/>
+		<forward name="downloadStatisticFilePage" path="/jsp/support/statistic/downloadStatisticExcel.jsp"/>
+		<forward name="OUTPUT_AJAX_PAGE" path="/jsp/support/ajax/output.jsp"/>
+		<!-- Ajax校验转向 -->
+		<forward name="xmlHttpRequest" path="/jsp/support/ajax/xmlHttpRequest.jsp" />
+		<forward name="login" path="/index.jsp"/>
+	</global-forwards>
+
+	<!-- ========== Action Mappings Configuration ============================== -->        
+    <action-mappings>
+		
+		
+    </action-mappings>
+   
+   	<!-- ========== Controller Configuration =============================== -->
+	<controller/>
+
+	<!-- ========== Message Resources Definitions =========================== -->
+	<message-resources parameter="i18n.ApplicationResources" />
+
+  	<!-- ========== Plug Ins Configuration ================================== -->
+	<!--plug-in className="" /-->
+
+</struts-config>

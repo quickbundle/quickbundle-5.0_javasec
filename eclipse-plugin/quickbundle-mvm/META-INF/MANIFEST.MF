@@ -1,0 +1,14 @@
+Manifest-Version: 5.0.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.quickbundle.mda.mvm
+Bundle-SymbolicName: org.quickbundle.mda.mvm;singleton:=true
+Bundle-Version: 5.0.0
+Eclipse-BundleShape: dir
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.quickbundle.mda.libs
+Bundle-ActivationPolicy: lazy
+Export-Package: org.quickbundle.mda.mvm
+Bundle-Activator: org.quickbundle.mda.mvm.MvmActivator
+Bundle-ClassPath: .,
+ target/classes

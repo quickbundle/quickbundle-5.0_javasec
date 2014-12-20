@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>正在进入</title>
+</head>
+<body>
+<br/>
+<form name=loading> 
+	<div align=center>
+		<div>
+			<font color="#0066ff" size="2" style="font-size:18px;">系统已经切换到XXXX机房的服务器，当前地址已停止使用，正在进入新系统，请稍等</font>
+			<font color="#0066ff" size="2" face="Arial">...</font>
+		</div>
+		<div style="padding: 10px;">
+			<input type=text name=chart size=46 style="font-family:Arial; font-weight:bolder; color:#0066ff; background-color:#fef4d9; padding:0px; border-style:none;"><input type=text name=percent size=3 style="color:#0066ff; text-align:center; border-width:medium; border-style:none;"> 
+		</div>
+	</div>
+</form>
+<script type="text/javascript"> 
+var bar=0;
+var line="||"; 
+var amount="||"; 
+count();
+function count(){
+	bar=bar+2;
+	amount =amount + line;
+	document.loading.chart.value=amount;
+	document.loading.percent.value=bar+"%";
+	if (bar<99) {
+		setTimeout("count()",100);
+	} else {
+		window.location = "http://www.quickbundle.org/";
+	} 
+}
+</script> 
+<p align="center"> 如果您的浏览器不支持跳转,<a style="text-decoration: none" href="http://www.quickbundle.org/"><font color="#FF0000">请点这里</font></a>.</p>
+</body>
+</html>

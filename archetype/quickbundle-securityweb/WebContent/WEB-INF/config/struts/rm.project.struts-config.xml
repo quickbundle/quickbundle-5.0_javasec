@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<action-mappings>
+		<!--RmLoginAction的struts跳转规则-->
+	    <action type="org.quickbundle.project.login.RmLoginAction" scope="request"	path="/RmLoginAction" parameter="cmd">
+			<forward name="toLogin" path="/project/sample/login/login.jsp"/>
+		<forward name="loginForceConfirm" path="/project/sample/login/loginForceConfirm.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

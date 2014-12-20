@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            name="Quickbundle.org-代码生成器V5.0.0"
+            id="org.quickbundle.generator_V5.0.0">
+      </category>
+      <wizard
+            name="2.生成可运行的代码"
+            icon="icons/sample.gif"
+            category="org.quickbundle.generator_V5.0.0"
+            class="org.quickbundle.mda.gc.GenerateCodeWizard"
+            id="org.quickbundle.gc_V5.0.0">
+      </wizard>
+   </extension>
+</plugin>

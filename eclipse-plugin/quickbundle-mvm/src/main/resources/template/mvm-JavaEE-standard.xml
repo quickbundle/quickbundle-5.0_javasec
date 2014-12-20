@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules rulesVersion="5.0.0">
+	<codegen>
+		<!--定义要生成的文件列表，分java、jsp、配置文件3种-->
+		<files filesType="java" outputPath="src/main/java/${javaPackageDir}">
+			<file xsltPath="JavaEE-standard/java/web/TableNameController.xsl" outputFile="web/TableNameController.java" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/java/rest/TableNameRestController.xsl" outputFile="rest/TableNameRestController.java" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/java/service/TableNameService.xsl" outputFile="service/TableNameService.java"/>
+			<file xsltPath="JavaEE-standard/java/dao/TableNameDao.xsl" outputFolder="dao/" result-document="true"/>
+			<file xsltPath="JavaEE-standard/java/dao/TableNameDao.xml.xsl" outputFolder="dao/" result-document="true"/>
+			<file xsltPath="JavaEE-standard/java/ITableNameConstants.xsl" outputFile="ITableNameConstants.java"/>
+			<file xsltPath="JavaEE-standard/java/vo/TableNameVo.xsl" outputFile="vo/TableNameVo.java" result-document="true"/>
+		</files>
+		<files filesType="jsp" outputPath="${webAppName}/WEB-INF/jsp/${jspSourcePath}">
+			<file xsltPath="JavaEE-standard/jsp/ajax/listTableName.xsl" outputFile="ajax/listTableName.jsp" bundleCode="ajax"/>
+			<file xsltPath="JavaEE-standard/jsp/middle/listMiddleTableName.xsl" outputFolder="middle/" bundleCode="main" result-document="true"/>
+			<file xsltPath="JavaEE-standard/jsp/util/referenceTableName.xsl" outputFile="util/referenceTableName.jsp" bundleCode="reference"/>
+			<file xsltPath="JavaEE-standard/jsp/util/statisticTableName_chart.xsl" outputFile="util/statisticTableName_chart.jsp" bundleCode="statistic"/>
+			<file xsltPath="JavaEE-standard/jsp/util/statisticTableName_flash.xsl" outputFile="util/statisticTableName_flash.jsp" bundleCode="statistic"/>
+			<file xsltPath="JavaEE-standard/jsp/util/statisticTableName_flashData.xsl" outputFile="util/statisticTableName_flashData.jsp" bundleCode="statistic"/>
+			<file xsltPath="JavaEE-standard/jsp/util/statisticTableName_table.xsl" outputFile="util/statisticTableName_table.jsp" bundleCode="statistic"/>
+			<file xsltPath="JavaEE-standard/jsp/detailTableName.xsl" outputFile="detailTableName.jsp" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/jsp/exportTableName_custom.xsl" outputFile="exportTableName_custom.jsp" bundleCode="importExport"/>
+			<file xsltPath="JavaEE-standard/jsp/exportTableName_excel.xsl" outputFile="exportTableName_excel.jsp" bundleCode="importExport"/>
+			<file xsltPath="JavaEE-standard/jsp/importTableName.xsl" outputFile="importTableName.jsp" bundleCode="importExport"/>
+			<file xsltPath="JavaEE-standard/jsp/insertTableName.xsl" outputFile="insertTableName.jsp" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/jsp/listTableName.xsl" outputFile="listTableName.jsp" bundleCode="main"/>
+		</files>
+		<files filesType="config" outputPath="src/main/resources/config">
+			<file xsltPath="JavaEE-standard/config/jdbc.xsl" outputFile="jdbc.properties" afterKeyWord="NOT_EXIST_POSITION"/>
+		</files>
+		<files filesType="config" outputPath="${webAppName}/WEB-INF/config/rm">
+			<file xsltPath="JavaEE-standard/config/id.xsl" outputFile="id.xml" afterKeyWord="&lt;!--generateFromHere-->"/>
+			<file xsltPath="JavaEE-standard/config/initCodeTypeData.xsl" outputFile="initCodeTypeData.xml" afterKeyWord="&lt;codes>" rowIsUnique="true"/>
+		</files>
+		<files filesType="config" outputPath="${webAppName}/jsp">
+			<file xsltPath="JavaEE-standard/config/funcTree_default.xsl" outputFile="funcTree_default.jsp" afterKeyWord="language=&quot;java&quot; %>" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/config/tree_default.xsl" outputFile="ajax/tree_default.jsp" afterKeyWord="language=&quot;java&quot; %>" bundleCode="ajax"/>
+		</files>
+		<files filesType="other" outputPath="src/main/java">
+			<file xsltPath="JavaEE-standard/other/IRmCodeConstants.xsl" outputFile="org/quickbundle/modules/code/IRmCodeConstants.java" afterKeyWord="//start dictionary define" rowIsUnique="true"/>
+		</files>
+	</codegen>
+</rules>

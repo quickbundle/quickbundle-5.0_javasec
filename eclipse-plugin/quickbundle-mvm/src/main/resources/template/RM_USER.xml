@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta>
+  <project>
+    <projectName>abc123</projectName>
+    <webAppName>webapp</webAppName>
+    <authorName>白小勇</authorName>
+    <javaPackageName>com.helloworld</javaPackageName>
+    <jspSourcePath>helloworld</jspSourcePath>
+  </project>
+  <database>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <url>jdbc:mysql://localhost/rmdemo?jdbcCompliantTruncation=false</url>
+    <userName>root</userName>
+    <password></password>
+    <dbProductName>MySQL</dbProductName>
+  </database>
+  <relations>
+    <mainTable tableName="RM_USER" refColumn="ID">
+      <refTable tableName="RM_USER_AGENT" refColumn="AGENTED_ID"/>
+      <refTable tableName="RM_USER_ONLINE_RECORD" refColumn="USER_ID"/>
+    </mainTable>
+  </relations>
+  <tables>
+    <table tableName="RM_USER" tableNameDisplay="用户" comment="" attachedRules="" tableFilterKeyword="RmUser" tableDirName="rmuser" tablePk="ID" statisticColumn="ID" keyColumn="NAME" tableComment="" customBundleCode="main,ajax,readonly,importExport,reference,statistic">
+      <column columnName="ID" columnNameDisplay="主键" dataType="java.lang.Long" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="NAME" columnNameDisplay="姓名" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOCK_STATUS" columnNameDisplay="激活/锁定状态" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="$RM_LOCK_STATUS=激活、锁定状态{
+0=锁定,
+1=激活状态
+}" dataTypeDb="CHAR" defaultValue="" nullable="NO" humanDisplayType="rm.dictionary.select" humanDisplayTypeKeyword="RM_LOCK_STATUS=激活、锁定状态" humanDisplayTypeData="
+0=锁定,
+1=激活状态
+" attachedRules=""/>
+      <column columnName="LOGIN_ID" columnNameDisplay="登录名" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="PASSWORD" columnNameDisplay="密码" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="AUTHEN_TYPE" columnNameDisplay="认证方式" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="ORGANIZATION_ID" columnNameDisplay="所属组织机构" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="EMPLOYEE_ID" columnNameDisplay="员工ID" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="50" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="EMAIL" columnNameDisplay="电子邮箱" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="ADMIN_TYPE" columnNameDisplay="用户权限类型" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="2" decimalDigits="" comment="$RM_ADMIN_TYPE=用户权限类型{
+0=临时用户,
+1=前台用户,
+2=普通用户,
+9=超级管理员(admin,一般用于数据初始化)
+}" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="rm.dictionary.select" humanDisplayTypeKeyword="RM_ADMIN_TYPE=用户权限类型" humanDisplayTypeData="
+0=临时用户,
+1=前台用户,
+2=普通用户,
+9=超级管理员(admin,一般用于数据初始化)
+" attachedRules=""/>
+      <column columnName="DESCRIPTION" columnNameDisplay="描述" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="1000" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="AGENT_STATUS" columnNameDisplay="代理状态" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="$RM_AGENT_STATUS=代理状态{
+0=未代理,
+1=已代理
+}" dataTypeDb="CHAR" defaultValue="" nullable="YES" humanDisplayType="rm.dictionary.select" humanDisplayTypeKeyword="RM_AGENT_STATUS=代理状态" humanDisplayTypeData="
+0=未代理,
+1=已代理
+" attachedRules=""/>
+      <column columnName="LOGIN_STATUS" columnNameDisplay="登录状态" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="" dataTypeDb="CHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LAST_LOGIN_DATE" columnNameDisplay="最后登录时间" dataType="java.sql.Timestamp" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LAST_LOGIN_IP" columnNameDisplay="最后登录IP" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="50" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGIN_SUM" columnNameDisplay="累计登录次数" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LAST_CUSTOM_CSS" columnNameDisplay="最后定制样式" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="IS_AFFIX" columnNameDisplay="有无附件" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="" dataTypeDb="CHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="FUNCTION_PERMISSION" columnNameDisplay="功能权限" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="4000" decimalDigits="" comment="逗号分隔" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="DATA_PERMISSION" columnNameDisplay="数据权限" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="4000" decimalDigits="" comment="逗号分隔" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CUSTOM1" columnNameDisplay="自定义1" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CUSTOM2" columnNameDisplay="自定义2" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CUSTOM3" columnNameDisplay="自定义3" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CUSTOM4" columnNameDisplay="自定义4" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CUSTOM5" columnNameDisplay="自定义5" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CUSTOM_XML" columnNameDisplay="扩展XML" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="4000" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="USABLE_STATUS" columnNameDisplay="数据可用状态" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="" dataTypeDb="CHAR" defaultValue="1" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_DATE" columnNameDisplay="修改日期" dataType="java.sql.Timestamp" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_IP" columnNameDisplay="修改IP" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="45" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_USER_ID" columnNameDisplay="修改用户ID" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+    </table>
+    <table tableName="RM_USER_AGENT" tableNameDisplay="用户代理" comment="" attachedRules="" tableFilterKeyword="RmUserAgent" tableDirName="rmuseragent" tablePk="ID" statisticColumn="AGENT_ID" keyColumn="ID" tableComment="" customBundleCode="main,condition,ajax,readonly,importExport,reference,statistic">
+      <column columnName="ID" columnNameDisplay="主键" dataType="java.lang.Long" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="AGENTED_ID" columnNameDisplay="被代理人" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="AGENT_ID" columnNameDisplay="代理人" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="NO" humanDisplayType="rm.listReference" humanDisplayTypeKeyword="RmUser" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="BEGIN_TIME" columnNameDisplay="生效时间" dataType="java.sql.Timestamp" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="END_TIME" columnNameDisplay="失效时间" dataType="java.sql.Timestamp" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="AGENT_AUTHORIZE" columnNameDisplay="代理权限范围" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="4000" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="USABLE_STATUS" columnNameDisplay="数据可用状态" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="" dataTypeDb="CHAR" defaultValue="1" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_DATE" columnNameDisplay="修改日期" dataType="java.sql.Timestamp" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_IP" columnNameDisplay="修改IP" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="45" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_USER_ID" columnNameDisplay="修改用户ID" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+    </table>
+    <table tableName="RM_USER_ONLINE_RECORD" tableNameDisplay="用户在线记录" comment="" attachedRules="" tableFilterKeyword="RmUserOnlineRecord" tableDirName="rmuseronlinerecord" tablePk="ID" statisticColumn="USER_ID" keyColumn="ID" tableComment="" customBundleCode="main,condition,ajax,readonly,importExport,reference,statistic">
+      <column columnName="ID" columnNameDisplay="主键" dataType="java.lang.Long" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="USER_ID" columnNameDisplay="用户ID" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="NO" humanDisplayType="rm.listReference" humanDisplayTypeKeyword="RmUser" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGIN_TIME" columnNameDisplay="登录时间" dataType="java.sql.Timestamp" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="NO" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="CLUSTER_NODE_ID" columnNameDisplay="集群节点ID" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="50" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGIN_SIGN" columnNameDisplay="客户端会话标识" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="200" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGIN_IP" columnNameDisplay="登录IP" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="50" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGIN_UUID" columnNameDisplay="唯一识别码" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="50" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGOUT_TIME" columnNameDisplay="注销时间" dataType="java.sql.Timestamp" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LOGOUT_TYPE" columnNameDisplay="注销类型" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="50" decimalDigits="" comment="$RM_LOGOUT_TYPE=注销类型{
+1=正常注销,
+2=超时退出,
+3=被强制登录替换,
+4=被管理员强制退出
+}" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="rm.dictionary.select" humanDisplayTypeKeyword="RM_LOGOUT_TYPE=注销类型" humanDisplayTypeData="
+1=正常注销,
+2=超时退出,
+3=被强制登录替换,
+4=被管理员强制退出
+" attachedRules=""/>
+      <column columnName="ONLINE_TIME" columnNameDisplay="在线时间_冗余" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="LAST_OPERATION" columnNameDisplay="最后操作" dataType="java.lang.String" isBuild="true" isBuild_list="true" filterKeyword="" filterType="default" maxLength="1000" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="USABLE_STATUS" columnNameDisplay="数据可用状态" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="1" decimalDigits="" comment="" dataTypeDb="CHAR" defaultValue="1" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_DATE" columnNameDisplay="修改日期" dataType="java.sql.Timestamp" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="" comment="" dataTypeDb="DATETIME" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_IP" columnNameDisplay="修改IP" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="45" decimalDigits="" comment="" dataTypeDb="VARCHAR" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+      <column columnName="MODIFY_USER_ID" columnNameDisplay="修改用户ID" dataType="java.lang.String" isBuild="false" isBuild_list="false" filterKeyword="" filterType="default" maxLength="19" decimalDigits="0" comment="" dataTypeDb="BIGINT" defaultValue="" nullable="YES" humanDisplayType="default" humanDisplayTypeKeyword="" humanDisplayTypeData="" attachedRules=""/>
+    </table>
+  </tables>
+</meta>

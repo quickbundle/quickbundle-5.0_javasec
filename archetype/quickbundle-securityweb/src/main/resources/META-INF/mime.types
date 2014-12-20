@@ -1,0 +1,228 @@
+text/html		html htm HTML HTM
+text/plain		txt text TXT TEXT
+image/gif		gif GIF
+image/ief		ief
+image/jpeg		jpeg jpg jpe JPG
+image/tiff		tiff tif
+image/png		png PNG
+image/x-xwindowdump	xwd
+application/postscript	ai eps ps
+application/rtf		rtf
+application/x-tex	tex
+application/x-texinfo	texinfo texi
+application/x-troff	t tr roff
+audio/basic		au
+audio/midi		midi mid
+audio/x-aifc		aifc
+audio/x-aiff            aif aiff
+audio/x-mpeg		mpeg mpg
+audio/x-wav             wav
+video/mpeg		mpeg mpg mpe
+video/quicktime		qt mov
+video/x-msvideo		avi
+application/pdf		pdf PDF
+
+#defaultMap.put("gif", "image/gif");
+#defaultMap.put("jpg", "image/jpeg");
+#defaultMap.put("jpe", "image/jpeg");
+#defaultMap.put("jpeg", "image/jpeg");
+#defaultMap.put("png", "image/png");
+#defaultMap.put("java", "text/plain");
+#defaultMap.put("body", "text/html");
+#defaultMap.put("rtx", "text/richtext");
+#defaultMap.put("tsv", "text/tab-separated-values");
+#defaultMap.put("etx", "text/x-setext");
+#defaultMap.put("ps", "application/x-postscript");
+#defaultMap.put("class", "application/java");
+#defaultMap.put("csh", "application/x-csh");
+#defaultMap.put("sh", "application/x-sh");
+#defaultMap.put("tcl", "application/x-tcl");
+#defaultMap.put("tex", "application/x-tex");
+#defaultMap.put("texinfo", "application/x-texinfo");
+#defaultMap.put("texi", "application/x-texinfo");
+#defaultMap.put("t", "application/x-troff");
+#defaultMap.put("tr", "application/x-troff");
+#defaultMap.put("roff", "application/x-troff");
+#defaultMap.put("man", "application/x-troff-man");
+#defaultMap.put("me", "application/x-troff-me");
+#defaultMap.put("ms", "application/x-wais-source");
+#defaultMap.put("src", "application/x-wais-source");
+#defaultMap.put("zip", "application/zip");
+#defaultMap.put("bcpio", "application/x-bcpio");
+#defaultMap.put("cpio", "application/x-cpio");
+#defaultMap.put("gtar", "application/x-gtar");
+#defaultMap.put("shar", "application/x-shar");
+#defaultMap.put("sv4cpio", "application/x-sv4cpio");
+#defaultMap.put("sv4crc", "application/x-sv4crc");
+#defaultMap.put("tar", "application/x-tar");
+#defaultMap.put("ustar", "application/x-ustar");
+#defaultMap.put("dvi", "application/x-dvi");
+#defaultMap.put("hdf", "application/x-hdf");
+#defaultMap.put("latex", "application/x-latex");
+#defaultMap.put("bin", "application/octet-stream");
+#defaultMap.put("oda", "application/oda");
+#defaultMap.put("ps", "application/postscript");
+#defaultMap.put("eps", "application/postscript");
+#defaultMap.put("ai", "application/postscript");
+#defaultMap.put("rtf", "application/rtf");
+#defaultMap.put("nc", "application/x-netcdf");
+#defaultMap.put("cdf", "application/x-netcdf");
+#defaultMap.put("cer", "application/x-x509-ca-cert");
+#defaultMap.put("exe", "application/octet-stream");
+#defaultMap.put("gz", "application/x-gzip");
+#defaultMap.put("Z", "application/x-compress");
+#defaultMap.put("z", "application/x-compress");
+#defaultMap.put("hqx", "application/mac-binhex40");
+#defaultMap.put("mif", "application/x-mif");
+#defaultMap.put("ief", "image/ief");
+#defaultMap.put("tiff", "image/tiff");
+#defaultMap.put("tif", "image/tiff");
+#defaultMap.put("ras", "image/x-cmu-raster");
+#defaultMap.put("pnm", "image/x-portable-anymap");
+#defaultMap.put("pbm", "image/x-portable-bitmap");
+#defaultMap.put("pgm", "image/x-portable-graymap");
+#defaultMap.put("ppm", "image/x-portable-pixmap");
+#defaultMap.put("rgb", "image/x-rgb");
+#defaultMap.put("xbm", "image/x-xbitmap");
+#defaultMap.put("xpm", "image/x-xpixmap");
+#defaultMap.put("xwd", "image/x-xwindowdump");
+#defaultMap.put("au", "audio/basic");
+#defaultMap.put("snd", "audio/basic");
+#defaultMap.put("aif", "audio/x-aiff");
+#defaultMap.put("aiff", "audio/x-aiff");
+#defaultMap.put("aifc", "audio/x-aiff");
+#defaultMap.put("wav", "audio/x-wav");
+#defaultMap.put("mpeg", "video/mpeg");
+#defaultMap.put("mpg", "video/mpeg");
+#defaultMap.put("mpe", "video/mpeg");
+#defaultMap.put("qt", "video/quicktime");
+#defaultMap.put("mov", "video/quicktime");
+#defaultMap.put("avi", "video/x-msvideo");
+#defaultMap.put("movie", "video/x-sgi-movie");
+#defaultMap.put("avx", "video/x-rad-screenplay");
+#defaultMap.put("wrl", "x-world/x-vrml");
+#defaultMap.put("mpv2", "video/mpeg2");
+#
+#/* Add XML related MIMEs */
+#defaultMap.put("xml", "text/xml");
+#defaultMap.put("xsl", "text/xml");        
+#defaultMap.put("svg", "image/svg+xml");
+#defaultMap.put("svgz", "image/svg+xml");
+#defaultMap.put("wbmp", "image/vnd.wap.wbmp");
+#defaultMap.put("wml", "text/vnd.wap.wml");
+#defaultMap.put("wmlc", "application/vnd.wap.wmlc");
+#defaultMap.put("wmls", "text/vnd.wap.wmlscript");
+#defaultMap.put("wmlscriptc", "application/vnd.wap.wmlscriptc");
+
+#application/andrew-inset ez  
+# application/mac-binhex40 hqx  
+# application/mac-compactpro cpt  
+# application/mathml+xml mathml  
+# application/msword doc  
+# application/octet-stream bin dms lha lzh exe class so dll  
+# application/oda oda  
+# application/ogg ogg  
+# application/pdf pdf  
+# application/postscript ai eps ps  
+# application/rdf+xml rdf  
+# application/smil smi smil  
+# application/srgs gram  
+# application/srgs+xml grxml  
+# application/vnd.mif mif  
+# application/vnd.mozilla.xul+xml xul  
+# application/vnd.ms-excel xls  
+# application/vnd.ms-powerpoint ppt  
+# application/vnd.wap.wbxml wbxml  
+# application/vnd.wap.wmlc .wmlc wmlc  
+# application/vnd.wap.wmlscriptc .wmlsc wmlsc  
+# application/voicexml+xml vxml  
+# application/x-bcpio bcpio  
+# application/x-cdlink vcd  
+# application/x-chess-pgn pgn  
+# application/x-cpio cpio  
+# application/x-csh csh  
+# application/x-director dcr dir dxr  
+# application/x-dvi dvi  
+# application/x-futuresplash spl  
+# application/x-gtar gtar  
+# application/x-hdf hdf  
+# application/x-httpd-php .php .php4 .php3 .phtml  
+# application/x-httpd-php-source .phps  
+# application/x-javascript js  
+# application/x-koan skp skd skt skm  
+# application/x-latex latex  
+# application/x-netcdf nc cdf  
+# application/x-pkcs7-crl .crl  
+# application/x-sh sh  
+# application/x-shar shar  
+# application/x-shockwave-flash swf  
+# application/x-stuffit sit  
+# application/x-sv4cpio sv4cpio  
+# application/x-sv4crc sv4crc  
+# application/x-tar .tgz tar  
+# application/x-tcl tcl  
+# application/x-tex tex  
+# application/x-texinfo texinfo texi  
+# application/x-troff t tr roff  
+# application/x-troff-man man  
+# application/x-troff-me me  
+# application/x-troff-ms ms  
+# application/x-ustar ustar  
+# application/x-wais-source src  
+# application/x-x509-ca-cert .crt  
+# application/xhtml+xml xhtml xht  
+# application/xml xml xsl  
+# application/xml-dtd dtd  
+# application/xslt+xml xslt  
+# application/zip zip  
+# audio/basic au snd  
+# audio/midi mid midi kar  
+# audio/mpeg mpga mp2 mp3  
+# audio/x-aiff aif aiff aifc  
+# audio/x-mpegurl m3u  
+# audio/x-pn-realaudio ram rm  
+# audio/x-pn-realaudio-plugin rpm  
+# audio/x-realaudio ra  
+# audio/x-wav wav  
+# chemical/x-pdb pdb  
+# chemical/x-xyz xyz  
+# image/bmp bmp  
+# image/cgm cgm  
+# image/gif gif  
+# image/ief ief  
+# image/jpeg jpeg jpg jpe  
+# image/png png  
+# image/svg+xml svg  
+# image/tiff tiff tif  
+# image/vnd.djvu djvu djv  
+# image/vnd.wap.wbmp .wbmp wbmp  
+# image/x-cmu-raster ras  
+# image/x-icon ico  
+# image/x-portable-anymap pnm  
+# image/x-portable-bitmap pbm  
+# image/x-portable-graymap pgm  
+# image/x-portable-pixmap ppm  
+# image/x-rgb rgb  
+# image/x-xbitmap xbm  
+# image/x-xpixmap xpm  
+# image/x-xwindowdump xwd  
+# model/iges igs iges  
+# model/mesh msh mesh silo  
+# model/vrml wrl vrml  
+# text/calendar ics ifb  
+# text/css css  
+# text/html .shtml html htm  
+# text/plain asc txt  
+# text/richtext rtx  
+# text/rtf rtf  
+# text/sgml sgml sgm  
+# text/tab-separated-values tsv  
+# text/vnd.wap.wml .wml wml  
+# text/vnd.wap.wmlscript .wmls wmls  
+# text/x-setext etx  
+# video/mpeg mpeg mpg mpe  
+# video/quicktime qt mov  
+# video/vnd.mpegurl mxu  
+# video/x-msvideo avi  
+# video/x-sgi-movie movie  
+# x-conference/x-cooltalk ice 

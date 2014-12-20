@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trees>
+	<!--注意：真或假用1或0表示；顺序不能乱-->
+	<!--***************** 以下为必填项属性 *****************-->
+	<!--id 必填项，标识唯一Id-->
+	<!--text 必填项，显示文本内容-->
+	<!--hasChild 必填项，此冗余值表示是否有子节点-->
+	<!--xmlSource 必填项（如果hasChild大于0），子节点的数据源-->
+	<!--***************** 以下为树的外观属性 *****************-->
+	<!--defaultOpen 可选，是否继续自动展开本节点，只有当hasChild为1并且本xml有子节点时才有效；默认等于0-->
+	<!--logoImagePath 可选，可以在文字前边加一个图标，注意要写上文件名；默认等于空-->
+	<!--statusFlag 可选，数据启用禁用状态；默认等于1-->
+	<!--title 可选，鼠标放上去时提示内容；默认等于text-->
+	<!--hrefPath 可选，超链接地址；默认等于空-->
+	<!--target 可选，超链接的打开方式；默认等于_blank-->
+	<!--dbClick 可选，定义双击事件；默认等于空-->
+	<!--orderStr 可选，排序编码，升序；默认等于空-->
+	<!--***************** 以下为表单提交属性 *****************-->
+	<!--returnValue 可选，提交时的返回值；默认等于Id -->
+	<!--isSelected 可选，是否已经被选中；默认等于0-->
+	<!--indeterminate 可选，是否为不确定状态；默认等于0-->
+	<!--thisType 可选，节点类型；默认等于空-->
+	<!--detailedType 可选，更具体的节点类型；默认等于空-->
+	<!--isSubmit 可选，表示是否可以被提交；默认等于1-->
+	<!--***************** 以下为不填的属性，预留 *****************-->
+	<!--parentId 不填，预留给程序处理，表示父节点Id；默认等于空-->
+	<!--childIds 不填，预留给程序处理，表示子节点集合；默认等于空-->
+	<TreeNode id="1" text="蓝海股份" hasChild="1" xmlSource="xmlData.xml" defaultOpen="0" logoImagePath="" statusFlag="" title="蓝海金融有限公司" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds="">
+		<TreeNode id="11" text="蓝海北京分公司" hasChild="0" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="欢迎来到销售部" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds=""/>
+		<TreeNode id="12" text="电信事业部" hasChild="1" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="welcome to ..." hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds="">
+			<TreeNode id="121" text="行业开发部" hasChild="0" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="欢迎来到销售部" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds=""/>
+			<TreeNode id="122" text="实施部" hasChild="0" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="欢迎来到销售部" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds=""/>
+		</TreeNode>
+	</TreeNode>
+	<TreeNode id="2" text="蓝海移动" hasChild="1" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="蓝海金融有限公司" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds="">
+		<TreeNode id="21" text="ERP部门" hasChild="0" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="欢迎来到销售部" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="0" parentId="" childIds=""/>
+		<TreeNode id="22" text="互联网开发部" hasChild="0" xmlSource="" defaultOpen="0" logoImagePath="" statusFlag="" title="welcome to ..." hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="0" parentId="" childIds=""/>
+		<MoreTreeNode text="更多..." xmlSource="xmlData2.xml"/>
+	</TreeNode>
+	<TreeNode id="3" text="蓝海审计-递归" hasChild="1" xmlSource="xmlData.xml" defaultOpen="0" logoImagePath="" statusFlag="" title="蓝海金融有限公司" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds="" custom1="这就是蓝海">
+	</TreeNode>
+</Trees>

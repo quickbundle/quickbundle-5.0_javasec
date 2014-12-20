@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.quickbundle.modules.message.dao.RmMessageReceiverDao">
+
+  <insert id="insert" parameterType="org.quickbundle.modules.message.vo.RmMessageReceiverVo">
+    insert into RM_MESSAGE_RECEIVER ( 
+      ID, MESSAGE_ID, RECEIVER_ID, IS_HANDLE, HANDLE_DATE, HANDLE_RESULT, USABLE_STATUS, MODIFY_DATE, 
+      MODIFY_IP, MODIFY_USER_ID ) 
+    values ( 
+      #{id}, #{message_id}, #{receiver_id}, #{is_handle}, #{handle_date}, #{handle_result}, #{usable_status}, #{modify_date}, 
+      #{modify_ip}, #{modify_user_id} )
+  </insert>
+    
+  <delete id="delete" parameterType="int">
+    delete from RM_MESSAGE_RECEIVER where ID=#{id}
+  </delete>
+  
+  <delete id="deleteMulti" parameterType="int">
+    delete from RM_MESSAGE_RECEIVER where ID in 
+    <foreach collection="array" index="index" item="item" open="(" separator="," close=")">  
+      #{item}   
+    </foreach>
+  </delete>
+
+  <update id="update" parameterType="org.quickbundle.modules.message.vo.RmMessageReceiverVo">
+    update RM_MESSAGE_RECEIVER set 
+      MESSAGE_ID=#{message_id}, RECEIVER_ID=#{receiver_id}, IS_HANDLE=#{is_handle}, HANDLE_DATE=#{handle_date}, 
+      HANDLE_RESULT=#{handle_result}, USABLE_STATUS=#{usable_status}, MODIFY_DATE=#{modify_date}, MODIFY_IP=#{modify_ip}, 
+      MODIFY_USER_ID=#{modify_user_id}
+      where ID=#{id}
+  </update>
+
+  <select id="get" parameterType="string" resultType="org.quickbundle.modules.message.vo.RmMessageReceiverVo">
+	select 
+	  RM_MESSAGE_RECEIVER.ID, RM_MESSAGE_RECEIVER.MESSAGE_ID, RM_MESSAGE_RECEIVER.RECEIVER_ID, RM_MESSAGE_RECEIVER.IS_HANDLE, 
+	  RM_MESSAGE_RECEIVER.HANDLE_DATE, RM_MESSAGE_RECEIVER.HANDLE_RESULT, RM_MESSAGE_RECEIVER.USABLE_STATUS, RM_MESSAGE_RECEIVER.MODIFY_DATE
+	from RM_MESSAGE_RECEIVER 
+	where RM_MESSAGE_RECEIVER.ID=#{id}
+  </select>
+
+  <select id="getCount" parameterType="string" resultType="int" useCache="true">
+	select count(RM_MESSAGE_RECEIVER.ID) from RM_MESSAGE_RECEIVER
+	<if test="value != null and value.length > 0">
+        where ${value}
+    </if>
+  </select>
+  
+  <select id="list" parameterType="map" resultType="org.quickbundle.modules.message.vo.RmMessageReceiverVo">
+    select
+      RM_MESSAGE_RECEIVER.ID, RM_MESSAGE_RECEIVER.MESSAGE_ID, RM_MESSAGE_RECEIVER.RECEIVER_ID, RM_MESSAGE_RECEIVER.IS_HANDLE, 
+      RM_MESSAGE_RECEIVER.HANDLE_DATE, RM_MESSAGE_RECEIVER.HANDLE_RESULT, RM_MESSAGE_RECEIVER.USABLE_STATUS, RM_MESSAGE_RECEIVER.MODIFY_DATE, 
+      RM_MESSAGE_RECEIVER.MODIFY_IP, RM_MESSAGE_RECEIVER.MODIFY_USER_ID
+    from RM_MESSAGE_RECEIVER
+    <if test="queryCondition != null and queryCondition != ''">
+        where ${queryCondition}
+    </if>
+    <if test="orderStr != null and orderStr != ''">
+        order by ${orderStr}
+    </if>
+  </select>
+  
+  <select id="listAllColumn" parameterType="map" resultType="org.quickbundle.modules.message.vo.RmMessageReceiverVo">
+    select
+      RM_MESSAGE_RECEIVER.ID, RM_MESSAGE_RECEIVER.MESSAGE_ID, RM_MESSAGE_RECEIVER.RECEIVER_ID, RM_MESSAGE_RECEIVER.IS_HANDLE, 
+      RM_MESSAGE_RECEIVER.HANDLE_DATE, RM_MESSAGE_RECEIVER.HANDLE_RESULT, RM_MESSAGE_RECEIVER.USABLE_STATUS, RM_MESSAGE_RECEIVER.MODIFY_DATE, 
+      RM_MESSAGE_RECEIVER.MODIFY_IP, RM_MESSAGE_RECEIVER.MODIFY_USER_ID
+    from RM_MESSAGE_RECEIVER
+    <if test="queryCondition != null and queryCondition != ''">
+        where ${queryCondition}
+    </if>
+    <if test="orderStr != null and orderStr != ''">
+        order by ${orderStr}
+    </if>
+  </select>
+
+  <select id="search" parameterType="map" resultType="org.quickbundle.modules.message.vo.RmMessageReceiverVo">
+    select
+      RM_MESSAGE_RECEIVER.ID, RM_MESSAGE_RECEIVER.MESSAGE_ID, RM_MESSAGE_RECEIVER.RECEIVER_ID, RM_MESSAGE_RECEIVER.IS_HANDLE, 
+      RM_MESSAGE_RECEIVER.HANDLE_DATE, RM_MESSAGE_RECEIVER.HANDLE_RESULT, RM_MESSAGE_RECEIVER.USABLE_STATUS, RM_MESSAGE_RECEIVER.MODIFY_DATE, 
+      RM_MESSAGE_RECEIVER.MODIFY_IP, RM_MESSAGE_RECEIVER.MODIFY_USER_ID
+    from RM_MESSAGE_RECEIVER
+    <trim prefix="where" prefixOverrides="and|or">  
+      <if test="message_id != null and message_id != ''">
+        RM_MESSAGE_RECEIVER.MESSAGE_ID=#{message_id}
+      </if>
+      <if test="receiver_id != null and receiver_id != ''">
+        and RM_MESSAGE_RECEIVER.RECEIVER_ID=#{receiver_id}
+      </if>
+      <if test="is_handle != null and is_handle != ''">
+        and RM_MESSAGE_RECEIVER.IS_HANDLE=#{is_handle}
+      </if>
+      <if test="handle_date_from != null and handle_date_from != ''">
+        and RM_MESSAGE_RECEIVER.HANDLE_DATE>#{handle_date_from}
+      </if>
+      <if test="handle_date_to != null and handle_date_to != ''">
+        and RM_MESSAGE_RECEIVER.HANDLE_DATE&lt;#{handle_date_to}
+      </if>
+      <if test="handle_result != null and handle_result != ''">
+        RM_MESSAGE_RECEIVER.HANDLE_RESULT like '%${handle_result}%'
+      </if>
+    </trim>
+    <if test="orderStr != null and orderStr != ''">
+        order by ${orderStr}
+    </if>
+  </select>
+  
+</mapper>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.quickbundle</groupId>
+	<artifactId>archetype-build.parent</artifactId>
+	<version>5.0.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<encoding>UTF-8</encoding>
+		<jdk.version>1.5</jdk.version>
+		<basedir>./</basedir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<quickbundle.version>5.0.0</quickbundle.version>
+
+		<maven-assembly.version>2.5.3</maven-assembly.version>
+		<maven-antrun.version>1.7</maven-antrun.version>
+	</properties>
+	
+	<profiles>
+		<profile>  
+		    <id>windows-properties</id>  
+		    <activation>  
+		        <os>  
+		          <family>Windows</family>  
+		        </os>  
+		    </activation>  
+		    <properties>  
+		        <run.command>cmd</run.command>  
+		        <run.command.additionnal.arg>/c</run.command.additionnal.arg>  
+		        <make.script>make.bat</make.script>
+		    </properties>  
+		</profile>  
+		<profile>  
+		    <id>linux-properties</id>  
+		    <activation>  
+		        <os>  
+		          <family>unix</family>  
+		        </os>  
+		    </activation>  
+		    <properties>  
+		        <run.command>sh</run.command>  
+		        <run.command.additionnal.arg></run.command.additionnal.arg>  
+				<make.script>make.sh</make.script>
+		    </properties>  
+		</profile>
+	</profiles>
+	
+	<build>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${maven-assembly.version}</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/assembly.xml</descriptor>
+					</descriptors>
+					<formats>
+						<format>dir</format>
+					</formats>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>${maven-antrun.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target description="execute make shell/batch">
+								<echo>execute ${make.script}</echo>
+								<exec dir="." executable="${run.command}">
+			                        <arg value="${run.command.additionnal.arg}"/>  
+			                        <arg value="${make.script}"/>  
+								</exec>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+	
+</project>

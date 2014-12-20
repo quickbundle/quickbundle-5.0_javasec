@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<action-mappings>
+
+	<!--RmUserOnlineRecord的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmuseronlinerecord.web.RmUserOnlineRecordAction" scope="request" path="/RmUserOnlineRecordAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmUserOnlineRecordAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmuseronlinerecord/listRmUserOnlineRecord.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmuseronlinerecord/insertRmUserOnlineRecord.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmuseronlinerecord/detailRmUserOnlineRecord.jsp"/>
+		</action>
+	<!--RmUserOnlineRecordCondition的struts跳转规则-->
+    <action type="org.quickbundle.orgauth.rmuseronlinerecord.web.RmUserOnlineRecordConditionAction" scope="request" path="/RmUserOnlineRecordConditionAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmUserOnlineRecordConditionAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmuseronlinerecord/condition/listRmUserOnlineRecord.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmuseronlinerecord/condition/insertRmUserOnlineRecord.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmuseronlinerecord/condition/detailRmUserOnlineRecord.jsp"/>
+	</action>
+	<!--RmUser的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmuser.web.RmUserAction" scope="request" path="/RmUserAction" parameter="cmd">
+		<forward name="toQueryAll" path="/RmUserAction.do?cmd=simpleQuery" redirect="true"/>
+		<forward name="listPage" path="/orgauth/rmuser/listRmUser.jsp"/>
+		<forward name="updatePage" path="/orgauth/rmuser/insertRmUser.jsp?isModify=1"/>
+		<forward name="detailPage" path="/orgauth/rmuser/detailRmUser.jsp"/>
+		<forward name="referencePage" path="/orgauth/rmuser/util/referenceRmUser.jsp"/>
+		<forward name="statisticPage" path="/orgauth/rmuser/util/statisticRmUser_rowColumn.jsp"/>
+		<forward name="listPage_online" path="/orgauth/rmuser/listRmUser_online.jsp"/>
+		<forward name="toQueryOnlineUser" path="/RmUserAction.do?cmd=queryOnlineUser" redirect="true"/>
+	</action>
+	<!--RmRole的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmrole.web.RmRoleAction" scope="request" path="/RmRoleAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmRoleAction.do?cmd=simpleQuery" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmrole/listRmRole.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmrole/insertRmRole.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmrole/detailRmRole.jsp"/>
+		<!--参照页面的跳转-->
+		<forward name="referencePage" path="/orgauth/rmrole/util/referenceRmRole.jsp"/>
+		<!--统计页面的跳转-->
+		<forward name="statisticPage" path="/orgauth/rmrole/util/statisticRmRole_rowColumn.jsp"/>
+		<!--用户页面的跳转-->
+		<forward name="USER_QUERALL" path="/RmUserAction.do?cmd=simpleQuery"/>
+		</action>
+		
+	<!--RmPartyRole的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmpartyrole.web.RmPartyRoleAction" scope="request" path="/RmPartyRoleAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyRoleAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmpartyrole/listRmPartyRole.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmpartyrole/insertRmPartyRole.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmpartyrole/detailRmPartyRole.jsp"/>
+	</action>
+	<!--RmFunctionNode的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmfunctionnode.web.RmFunctionNodeAction" scope="request" path="/RmFunctionNodeAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmFunctionNodeAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmfunctionnode/listRmFunctionNode.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmfunctionnode/insertRmFunctionNode.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmfunctionnode/detailRmFunctionNode.jsp"/>
+		<!--统计页面的跳转-->
+		<forward name="statisticPage" path="/orgauth/rmfunctionnode/util/statisticRmFunctionNode_rowColumn.jsp"/>
+	</action>
+	<!--RmAuthorize的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmauthorize.web.RmAuthorizeAction" scope="request" path="/RmAuthorizeAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmAuthorizeAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmauthorize/listRmAuthorize.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmauthorize/insertRmAuthorize.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmauthorize/detailRmAuthorize.jsp"/>
+		<!--参照页面的跳转-->
+		<forward name="referencePage" path="/orgauth/rmauthorize/util/referenceRmAuthorize.jsp"/>
+	</action>
+	<!--RmAuthorizeResource的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmauthorizeresource.web.RmAuthorizeResourceAction" scope="request" path="/RmAuthorizeResourceAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmAuthorizeResourceAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmauthorizeresource/listRmAuthorizeResource.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmauthorizeresource/insertRmAuthorizeResource.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmauthorizeresource/detailRmAuthorizeResource.jsp"/>
+		<!--参照页面的跳转-->
+		<forward name="referencePage" path="/orgauth/rmauthorizeresource/util/referenceRmAuthorizeResource.jsp"/>
+		</action>
+	<!--RmAuthorizeResourceCondition的struts跳转规则-->
+    <action type="org.quickbundle.orgauth.rmauthorizeresource.web.RmAuthorizeResourceConditionAction" scope="request" path="/RmAuthorizeResourceConditionAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmAuthorizeResourceConditionAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmauthorizeresource/condition/listRmAuthorizeResource.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmauthorizeresource/condition/insertRmAuthorizeResource.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmauthorizeresource/condition/detailRmAuthorizeResource.jsp"/>
+		<forward name="referencePage" path="/orgauth/rmauthorizeresource/util/referenceRmAuthorizeResource.jsp"/>
+	</action>
+	<!--RmAuthorizeResourceRecord的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmauthorizeresourcerecord.web.RmAuthorizeResourceRecordAction" scope="request" path="/RmAuthorizeResourceRecordAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmAuthorizeResourceRecordAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmauthorizeresourcerecord/listRmAuthorizeResourceRecord.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmauthorizeresourcerecord/insertRmAuthorizeResourceRecord.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmauthorizeresourcerecord/detailRmAuthorizeResourceRecord.jsp"/>
+	</action>
+<!--RmPartyView的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmpartyview.web.RmPartyViewAction" scope="request" path="/RmPartyViewAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyViewAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmpartyview/listRmPartyView.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmpartyview/insertRmPartyView.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmpartyview/detailRmPartyView.jsp"/>
+		<!--参照页面的跳转-->
+		<forward name="referencePage" path="/orgauth/rmpartyview/util/referenceRmPartyView.jsp"/>
+		</action>
+	<!--RmPartyTypeRelationRule的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmpartytyperelationrule.web.RmPartyTypeRelationRuleAction" scope="request" path="/RmPartyTypeRelationRuleAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyTypeRelationRuleAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmpartytyperelationrule/listRmPartyTypeRelationRule.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmpartytyperelationrule/insertRmPartyTypeRelationRule.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmpartytyperelationrule/detailRmPartyTypeRelationRule.jsp"/>
+		</action>
+	<!--RmPartyTypeRelationRuleCondition的struts跳转规则-->
+    <action type="org.quickbundle.orgauth.rmpartytyperelationrule.web.RmPartyTypeRelationRuleConditionAction" scope="request" path="/RmPartyTypeRelationRuleConditionAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyTypeRelationRuleConditionAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmpartytyperelationrule/condition/listRmPartyTypeRelationRule.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmpartytyperelationrule/condition/insertRmPartyTypeRelationRule.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmpartytyperelationrule/condition/detailRmPartyTypeRelationRule.jsp"/>
+	</action>
+	<!--RmPartyType的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmpartytype.web.RmPartyTypeAction" scope="request" path="/RmPartyTypeAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyTypeAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmpartytype/listRmPartyType.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmpartytype/insertRmPartyType.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmpartytype/detailRmPartyType.jsp"/>
+		<!--参照页面的跳转-->
+		<forward name="referencePage" path="/orgauth/rmpartytype/util/referenceRmPartyType.jsp"/>
+		</action>
+	<!--RmParty的struts跳转规则-->
+	<action type="org.quickbundle.orgauth.rmparty.web.RmPartyAction" scope="request" path="/RmPartyAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmparty/listRmParty.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmparty/insertRmParty.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmparty/detailRmParty.jsp"/>
+		<!--参照页面的跳转-->
+		<forward name="referencePage" path="/orgauth/rmparty/util/referenceRmParty.jsp"/>
+		</action>
+	<!--RmPartyCondition的struts跳转规则-->
+    <action type="org.quickbundle.orgauth.rmparty.web.RmPartyConditionAction" scope="request" path="/RmPartyConditionAction" parameter="cmd">
+		<!--查询全部页面的跳转，被其它方法调用-->
+		<forward name="toQueryAll" path="/RmPartyConditionAction.do?cmd=queryAll" redirect="true"/>
+		<!--查询全部页面的跳转，跳到最终页面-->
+		<forward name="listPage" path="/orgauth/rmparty/condition/listRmParty.jsp"/>
+		<!--修改页面的跳转-->
+		<forward name="updatePage" path="/orgauth/rmparty/condition/insertRmParty.jsp?isModify=1"/>
+		<!--详细页面的跳转-->
+		<forward name="detailPage" path="/orgauth/rmparty/condition/detailRmParty.jsp"/>
+	</action>
+	</action-mappings>
+</struts-config>

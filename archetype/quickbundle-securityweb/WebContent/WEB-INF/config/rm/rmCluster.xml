@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm>
+	<org.quickbundle.config.RmConfig>
+		<!-- job scheduler is start #change in production 
+			系统是否启动任务调度 -->
+		<schedulerStart>false</schedulerStart>
+		<!-- lazy start scheduler time(second), 0 or -1 ignore this 
+			延时启动scheduler的秒数 -->
+		<schedulerStartLazy>30</schedulerStartLazy>
+	</org.quickbundle.config.RmConfig>
+
+	<org.quickbundle.config.RmClusterConfig>
+		<org.quickbundle.project.init.ClusterConfigLoaderDb firstShardingPrefix="1000"/>
+		
+		<!-- 
+		<org.quickbundle.project.init.ClusterConfigLoaderXml thisId="server1">
+			<node id="server1">
+				<shardingPrefix>1000</shardingPrefix>
+				<user>server1</user>
+				<password>1</password>
+				<contextPath>/rmdemo</contextPath>
+				<baseUrl>http://localhost:9999/rmdemo/</baseUrl>
+				<webServiceUrl>http://localhost:9999/rmdemo/services/</webServiceUrl>
+			</node>
+			<node id="server2">
+				<shardingPrefix>1002</shardingPrefix>
+				<user>server2</user>
+				<password>1</password>
+				<contextPath>/rmdemo</contextPath>
+				<baseUrl>http://localhost:10000/rmdemo/</baseUrl>
+				<webServiceUrl>http://localhost:10000/rmdemo/services/</webServiceUrl>
+			</node>
+		</org.quickbundle.project.init.ClusterConfigLoaderXml>
+		-->
+		
+	</org.quickbundle.config.RmClusterConfig>
+	
+	<org.quickbundle.project.login.RmSsoLogin>
+		<redirectGroup enable="false">
+			<redirectUrls >
+				<url>^.*\.do$</url>
+			</redirectUrls>
+			<redirectTargets>
+				<baseUrl>http://localhost:10000/rmdemo/</baseUrl>
+			</redirectTargets>
+		</redirectGroup>
+	</org.quickbundle.project.login.RmSsoLogin>
+</rm>

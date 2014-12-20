@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>日期参照</title>
+<link href="calendar.css" rel=stylesheet type=text/css>
+<script type="text/javascript" src="../jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
+<script id=clientEventHandlersJS type="text/javascript">
+function cal_ondblclick() {
+	window.returnValue =cal.fnGetValue()
+	self.close()
+}
+function button1_onclick(){
+	window.returnValue=cal.fnGetValue()
+	self.close()
+}
+
+function button2_onclick(){
+	window.returnValue="";
+	self.close()
+}
+
+function window_onload() {
+	//if (isSpace(window.dialogArguments)==false)
+	//	cal.value=window.dialogArguments
+}
+function ok_onkeydown(e){
+	e = window.event || e;
+    if (e.keyCode==13){
+	cal_ondblclick()}
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body onload="return window_onload()" onkeydown="return ok_onkeydown(event)">
+<div id="cal" style="width:100%;height:100%" ondblclick="return cal_ondblclick()">
+</div>
+</body>
+</html>

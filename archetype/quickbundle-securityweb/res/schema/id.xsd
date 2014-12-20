@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.quickbundle.org/schema" xmlns="http://www.quickbundle.org/schema"
+	elementFormDefault="qualified">
+
+	<xs:element name="RmIdFactory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="table" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="table_code" type="xs:string" />
+						<xs:attribute name="table_name" type="xs:string" />
+						<xs:attribute name="id_name" type="xs:string" />
+						<xs:attribute name="multi_db" type="xs:string" />
+						<xs:attribute name="wrapper_class" type="xs:string" />
+						<xs:attribute name="wrapper_class_format" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

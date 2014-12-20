@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java.lang.Exception>
+	<!-- cause, action -->
+	<exception name="org.springframework.dao.DataIntegrityViolationException" title="" description="违反数据一致性">
+		<message matches=".*ORA\-02292.*" title="" description="请先删除所有关联的子记录，再尝试删除本条记录"/>
+		<message matches=".*?Duplicate entry '\d+?' for key 'IDXU_LOGINID'" title="" description="此用户名已被注册，请重新输入别的用户名！"/>
+		<message matches=".*IDXU_VIEW_PARTY_CHILD.*" title="" description="当前视图下此规则已存在"/>
+	</exception>
+	<exception name="org.quickbundle.modules.code.rmcodetype.util.exception.RmCodeTypeException" title="" description="编码类型模块操作错误">
+	</exception>
+</java.lang.Exception>

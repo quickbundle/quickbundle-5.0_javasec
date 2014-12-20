@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+    <keywordReplace>
+	    <items>
+	       <item title="项目名" keyword="quickbundle-securityweb" replacePath="true" required="true" defaultValue="projectName"></item>
+	       <item title="WEB应用名" keyword="rmdemo" replacePath="true" required="true" defaultValue="webAppName"></item>
+	    </items>
+		<fileFilter>
+			<fileAffix name="component"/>
+			<fileAffix name="project"/>
+			<fileAffix name="prefs"/>
+			<fileAffix name="properties"/>
+			<fileAffix name="classpath"/>
+			<fileAffix name="xml"/>
+			<fileAffix name="conf"/>
+		</fileFilter>
+    </keywordReplace>
+	<modules>
+		<module key="base" isBuild="true" name="基础框架" description="项目基础框架、代码生成依赖的组件(3张表)" isNecessary="true">
+			<folder>/quickbundle-securityweb/src/test/java/?$</folder>
+		</module>
+		<module key="system" isBuild="true" name="系统组件" description="业务日志、锁、系统参数、公告(7张表)" isNecessary="true"/>
+		<module key="orgauth" isBuild="true" name="组织权限" description="通用的组织结构、功能数据权限模块(19张表)" isNecessary="true">
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/sql/(mysql/rm_orgauth\.mysql|oracle/rm_orgauth\.oracle)\.sql</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/spring/rm\.orgauth\.applicationContext\.xml</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/struts/rm\.orgauth\.struts\-config\.xml</file>
+			<file>/quickbundle-securityweb/WebContent/jsp/funcTree_orgauth\.jsp</file>
+			<file>/quickbundle-securityweb/WebContent/ut/orgauth/.*</file>
+			<!--/quickbundle-securityweb/src/main/java/ut/orgauth/.*(?<!(/RmUserVo\.java))-->
+			<file><![CDATA[/quickbundle-securityweb/src/main/java/ut/orgauth/.*]]></file>
+			<file>/quickbundle-securityweb/WebContent/jsp/funcTree_bundle\.jsp
+				<key><![CDATA[<%@ include file="funcTree_orgauth.jsp" %>]]></key>
+			</file>
+			<file encode="UTF-8">/quickbundle-securityweb/WebContent/WEB\-INF/config/jdbc/id\.xml
+				<key p="true"><![CDATA[<!\-\- orgauth begin \-\->.*<!\-\- orgauth end \-\->]]></key>
+			</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/rm/initCodeTypeData\.xml
+				<key p="true"><![CDATA[<!\-\- orgauth begin \-\->.*<!\-\- orgauth end \-\->]]></key>
+			</file>
+			<file>/quickbundle-securityweb/src/main/java/org/quickbundle/project/code/IRmCodeConstants\.java
+				<key p="true"><![CDATA[//orgauth begin.*//orgauth end]]></key>
+			</file>
+			<file>/quickbundle-securityweb/src/main/java/org/quickbundle/project/login/RmLoginService.java
+				<key><![CDATA[import ut\.orgauth.*import ut\.orgauth[\w_.]+;]]></key>
+				<key p="true"><![CDATA[//orgauth [\w ]*begin.*?//orgauth [\w ]*end]]></key>
+			</file>
+		</module>
+		<module key="quartz" isBuild="true" name="分布式调度" description="可执行定时任务、触发式调度(13张表)" isNecessary="true">
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/sql/(mysql/quartz_mysql_innodb|oracle/quartz_oracle)\.sql</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/sql/(mysql/rm_quartz\.mysql|oracle/rm_quartz\.oracle)\.sql</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/spring/rm\.scheduler\.applicationContext\.xml</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/struts/rm\.scheduler\.struts\-config\.xml</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/quartz/.*</file>
+			<file>/quickbundle-securityweb/(rmdemo/WEB\-INF/lib|src/third/support/source)/quartz[\-.0-9a-z]*\.jar</file>
+			<file>/quickbundle-securityweb/WebContent/ut/ap/scheduler/.*</file>
+			<file>/quickbundle-securityweb/src/main/java/org/quickbundle/project/db/quartz/.*</file>
+			<file>/quickbundle-securityweb/src/main/java/ut/ap/scheduler/.*</file>
+			<file>/quickbundle-securityweb/src/third/java/org/quartz.*</file>
+			<file>/quickbundle-securityweb/WebContent/WEB\-INF/config/jdbc/id\.xml
+				<key><![CDATA[<table table_code="1001" table_name="QRTZ_LOGS" id_name="ID" />]]></key>
+			</file>
+			<file>/quickbundle-securityweb/WebContent/jsp/funcTree_bundle\.jsp
+				<key p="true"><![CDATA[//quartz begin.*?//quartz end]]></key>
+			</file>
+			<file>/quickbundle-securityweb/src/main/java/org/quickbundle/project/init/RmWebApplicationInit\.java
+				<key p="true"><![CDATA[//quartz begin.*?//quartz end]]></key>
+			</file>
+			<file>/quickbundle-securityweb/src/main/java/org/quickbundle/project/listener/RmContextLoaderListener\.java
+				<key p="true"><![CDATA[//quartz begin.*?//quartz end]]></key>
+			</file>
+		</module>
+	</modules>
+</rules>

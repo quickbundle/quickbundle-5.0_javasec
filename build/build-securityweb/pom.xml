@@ -1,0 +1,39 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.quickbundle</groupId>
+		<artifactId>archetype-build.parent</artifactId>
+		<version>5.0.0</version>
+		<relativePath>../build.parent/pom.xml</relativePath>
+	</parent>
+	<artifactId>build-securityweb</artifactId>
+	<packaging>jar</packaging>
+
+	<properties>
+		<encoding>UTF-8</encoding>
+		<jdk.version>1.5</jdk.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.quickbundle</groupId>
+			<artifactId>org.quickbundle.mda.libs</artifactId>
+			<version>${quickbundle.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quickbundle</groupId>
+			<artifactId>org.quickbundle.mda.gp</artifactId>
+			<version>${quickbundle.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quickbundle</groupId>
+			<artifactId>org.quickbundle.mda.mvm</artifactId>
+			<version>${quickbundle.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quickbundle</groupId>
+			<artifactId>org.quickbundle.mda.gc</artifactId>
+			<version>${quickbundle.version}</version>
+		</dependency>
+	</dependencies>
+</project>

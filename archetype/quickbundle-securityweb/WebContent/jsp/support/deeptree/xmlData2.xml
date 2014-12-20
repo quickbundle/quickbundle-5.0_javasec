@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trees>
+	<TreeNode id="1" text="移动商街" hasChild="0" xmlSource="xmlData.xml" defaultOpen="0" logoImagePath="" statusFlag="" title="蓝海金融有限公司" hrefPath="" target="" dbClick="" orderStr="U901002" returnValue="" isSelected="" indeterminate="" thisType="Company" detailedType="Company" isSubmit="" parentId="" childIds="">
+	</TreeNode>
+	<MoreTreeNode text="还有更多..." xmlSource="xmlData2.xml"/>
+</Trees>

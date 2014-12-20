@@ -1,0 +1,193 @@
+<HTML>
+<HEAD>
+<TITLE>月份</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<SCRIPT type="text/javascript">
+    var myDate=new Date();
+    var currentYear=myDate.getFullYear();
+    var nextTenYear=currentYear+10;
+    var minYear = currentYear;//把起始年份设置成当前年份
+	var maxYear = nextTenYear;//把结束年份从当前年份加10
+	
+	//var minYear = 2000;
+	//var maxYear = 2010;
+	function scroll(seed)
+	{
+		var m1 = "欢迎你的光临" 
+		var m2 = "请多提意见，可要记得长来呀，谢谢！"
+		var msg=m1+m2; 
+		var out = " ";
+		var c = 1;
+		if (seed > 100) 
+		{
+			seed--;
+			var cmd="scroll(" + seed + ")";
+			timerTwo=window.setTimeout(cmd,60);
+		}
+		else if (seed <= 100 && seed > 0) 
+		{
+			for (c=0 ; c < seed ; c++) 
+			{
+				out+=" ";
+			}
+			out+=msg;
+			seed--;
+			var cmd="scroll(" + seed + ")";
+			window.status=out;
+			timerTwo=window.setTimeout(cmd,60);
+		} else if (seed <= 0) 
+		{
+			if (-seed < msg.length) 
+			{
+				out+=msg.substring(-seed,msg.length);
+				seed--;
+				var cmd="scroll(" + seed + ")";
+				window.status=out;
+				timerTwo=window.setTimeout(cmd,60);
+			}
+			else{
+				window.status=" ";
+				timerTwo=window.setTimeout("scroll(40)",60);
+			}
+		}
+	}
+	timerONE=window.setTimeout('scroll(40)',60);
+</SCRIPT>
+<LINK href="css/selectMonth.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2800.1505" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
+  <FORM name=form1><INPUT class=input6 type=hidden size=12 name=selectmm> 
+<TABLE height="100%" cellSpacing=0 borderColorDark=#ffffff cellPadding=0 
+width=218 align=left borderColorLight=#bfbfbf border=1>
+
+  <TBODY>
+  <TR vAlign=top>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="99%" 
+        align=center><TBODY>
+        <TR>
+          <TD bgColor=#0080c0 height=25>
+            <DIV align=center><A onclick=javascript:goleft() 
+            style="cursor:pointer">&lt;&lt;&lt;</A> 
+            <FONT color=#0080c0>--</FONT> <SELECT class=input6 size=1 
+            name=selectmonth> 
+              <SCRIPT type="text/javascript">
+						var	today =	new	Date()
+						var	yearNow	 = today.getYear()
+						for(var i=minYear;i<=maxYear;i++)
+						{
+							if(yearNow == i )
+								document.write("<option value=" + i +" selected >" + i +"</option>");
+							else
+								document.write("<option value=" + i +">" + i +"</option>");
+						}
+					</SCRIPT>
+            </SELECT> <FONT color=#0080c0>--</FONT><A 
+            onclick=javascript:goright() 
+            style="cursor:pointer">&gt;&gt;&gt;</A></DIV></TD></TR>
+        <TR>
+          <TD>
+            <TABLE height="100%" cellSpacing=1 borderColorDark=#ffffff 
+            cellPadding=0 width="100%" align=center borderColorLight=#cccccc 
+            border=1>
+              <TBODY>
+              <TR bgColor=#ebebeb>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(1); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;1&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(2); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;2&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(3); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;3&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(4); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;4&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(5); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;5&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(6); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;6&nbsp;</FONT></B></DIV></TD></TR>
+              <TR bgColor=#ebebeb>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(7); 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;7&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(8) 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;8&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(9) 
+                height=20>
+                  <DIV align=center><B><FONT 
+                  color=#ff8000>&nbsp;9&nbsp;</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(10); 
+                height=20>
+                  <DIV align=center><B><FONT 
+color=#ff8000>10</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(11); 
+                height=20>
+                  <DIV align=center><B><FONT 
+color=#ff8000>11</FONT></B></DIV></TD>
+                <TD style="cursor:pointer" onclick=javascript:selectyymm(12); 
+                height=20>
+                  <DIV align=center><B><FONT 
+              color=#ff8000>12</FONT></B></DIV></TD>
+            </TR>
+           </TBODY>
+          </TABLE>
+         </TD>
+        </TR>
+       </TBODY>
+      </TABLE>
+     </TD></TR></TBODY></TABLE>
+     </FORM>
+<SCRIPT type="text/javascript">
+	function goleft()
+	{
+		//var s = document.form1.selectmonth.value;
+		var s = (minYear --);
+			objNewOpt = document.createElement("OPTION");
+			objNewOpt.text = parseInt(s) - 1;
+			objNewOpt.value = parseInt(s) - 1;
+	
+			form1.selectmonth.options.add(objNewOpt, 0);
+			form1.selectmonth.value = parseInt(s) - 1;
+	
+	}
+	
+	function goright()
+	{
+		//var s = document.form1.selectmonth.value;
+		var s = (maxYear ++);
+			objNewOpt = document.createElement("OPTION");
+			objNewOpt.text = parseInt(s) + 1;
+			objNewOpt.value = parseInt(s) + 1;
+	
+			form1.selectmonth.options.add(objNewOpt);
+			form1.selectmonth.value = parseInt(s) + 1;
+	}
+	
+	function selectyymm( imm)
+	{
+		if (parseInt(imm) < 10 )
+		{
+			document.form1.selectmm.value = document.form1.selectmonth.value + "-0" + imm;
+		}
+		else
+		{
+			document.form1.selectmm.value = document.form1.selectmonth.value + "-" + imm;
+		}
+		window.returnValue = document.form1.selectmm.value;
+		window.close();
+	}
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,54 @@
+﻿@import url("rm.css");
+
+/* 开始项目的个性化css定义 */
+/*左侧样式*/
+.left_menu {padding:0;height:100%;}
+.left_menu img {border:0;}
+.left_tit {text-align:center;font-weight:bold;line-height:23px;}
+.left_tit  a {background:url(../images/left_bg.jpg) repeat-x top #fff;display:block;border:1px solid #66CCFF;border-bottom:0px;}
+.left_tit a:hover {background:url(../images/left_bg1.jpg) repeat-x top #fff;display:block;outline:none;}
+.left_menu ul {list-style:none;padding:5px;margin:0;}
+.left_menu ul li {}
+.left_mt {height:100%;overflow:auto;padding:0 5px;border-top:1px solid #66CCFF;line-height:20px;background:#fff;}
+.left_mpic {text-align:center;height:100%;overflow:auto;border-top:1px solid #66CCFF;line-height:20px;background:#fff;}
+
+
+.linkbutton {font-size:12px;padding:0;margin:0;line-height:15px;color:#03599B;background:url(../images/butts.gif) left top repeat-x;border:1px solid #ccc;width:34px;}
+.linkbutton4 {width:60px;}
+.linkbutton5 {width:72px;}
+.linkbutton1 {font-size:12px;border:0;padding:0;margin:0;line-height:15px;color:red;background:none;width:5px;}
+
+/*打开关闭左侧*/
+.swf_clo {float:right;margin-bottom:0px;cursor:pointer;background:#DEEFFE;}
+.swf_open {clear:both;text-align:left;margin-bottom:600px;cursor:pointer;background:#DEEFFE;}
+
+/* 开始列表控件 */
+table.listCss, th.listCss, th.listCss2, td.listCss {
+	vertical-align:middle;
+	border:0px solid #9EB4CD;
+	border-width:0px;
+	border-spacing:0px;
+}
+table.listCss {
+	word-wrap: normal;
+	word-break: keep-all;
+}
+th.listCss {
+	background-color: #EBEBEB;/*表格控件表头背景颜色*/
+	color:#000000;
+	line-height: 22px;
+	font-weight: bold;
+	text-align: center;
+}
+th.listCss2 {
+	line-height: 22px;
+	background-color: #EBF3F7;
+	font-weight: bold;
+	text-align: center;
+}
+td.listCss {
+	color:#000000;	/*表格控件列表文字颜色465c80*/
+	text-align:left;
+	line-height: 22px;
+}
+/* 结束列表控件 */

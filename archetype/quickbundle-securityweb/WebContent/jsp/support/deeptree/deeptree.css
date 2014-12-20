@@ -1,0 +1,82 @@
+body {
+	overflow:hidden;
+}
+
+#footerDiv {
+	position: absolute;
+	width: 100%;
+	clear: both;
+	height: 25px;
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+	margin-top: 20px;
+	bottom: 0;
+	left: 0;
+}
+
+.deeptree {
+	width: 100%;
+	padding: 10px;
+	overflow:auto;
+}
+
+.TreeNode {
+	font-size: 90%;
+}
+
+.TreeNode img {
+	cursor: pointer;
+}
+.logoImage img {
+}
+
+.TreeNode span {
+	height: 18px;
+	color: #000000;
+	margin-left: 0px;
+	border: 0px solid #FFFFFF;
+	padding: 3 3;
+	cursor:pointer;
+}
+
+.container {
+	padding-left: 14px;
+}
+
+span a {
+	color: black;
+	text-decoration: none;
+}
+
+span a.abandon {
+	color: #336699;
+	text-decoration: none;
+}
+
+span a.hidden {
+	color: #ACACAC;
+	text-decoration: none;
+}
+
+span.MouseOver {
+	border: 0px solid #999999;
+	cursor: pointer;
+}
+
+span.dragOver {
+	background-color: #BB7977;
+	color: #000000;
+	border: 0px solid #999999;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+span.HighLight {
+	background-color: #e2d9d9;
+	color: #000000;
+	border: 0px solid #999999;
+}
+
+span.load {
+	color: #aaaaaa;
+}

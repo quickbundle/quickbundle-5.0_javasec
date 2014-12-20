@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.quickbundle.modules.message.dao.RmMessageDao">
+
+  <insert id="insert" parameterType="org.quickbundle.modules.message.vo.RmMessageVo">
+    insert into RM_MESSAGE ( 
+      ID, BIZ_KEYWORD, SENDER_ID, PARENT_MESSAGE_ID, OWNER_ORG_ID, TEMPLATE_ID, IS_AFFIX, RECORD_ID, 
+      MESSAGE_XML_CONTEXT, USABLE_STATUS, MODIFY_DATE, MODIFY_IP, MODIFY_USER_ID ) 
+    values ( 
+      #{id}, #{biz_keyword}, #{sender_id}, #{parent_message_id}, #{owner_org_id}, #{template_id}, #{is_affix}, #{record_id}, 
+      #{message_xml_context}, #{usable_status}, #{modify_date}, #{modify_ip}, #{modify_user_id} )
+  </insert>
+    
+  <delete id="delete" parameterType="int">
+    delete from RM_MESSAGE where ID=#{id}
+  </delete>
+  
+  <delete id="deleteMulti" parameterType="int">
+    delete from RM_MESSAGE where ID in 
+    <foreach collection="array" index="index" item="item" open="(" separator="," close=")">  
+      #{item}   
+    </foreach>
+  </delete>
+
+  <update id="update" parameterType="org.quickbundle.modules.message.vo.RmMessageVo">
+    update RM_MESSAGE set 
+      BIZ_KEYWORD=#{biz_keyword}, SENDER_ID=#{sender_id}, PARENT_MESSAGE_ID=#{parent_message_id}, OWNER_ORG_ID=#{owner_org_id}, 
+      TEMPLATE_ID=#{template_id}, IS_AFFIX=#{is_affix}, RECORD_ID=#{record_id}, MESSAGE_XML_CONTEXT=#{message_xml_context}, 
+      USABLE_STATUS=#{usable_status}, MODIFY_DATE=#{modify_date}, MODIFY_IP=#{modify_ip}, MODIFY_USER_ID=#{modify_user_id}  
+      where ID=#{id}
+  </update>
+
+  <select id="get" parameterType="string" resultType="org.quickbundle.modules.message.vo.RmMessageVo">
+	select 
+	  RM_MESSAGE.ID, RM_MESSAGE.BIZ_KEYWORD, RM_MESSAGE.SENDER_ID, RM_MESSAGE.PARENT_MESSAGE_ID, 
+	  RM_MESSAGE.OWNER_ORG_ID, RM_MESSAGE.TEMPLATE_ID, RM_MESSAGE.IS_AFFIX, RM_MESSAGE.RECORD_ID, 
+	  RM_MESSAGE.MESSAGE_XML_CONTEXT, RM_MESSAGE.USABLE_STATUS, RM_MESSAGE.MODIFY_DATE, RM_MESSAGE.MODIFY_IP, 
+	  RM_MESSAGE.MODIFY_USER_ID
+	from RM_MESSAGE 
+	where RM_MESSAGE.ID=#{id}
+  </select>
+
+  <select id="getCount" parameterType="string" resultType="int" useCache="true">
+	select count(RM_MESSAGE.ID) from RM_MESSAGE
+	<if test="value != null and value.length > 0">
+        where ${value}
+    </if>
+  </select>
+  
+  <select id="list" parameterType="map" resultType="org.quickbundle.modules.message.vo.RmMessageVo">
+    select
+      RM_MESSAGE.ID, RM_MESSAGE.BIZ_KEYWORD, RM_MESSAGE.SENDER_ID, RM_MESSAGE.PARENT_MESSAGE_ID, 
+      RM_MESSAGE.OWNER_ORG_ID, RM_MESSAGE.TEMPLATE_ID, RM_MESSAGE.IS_AFFIX, RM_MESSAGE.RECORD_ID
+    from RM_MESSAGE
+    <if test="queryCondition != null and queryCondition != ''">
+        where ${queryCondition}
+    </if>
+    <if test="orderStr != null and orderStr != ''">
+        order by ${orderStr}
+    </if>
+  </select>
+  
+  <select id="listAllColumn" parameterType="map" resultType="org.quickbundle.modules.message.vo.RmMessageVo">
+    select
+      RM_MESSAGE.ID, RM_MESSAGE.BIZ_KEYWORD, RM_MESSAGE.SENDER_ID, RM_MESSAGE.PARENT_MESSAGE_ID, 
+      RM_MESSAGE.OWNER_ORG_ID, RM_MESSAGE.TEMPLATE_ID, RM_MESSAGE.IS_AFFIX, RM_MESSAGE.RECORD_ID, 
+      RM_MESSAGE.MESSAGE_XML_CONTEXT, RM_MESSAGE.USABLE_STATUS, RM_MESSAGE.MODIFY_DATE, RM_MESSAGE.MODIFY_IP, 
+      RM_MESSAGE.MODIFY_USER_ID
+    from RM_MESSAGE
+    <if test="queryCondition != null and queryCondition != ''">
+        where ${queryCondition}
+    </if>
+    <if test="orderStr != null and orderStr != ''">
+        order by ${orderStr}
+    </if>
+  </select>
+
+  <select id="search" parameterType="map" resultType="org.quickbundle.modules.message.vo.RmMessageVo">
+    select
+      RM_MESSAGE.ID, RM_MESSAGE.BIZ_KEYWORD, RM_MESSAGE.SENDER_ID, RM_MESSAGE.PARENT_MESSAGE_ID, 
+      RM_MESSAGE.OWNER_ORG_ID, RM_MESSAGE.TEMPLATE_ID, RM_MESSAGE.IS_AFFIX, RM_MESSAGE.RECORD_ID, 
+      RM_MESSAGE.MESSAGE_XML_CONTEXT, RM_MESSAGE.USABLE_STATUS, RM_MESSAGE.MODIFY_DATE, RM_MESSAGE.MODIFY_IP, 
+      RM_MESSAGE.MODIFY_USER_ID
+    from RM_MESSAGE
+    <trim prefix="where" prefixOverrides="and|or">  
+      <if test="biz_keyword != null and biz_keyword != ''">
+        RM_MESSAGE.BIZ_KEYWORD like '%${biz_keyword}%'
+      </if>
+      <if test="sender_id != null and sender_id != ''">
+        and RM_MESSAGE.SENDER_ID=#{sender_id}
+      </if>
+      <if test="parent_message_id != null and parent_message_id != ''">
+        and RM_MESSAGE.PARENT_MESSAGE_ID=#{parent_message_id}
+      </if>
+      <if test="owner_org_id != null and owner_org_id != ''">
+        and RM_MESSAGE.OWNER_ORG_ID=#{owner_org_id}
+      </if>
+      <if test="template_id != null and template_id != ''">
+        and RM_MESSAGE.TEMPLATE_ID=#{template_id}
+      </if>
+      <if test="is_affix != null and is_affix != ''">
+        and RM_MESSAGE.IS_AFFIX=#{is_affix}
+      </if>
+      <if test="record_id != null and record_id != ''">
+        and RM_MESSAGE.RECORD_ID=#{record_id}
+      </if>
+    </trim>
+    <if test="orderStr != null and orderStr != ''">
+        order by ${orderStr}
+    </if>
+  </select>
+  
+</mapper>

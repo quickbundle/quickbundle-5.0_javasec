@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RmIdFactory 
+	xmlns="http://www.quickbundle.org/schema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.quickbundle.org/schema http://www.quickbundle.org/schema/id.xsd">
+
+    <!--系统中所有表的主键生成规则-->
+    <!-- table_name排重的xpath表达式 //table[@table_name=following::table/@table_name]/@table_name -->
+    
+	<!--generateFromHere-->
+
+	<!-- orgauth begin -->
+	<table table_code="2028" table_name="RM_PARTY_ROLE" id_name="ID" wrapper_class="org.quickbundle.base.beans.idwrapper.NumberIncrementWrapper"/>
+	<table table_code="2024" table_name="RM_AUTHORIZE" id_name="ID"/>
+	<table table_code="2018" table_name="RM_AUTHORIZE_RESOURCE" id_name="ID"/>
+	<table table_code="2017" table_name="RM_AUTHORIZE_RESOURCE_RECORD" id_name="ID"/>
+	<table table_code="2014" table_name="RM_FUNCTION_NODE" id_name="ID"/>
+	<table table_code="2011" table_name="RM_PARTY" id_name="ID"/>
+	<table table_code="2010" table_name="RM_PARTY_RELATION" id_name="ID"/>
+	<table table_code="2009" table_name="RM_PARTY_TYPE_RELATION_RULE" id_name="ID"/>
+	<table table_code="2008" table_name="RM_PARTY_TYPE" id_name="ID"/>
+	<table table_code="2007" table_name="RM_PARTY_VIEW" id_name="ID"/>
+	<table table_code="2006" table_name="RM_ROLE" id_name="ID"/>
+	<table table_code="2005" table_name="RM_USER_ONLINE_RECORD" id_name="ID"/>
+	<table table_code="2004" table_name="RM_USER" id_name="ID"/>
+	<!-- orgauth end -->
+
+	<!-- quartz begin -->
+	<table table_code="1001" table_name="RM_SCHEDULER_EVENT" id_name="ID"/>
+	<!-- quartz end -->
+	
+	<!-- system begin -->
+	<table table_code="1001" table_name="RM_LOG_TYPE" id_name="ID"/>
+	<table table_code="1001" table_name="RM_LOG" id_name="ID"/>
+	<table table_code="1001" table_name="RM_LOCK" id_name="ID"/>
+	<table table_code="1001" table_name="RM_SYSTEM_PARAMETER" id_name="ID"/>
+	<table table_code="2051" table_name="RM_NOTICE" id_name="ID"/>
+	<!-- system end -->
+
+	<table table_code="2003" table_name="RM_AFFIX" id_name="ID"/>
+	<table table_code="2002" table_name="RM_CODE_DATA" id_name="ID"/>
+	<table table_code="2001" table_name="RM_CODE_TYPE" id_name="ID"/>
+
+	
+	<table table_code="3001" table_name="RM_MESSAGE" id_name="ID"/>
+	<table table_code="3002" table_name="RM_MESSAGE_RECEIVER" id_name="ID"/>
+</RmIdFactory>

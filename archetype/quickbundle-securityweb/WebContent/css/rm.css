@@ -1,0 +1,408 @@
+﻿html,body {
+	margin:0px;
+	height:100%;
+	width:100%;
+	font-size:12px;
+	font-family:"Times New Roman", Times, serif,宋体;
+	background-color:#FFFFFF;
+	scrollbar-highlight-color: #ffffff; 
+	scrollbar-face-color: #ecece4; 
+	scrollbar-shadow-color: #ecece4; 
+	scrollbar-3dlight-color: #ecece4;
+	scrollbar-arrow-color: #999999;
+	scrollbar-track-color: #999999; 
+	scrollbar-darkshadow-color: #e8f6fe;
+}
+a {
+	color:#000000;
+	text-decoration:none;
+}
+a:hover {
+	color:#666666;
+	text-decoration:underline;
+}
+.aul {
+	cursor:pointer;
+	text-decoration:underline;
+}
+img { border:0; }
+table,td,input,div,span {
+	font-size:12px;
+	font-family:"Times New Roman", Times, serif,宋体;
+}
+.sort_none {
+	color:#EBEBEB;
+}
+
+.sort_asc, .sort_desc {
+	color:red;
+}
+
+button,submit,reset { /* 通用中文按纽 */
+	font-size: 12px;
+	position:relative;
+	top:-1px;
+	cursor:pointer;
+	line-height:16px;
+} 
+.tdc1 {	background:#F6F6F6; } 
+.tdc2 {	background:#FFFFFF; }
+.pagebg {background:#F6F6F6;}
+.style_required_red, .font_remain_prompt { color: #FF0000; }
+.emphasis_text {
+	color:#FF0000;
+	font-size:130%;
+	letter-spacing:1px;
+	font-weight:bold;
+}
+.textarea_limit_words {}
+.textarea_fckEditor {
+	WIDTH: 100%;
+	HEIGHT: 600px;
+}
+/*嵌套div的表格*/
+.table_div_content {
+	width:99%;
+	border-top: 0px none;
+	border-right: 1px solid #9EB4CD;
+	border-bottom: 1px solid #9EB4CD;
+	border-left: 1px solid #9EB4CD;
+	background-color: #FFFFFF;
+	padding: 0px;
+	border: 0px solid #9EB4CD;
+	border-spacing: 0px;
+	padding: 0px;
+	border-collapse: collapse;
+	table-layout:fixed; /* 折行 */
+	word-wrap: break-word;
+	word-break: break-all;
+}
+/* 隔行变色的表格 */
+.mainTable { 
+	border-collapse:collapse;
+	border:0;
+	background-color:#FFFFFF; 
+	width:99%;
+	border: #ADADAD solid;
+	border-width: 1px;
+}
+.mainTable td {border-right:1px #f6f6f6 solid;padding:3px 5px;}
+.maintab {
+	background:#ADADAD;
+	width:99%;
+}
+.table_query {
+	width:100%;
+	border:0;
+}
+/* 开始列表表头 */ 
+.tableHeader {
+	border-collapse:collapse; 
+	border-spacing:0; 
+	width:99%;
+	height:27px;
+	border:0px solid #6E9DB4;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+	text-align:left;
+	margin-top: 5px;
+}
+.tableHeader td { 
+	padding:0; 
+}
+.tableHeader h3 {
+	margin:0;
+	padding:0;
+	font-size:12px;
+	font-weight:bold;
+	padding:3px 0px 0px 0px;
+}
+.tableHeaderMiddleTd {
+	background:url("../images/bg_mcontentM.gif") repeat-x;
+}
+.tableHeaderLeftTd {
+	background:url("../images/bg_mcontentL.gif");
+}
+.tableHeaderRightTd {
+	background:url("../images/bg_mcontentR.gif") right no-repeat;
+}
+/* 结束列表表头 */ 
+
+/* 开始列表控件 */
+table.listCss, th.listCss, th.listCss2, td.listCss {
+	vertical-align:middle;
+	border:0px solid #9EB4CD;
+	border-width:0px;
+	border-spacing:0px;
+}
+table.listCss {
+	border:1px solid #9EB4CD;
+	border-width:0px;
+	border-spacing:1px;
+	line-height: 130%;
+	background-color: #ADADAD;
+	width:100%;
+}
+th.listCss {
+	background-color: #EBEBEB;/*表格控件表头背景颜色*/
+	color:#000000;
+	line-height: 22px;
+	font-weight: bold;
+	text-align: center;
+}
+th.listCss2 {
+	line-height: 22px;
+	background-color: #EBF3F7;
+	font-weight: bold;
+	text-align: center;
+}
+td.listCss {
+	color:#000000;	/*表格控件列表文字颜色465c80*/
+	line-height: 22px;
+}
+/* 结束列表控件 */
+
+/* 开始按钮 */
+.button_ellipse {
+	
+}
+.btn3_mouseover, .btn3_mouseout, .btn3_mousedown, .btn3_mouseup {
+	FONT-SIZE: 12px;
+	height: 22px;
+	cursor: pointer; 
+	COLOR: black; 
+	background-color:#E7F0FB;
+	BORDER-LEFT: #2C59AA 1px solid; 
+	BORDER-RIGHT: #2C59AA 1px solid;
+	BORDER-TOP: #2C59AA 1px solid;
+	BORDER-BOTTOM: #2C59AA 1px solid;
+	PADDING-LEFT: 2px;
+	PADDING-RIGHT: 2px;
+	PADDING-TOP: 2px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#C3DAF5));
+	background: -moz-linear-gradient(top, #FFFFFF, #C3DAF5);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#C3DAF5, GradientType=0);
+} 
+.btn3_mouseover { 
+	BORDER-LEFT: #FFE400 1px solid;
+	BORDER-RIGHT: #FFE400 1px solid;
+	BORDER-TOP: #FFE400 1px solid;
+	BORDER-BOTTOM: #FFE400 1px solid;
+} 
+.btn3_mouseout { 
+}
+.btn3_mousedown {
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#D7E7FA));
+	background: -moz-linear-gradient(top, #FFFFFF, #D7E7FA);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#D7E7FA, GradientType=0);
+} 
+.btn3_mouseup { 
+}
+/* 结束按钮 */
+
+/* 开始输入框 、参照 */
+.text_field_short, .text_field, .text_field_readonly, .text_field_reference, .text_field_reference_readonly, 
+.text_field_half, .text_field_half_readonly, .text_field_half_reference, .text_field_half_reference_readonly  {
+	font-size: 9pt;
+	color: #003300;
+	height: 22px;
+	border-top: 1px solid #333333;
+	border-right: 1px solid #B3B3B3;
+	border-bottom: 1px solid #B3B3B3;
+	border-left: 1px solid #333333;
+	line-height: 16px;
+	vertical-align: middle;
+}
+.text_field_readonly, .textarea_field_readonly, .text_field_reference_readonly, .text_field_half_readonly, .text_field_half_reference_readonly {
+	background-color: #E1DFE0;
+}
+.text_field_short {  /* 最长的text 可写 */
+	width: 30px;
+}
+.text_field {  /* 最长的text 可写 */
+	width: 204px;
+}
+.text_field_readonly {  /* 最长的text，只读  */
+	width: 204px;
+}
+.text_field_reference {  /* 参照左边的text，可写，长度为 (最长-参照width) */
+	width: 186px;
+}
+.text_field_reference_readonly { /* 参照左边的text，只读，长度为 (最长-参照width) */
+	width: 186px;
+}
+.text_field_half {  /* 一半的text，可写，长度为 ((最长-20)/2) */
+	width: 92px;
+}
+.text_field_half_readonly {  /* 一半的text，只读，长度为 ((最长-20)/2) */
+	width: 92px;
+}
+.text_field_half_reference {  /* 参照左边的一半text，可写，长度为 ((最长-20)/2-参照width) */
+	width: 74px;
+}
+.text_field_half_reference_readonly {  /* 参照左边的一半text，只读，长度为 ((最长-20)/2-参照width) */
+	width: 74px;
+}
+.refButtonClass {
+	width: 18px;
+	height: 26px;
+	vertical-align: middle;
+	line-height: 16px;
+	cursor: pointer;
+	border: 0px;
+}
+.text_date, .text_date_half, .text_datetime, .text_datetime_half, {
+	border:#999 1px solid;
+	height:20px;
+	background:#fff url(../js/datepicker/skin/datePicker.gif) no-repeat right;
+	width: 92px;
+}
+.text_date, .text_datetime{
+	width: 204px;
+}
+/* 结束输入框 、参照 */
+
+/* 开始 主子表页签 */
+.tabInfoDisT, .tabInfoSelT, .tabInfoSelTR, .tabInfoDefT, .tabInfoDefTR, .tabInfoHovT, .tabInfoHovTR {
+	border-width:0px 0px 1px 0px;
+	border-color:#949878;
+	border-style:Solid;
+	font-size:8pt;
+	font-family:Microsoft Sans Serif;
+	cursor:pointer;
+	color:Black;
+}
+.tabInfoDisT{
+	height:22px;
+	color:Gray;
+	padding:2px 0 0 7px;
+	cursor:Default;
+	background:url(../images/ig_tab_winXP3.gif) no-repeat left 2px;
+}
+.tabInfoSelT{
+	height:30px;
+	padding:2px 0 2px 7px;
+	cursor:Default;
+	background:url(../images/ig_tab_winXP1.gif) no-repeat left top;
+}
+.tabInfoSelTR{
+ 	width:6px;
+	cursor:Default;
+	background:url(../images/ig_tab_winXP1.gif) no-repeat right top;
+}
+.tabInfoDefT{
+	height:30px;
+	padding:2px 0 0 7px;
+	background:url(../images/ig_tab_winXP3.gif) no-repeat left 2px;
+} 
+.tabInfoDefTR{
+	width:6px;
+	background:url(../images/ig_tab_winXP3.gif) no-repeat right 2px;
+}
+.tabInfoHovT{
+	height:30px;
+	padding:2px 0 0 7px;
+	background:url(../images/ig_tab_winXP2.gif) no-repeat left 2px;
+} 
+.tabInfoHovTR{
+	width:6px;
+	background:url(../images/ig_tab_winXP2.gif) no-repeat right 2px;
+}
+/* 结束 主子表页签 */
+
+.rm_affix_single {  }
+
+.rm_affix {  }
+
+.rm_checkbox {  }
+
+.div_buttons {
+	display: none;
+	white-space:normal;
+	width:20px;
+	position:absolute;
+	left:10px;
+	top:10px;
+	z-index:999;
+}
+
+/* jquery.validate.css begin */
+.poperror {
+	MARGIN:2px;
+	PADDING:0px;
+	background:#dfdfdf;
+}
+.error {
+	border: 2px dotted red; 
+}
+.valid {
+	border: 1px;
+}
+/* jquery.validate.css end */
+
+.rowContainer {
+	overflow-y:auto;
+	height:280px;
+}
+
+.rowTable {
+	border-collapse:collapse;
+	border:0;
+	background-color:#FFFFFF; 
+	width:99%;
+	border: #ADADAD solid;
+	border-width: 1px;
+}
+
+.rowPrototype {
+	display:none;
+}
+
+.rowNewInput {
+	border:1;
+	background-color:transparent;
+	padding:0;
+}
+
+.buttonArea {
+	padding:3px 0px 3px 20px;
+}
+
+.text_qqp, .text_qqs {
+	font-size: 9pt;
+	color: #003300;
+	height: 20px;
+	border-top: 1px solid #333333;
+	border-right: 1px solid #B3B3B3;
+	border-bottom: 1px solid #B3B3B3;
+	border-left: 1px solid #333333;
+	line-height: 16px;
+	vertical-align: middle;
+	width: 186px;
+	background:url(../images/search_bg.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.out_qq {
+	z-index:1;
+	font-family: "新宋体";
+	font-size: 12px;
+	text-align: left;
+	letter-spacing: 1px;
+	border: 1px solid #808080;
+	background: #FFFFC8;
+	padding:2px; 
+	position:absolute; 
+	display:none;
+}
+.button_area {
+	text-align: right;
+	padding-right:20px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+.div_queryButtons {
+	position:absolute;
+	top:5px;
+	left:140px;
+}

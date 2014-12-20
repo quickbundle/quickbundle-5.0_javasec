@@ -1,0 +1,55 @@
+.window_back {
+  position:absolute;
+  top:0;
+  left:0;
+  background-color: #000;
+  filter: alpha(opacity = 50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  z-index: 100000;
+}
+
+.windowpanel {
+  width: 300px;
+  height: 200px;
+  background-color: #EBECEE;
+  border: 1px solid #8DB2E3;
+  position: absolute;
+  overflow: hidden;
+}
+
+.windowpanel_move {
+  cursor: move;
+}
+
+.windowpanel_toolbar {
+  position: relative;
+}
+
+.windowpanel_title {
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 5px;
+  color: #000000;
+  font-weight: bold;
+  background-color: #000000;
+  background: url(../images/megb_left.jpg) repeat-x;
+  border-bottom: solid 1px #e1e3e2;
+}
+
+.windowpanel_content {
+  margin: 3px;
+  border: 1px solid #e3e1e1;
+  overflow: hidden;
+}
+
+.windowpanel .closer {
+  background: transparent url(../image/WindowPanel/window-close.gif) no-repeat;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}

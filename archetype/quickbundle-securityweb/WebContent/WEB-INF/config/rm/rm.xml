@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm>
+	<org.quickbundle.project.init.CustomSystemProperties>
+		<!-- for production -->
+		<rmdemo.root.home>${user.home}/.qbhome/rmdemo</rmdemo.root.home>
+		
+		<!-- for tomcat debug 
+		<rmdemo.root.home>${user.dir}/work/.qbhome/rmdemo</rmdemo.root.home> -->
+		
+		<javamelody.storage-directory>${rmdemo.root.home}/javamelody</javamelody.storage-directory>
+	</org.quickbundle.project.init.CustomSystemProperties>
+	
+	<org.quickbundle.config.RmConfig>
+		<!-- system is in debug mode #change in production 
+			系统是否开发调试状态 -->
+		<systemDebugMode>true</systemDebugMode>
+		
+		<!-- war's home directory -->
+		<warHome>${rmdemo.root.home}</warHome>
+		
+		<!-- default page size of list page 
+			列表页默认分页数 -->
+		<defaultPageSize>15</defaultPageSize>
+		
+		<!-- user only login once at the moment 
+			系统用户是否唯一登录，同时登录会强制踢出第一个用户 -->
+		<userUniqueLogin>true</userUniqueLogin>
+		
+		<!-- this app's description 
+			初始化默认系统名称 -->
+		<appDescription>Demo System</appDescription>
+		
+		<!-- log request executeTime and sql count? 
+			是否记录request日志，用于分析执行时间和SQL数量 -->
+		<logRequest>true</logRequest>
+		
+		<!-- move file to recycleBinFolder, instead of remove 
+			是否逻辑删除文件 -->
+		<logicDeleteFile>true</logicDeleteFile>
+		
+		<!-- recycle Bin Folder
+			逻辑删除的回收站文件夹 -->
+		<recycleBinFolder>${rmdemo.root.home}/recycle_bin</recycleBinFolder>
+		
+		<!-- default font for report -->
+		<defaultFont>微软雅黑,黑体</defaultFont>
+	</org.quickbundle.config.RmConfig>
+	
+	<!-- when log in, don't filter session -->
+	<org.quickbundle.project.filter.RmPrivilegeFilter>
+		<ignoreUrls>
+			<!-- ignore all url check 
+			<url>^.*$</url>
+			-->
+			<!-- static resource -->
+			<url>^.+\.(jpg|gif|png|js|htc|jpeg|bmp|ico|swf|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|rtf)$</url>
+			<url>^/(css|images|js|media)/.*$</url>
+			<!-- login -->
+			<url>^/(|(index|heartbeat)\.jsp|RmLoginAction\.do)$</url>
+			<url>^/project/sample/(login|test)/.*$</url>
+			<!-- tools page -->
+			<url>^/jsp/support/(god|verify)/.*$</url>
+			<url>^/jsp/common/error/.*$</url>
+			<!-- soa -->
+			<url>^/(services|api)(|/.*)$</url>
+		</ignoreUrls>
+		<!-- valid business service url, to be monitor and log -->
+		<validBsUrlMatch>^.*((\.(jsp|do|py))|/[\w]*)$</validBsUrlMatch>
+	</org.quickbundle.project.filter.RmPrivilegeFilter>
+	
+	<org.quickbundle.project.RmProjectHelper>
+		<logFatal>
+			<mailTo>test@quickbundle.org</mailTo>
+		</logFatal>
+	</org.quickbundle.project.RmProjectHelper>
+</rm>

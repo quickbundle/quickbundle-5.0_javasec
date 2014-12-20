@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<action-mappings>
+	
+		<!--RmLog的struts跳转规则-->
+		<action type="org.quickbundle.modules.log.rmlog.web.RmLogAction" scope="request" path="/RmLogAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmLogAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/log/rmlog/listRmLog.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/log/rmlog/insertRmLog.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/log/rmlog/detailRmLog.jsp"/>
+		</action>
+		<!--RmLogType的struts跳转规则-->
+		<action type="org.quickbundle.modules.log.rmlogtype.web.RmLogTypeAction" scope="request" path="/RmLogTypeAction" parameter="cmd">
+			<forward name="toQueryAll" path="/RmLogTypeAction.do?cmd=queryAll" redirect="true"/>
+			<forward name="listPage" path="/modules/log/rmlogtype/listRmLogType.jsp"/>
+			<forward name="updatePage" path="/modules/log/rmlogtype/insertRmLogType.jsp?isModify=1"/>
+			<forward name="detailPage" path="/modules/log/rmlogtype/detailRmLogType.jsp"/>
+			<forward name="referencePage" path="/modules/log/rmlogtype/util/referenceRmLogType.jsp"/>
+		</action>
+	
+		<!--RmLock的struts跳转规则-->
+		<action type="org.quickbundle.modules.lock.rmlock.web.RmLockAction" scope="request" path="/RmLockAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmLockAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/lock/rmlock/listRmLock.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/lock/rmlock/insertRmLock.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/lock/rmlock/detailRmLock.jsp"/>
+		</action>
+	
+		<!--RmAffix的struts跳转规则-->
+		<action type="org.quickbundle.modules.affix.rmaffix.web.RmAffixAction" scope="request" path="/RmAffixAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmAffixAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/affix/rmaffix/listRmAffix.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/affix/rmaffix/insertRmAffix.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/affix/rmaffix/detailRmAffix.jsp"/>
+			<!--参照页面的跳转-->
+			<forward name="referencePage" path="/modules/affix/rmaffix/util/referenceRmAffix.jsp"/>
+			<!--统计页面的跳转-->
+			<forward name="statisticPage" path="/modules/affix/rmaffix/util/statisticRmAffix_rowColumn.jsp"/>
+		</action>
+		<!--RmAffixReadOnly的struts跳转规则-->
+	    <action type="org.quickbundle.modules.affix.rmaffix.web.RmAffixReadOnlyAction" scope="request" path="/RmAffixReadOnlyAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmAffixReadOnlyAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/affix/rmaffix/listRmAffix.jsp?REQUEST_IS_READ_ONLY=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/affix/rmaffix/detailRmAffix.jsp?REQUEST_IS_READ_ONLY=1"/>
+		</action>
+		<!--RmAffixCondition的struts跳转规则-->
+	    <action type="org.quickbundle.modules.affix.rmaffix.web.RmAffixConditionAction" scope="request" path="/RmAffixConditionAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmAffixConditionAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/affix/rmaffix/condition/listRmAffix.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/affix/rmaffix/condition/insertRmAffix.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/affix/rmaffix/condition/detailRmAffix.jsp"/>
+		</action>
+		<!--RmAffixAjax的struts跳转规则-->
+	    <action type="org.quickbundle.modules.affix.rmaffix.web.RmAffixAjaxAction" scope="request" path="/RmAffixAjaxAction" parameter="cmd" />
+		
+		<!--RmCodeDataCondition的struts跳转规则-->
+	    <action type="org.quickbundle.modules.code.rmcodedata.web.RmCodeDataConditionAction" scope="request" path="/RmCodeDataConditionAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmCodeDataConditionAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/code/rmcodedata/condition/listRmCodeData.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/code/rmcodedata/condition/insertRmCodeData.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/code/rmcodedata/condition/detailRmCodeData.jsp"/>
+		</action>
+	
+		<!--RmCodeType的struts跳转规则-->
+		<action type="org.quickbundle.modules.code.rmcodetype.web.RmCodeTypeAction" scope="request" path="/RmCodeTypeAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmCodeTypeAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/code/rmcodetype/listRmCodeType.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/code/rmcodetype/insertRmCodeType.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/code/rmcodetype/detailRmCodeType.jsp"/>
+			<!--参照页面的跳转-->
+			<forward name="referencePage" path="/modules/code/rmcodetype/referenceRmCodeType.jsp"/>
+			<!--统计页面的跳转-->
+			<forward name="statisticPage" path="/modules/code/rmcodetype/statisticRmCodeType_rowColumn.jsp"/>
+		</action>
+		<!--RmCodeTypeReadOnly的struts跳转规则-->
+	    <action type="org.quickbundle.modules.code.rmcodetype.web.RmCodeTypeReadOnlyAction" scope="request" path="/RmCodeTypeReadOnlyAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmCodeTypeReadOnlyAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/code/rmcodetype/listRmCodeType.jsp?REQUEST_IS_READ_ONLY=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/code/rmcodetype/detailRmCodeType.jsp?REQUEST_IS_READ_ONLY=1"/>
+		</action>
+		<!--RmCodeTypeCondition的struts跳转规则-->
+	    <action type="org.quickbundle.modules.code.rmcodetype.web.RmCodeTypeConditionAction" scope="request" path="/RmCodeTypeConditionAction" parameter="cmd">
+			<!--查询全部页面的跳转，被其它方法调用-->
+			<forward name="toQueryAll" path="/RmCodeTypeConditionAction.do?cmd=queryAll" redirect="true"/>
+			<!--查询全部页面的跳转，跳到最终页面-->
+			<forward name="listPage" path="/modules/code/rmcodetype/condition/listRmCodeType.jsp"/>
+			<!--修改页面的跳转-->
+			<forward name="updatePage" path="/modules/code/rmcodetype/condition/insertRmCodeType.jsp?isModify=1"/>
+			<!--详细页面的跳转-->
+			<forward name="detailPage" path="/modules/code/rmcodetype/condition/detailRmCodeType.jsp"/>
+		</action>
+		
+	</action-mappings>
+</struts-config>

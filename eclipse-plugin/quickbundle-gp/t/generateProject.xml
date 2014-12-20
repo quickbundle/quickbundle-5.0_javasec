@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetypes>
+    <archetype>
+        <title>安全强化的JavaEE版</title>
+        <framework>JavaEE-2.5|Quickbundle-4.0</framework>
+        <description><![CDATA[对JavaEE标准版，以“Build Security In”的思想彻底重构之后的注重安全的应用骨架。适用场景：对安全有一定要求的企业应用、互联网应用后端。
+    JavaEE 2.5项目骨架，Maven规范，主框架是jQuery-1.9 + Html4 + Spring MVC 3.2 + Spring 3.2 + MyBatis 3.2，集成了Jackson-2.1(Json) + Apache CXF-2.5(web service) + JFreeChart-1.0(图表) + JasperReport-4.7(报表) + mail-1.4(邮件) + jxl-2.6(Excel) + dom4j-1.6(xml) + slf4j-1.7(日志) + jython-2.7(Python运行库)，内置组织权限(设计思想源自Martin Fowler的《分析模式》) + 分布式调度(基于quartz-2.1增强了管理界面) + 编码数据管理 + 附件管理 + 业务日志 + 业务锁。待增加：Activiti-5.13(工作流引擎，增强了组织适配器、流程管理器等) + MuleESB-3.4(ESB企业服务总线) + Drools-6.0(规则引擎)。适用场景：企业应用、互联网应用后端。]]></description>
+        <author>Quickbundle团队</author>
+        <config>JavaEE-security.xml</config>
+        <source>{templatePath}/j1</source>
+    </archetype>
+    <archetype>
+        <title>跨平台的Mobile端</title>
+        <framework>Html5|PhoneGap-2.0</framework>
+        <description><![CDATA[提供一个跨平台移动终端方案，一套代码支持iOS、Android、Windows Phone等移动平台，主框架是PhoneGap-2.0 + jQuery-1.5 + jQuery Mobile-1.0 + jQuery JSONP-2.4 + Html5。适用场景：要求跨平台的移动端接入。]]></description>
+        <author>张文鹤</author>
+        <config>JavaEE-mobile.xml</config>
+        <source>{templatePath}/m1</source>
+    </archetype>
+</archetypes>
