@@ -11,6 +11,7 @@
   <modules>
     <module>java-lib</module>
     <module>eclipse-plugin</module>
+    <module>archetype/quickbundle-securityweb</module>
     <module>build</module>
   </modules>
 
