@@ -31,5 +31,5 @@ mvn clean eclipse:clean eclipse:eclipse
 cd ..
 echo extract quickbundle-securityweb.jar...
 jar cfM ../build/build-securityweb/target/quickbundle-securityweb.jar quickbundle-securityweb
-cd ../build/build-securityweb/target/eclipse/plugins/org.quickbundle.mda.gp-5.0.0/t/j1
+cd ../../build/build-securityweb/target/eclipse/plugins/org.quickbundle.mda.gp-5.0.0/t/j1
 jar xfM ../../../../../quickbundle-securityweb.jar
