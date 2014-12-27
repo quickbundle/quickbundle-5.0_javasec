@@ -9,6 +9,7 @@
 		<relativePath>../org.quickbundle.mda.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>org.quickbundle.mda.libs</artifactId>
+    <packaging>eclipse-plugin</packaging>
 
 	<properties>
 		<encoding>UTF-8</encoding>
