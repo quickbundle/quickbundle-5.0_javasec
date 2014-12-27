@@ -2,8 +2,7 @@ package org.quickbundle.third.mybatis;
 
 import java.sql.Statement;
 import java.util.Properties;
-//TODO 
-//import org.apache.ibatis.executor.resultset.FastResultSetHandler;
+
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
@@ -16,12 +15,10 @@ import org.quickbundle.tools.helper.RmReflectHelper;
 @Intercepts({ @Signature(type = ResultSetHandler.class, method = "handleResultSets", args = { Statement.class }) })
 public class ScrollableResultSetHandlerInterceptor implements Interceptor {
 	public Object intercept(Invocation invocation) throws Throwable {
-		return null;
-		/*
-		if(!(invocation.getTarget() instanceof FastResultSetHandler)) {
+		if(!(invocation.getTarget() instanceof ResultSetHandler)) {
 			return invocation.proceed();
 		}
-		FastResultSetHandler resultSet = (FastResultSetHandler) invocation.getTarget();
+		ResultSetHandler resultSet = (ResultSetHandler) invocation.getTarget();
 
 		RowBounds rowBounds = (RowBounds) RmReflectHelper.getFieldValue(resultSet, "rowBounds");
 
@@ -29,7 +26,6 @@ public class ScrollableResultSetHandlerInterceptor implements Interceptor {
 			RmReflectHelper.setFieldValue(resultSet, "rowBounds", new RowBounds());
 		//}
 		return invocation.proceed();
-		*/
 	}
 
 	public Object plugin(Object target) {

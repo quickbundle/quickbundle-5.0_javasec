@@ -11,6 +11,8 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.reflection.MetaObject;
+import org.apache.ibatis.reflection.factory.DefaultObjectFactory;
+import org.apache.ibatis.reflection.wrapper.DefaultObjectWrapperFactory;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 import org.quickbundle.third.mybatis.dialect.DB2Dialect;
@@ -28,12 +30,9 @@ public class ScrollableStatementHandlerInterceptor implements Interceptor {
 	private final static Logger log = LoggerFactory.getLogger(ScrollableStatementHandlerInterceptor.class);
 
 	public Object intercept(Invocation invocation) throws Throwable {
-		//TODO 
-		return null;
-		/*
 		StatementHandler statementHandler = (StatementHandler) invocation.getTarget();
 		BoundSql boundSql = statementHandler.getBoundSql();
-		MetaObject metaStatementHandler = MetaObject.forObject(statementHandler);
+		MetaObject metaStatementHandler = MetaObject.forObject(statementHandler, new DefaultObjectFactory(), new DefaultObjectWrapperFactory());
 		RowBounds rowBounds = (RowBounds) metaStatementHandler.getValue("delegate.rowBounds");
 		if (rowBounds == null || rowBounds == RowBounds.DEFAULT || rowBounds.getOffset() < 0 || rowBounds.getLimit() < 0) {
 			return invocation.proceed();
@@ -77,7 +76,6 @@ public class ScrollableStatementHandlerInterceptor implements Interceptor {
 			log.debug("生成分页SQL : " + boundSql.getSql());
 		}
 		return invocation.proceed();
-		*/
 	}
 
 	public Object plugin(Object target) {
