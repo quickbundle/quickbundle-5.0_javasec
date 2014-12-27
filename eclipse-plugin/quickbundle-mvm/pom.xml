@@ -9,6 +9,7 @@
 		<relativePath>../org.quickbundle.mda.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>org.quickbundle.mda.mvm</artifactId>
+    <packaging>eclipse-plugin</packaging>
 
 	<dependencies>
 		<dependency>
