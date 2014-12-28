@@ -32,7 +32,7 @@
       where ID=#{id}
   </update>
 
-  <select id="get" parameterType="string" resultType="org.quickbundle.modules.message.vo.RmMessageVo">
+  <select id="get" parameterType="long" resultType="org.quickbundle.modules.message.vo.RmMessageVo">
 	select 
 	  RM_MESSAGE.ID, RM_MESSAGE.BIZ_KEYWORD, RM_MESSAGE.SENDER_ID, RM_MESSAGE.PARENT_MESSAGE_ID, 
 	  RM_MESSAGE.OWNER_ORG_ID, RM_MESSAGE.TEMPLATE_ID, RM_MESSAGE.IS_AFFIX, RM_MESSAGE.RECORD_ID, 
