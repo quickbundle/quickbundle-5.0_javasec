@@ -1,8 +1,10 @@
-/*
-drop table if exists RM_MESSAGE;
+drop table if exists RM_M_MESSAGE_USER;
 
 drop table if exists RM_MESSAGE_RECEIVER;
-*/
+
+drop table if exists RM_MESSAGE;
+
+
 /*==============================================================*/
 /* Table: RM_MESSAGE                                            */
 /*==============================================================*/
@@ -57,21 +59,20 @@ alter table RM_MESSAGE_RECEIVER add constraint FK_Reference_947 foreign key (MES
       references RM_MESSAGE (ID) on delete restrict on update restrict;
 
 
-drop table RM_M_MESSAGE_USER;
 /*==============================================================*/
 /* Table: RM_M_MESSAGE_USER                                                  */
 /*==============================================================*/
 create table RM_M_MESSAGE_USER
 (
-   RM_MESSAGE_ID           BIGINT not null,
-   RM_USER_ID              BIGINT not null,
-   primary key (RM_MESSAGE_ID, RM_USER_ID)
+   MESSAGE_ID           BIGINT not null,
+   USER_ID              BIGINT not null,
+   primary key (MESSAGE_ID, USER_ID)
 )
 ;
 
-alter table RM_M_MESSAGE_USER add constraint FK_Reference_51 foreign key (RM_MESSAGE_ID)
+alter table RM_M_MESSAGE_USER add constraint FK_Reference_51 foreign key (MESSAGE_ID)
       references RM_MESSAGE (ID) on delete restrict on update restrict;
 
-alter table RM_M_MESSAGE_USER add constraint FK_Reference_52 foreign key (RM_USER_ID)
+alter table RM_M_MESSAGE_USER add constraint FK_Reference_52 foreign key (USER_ID)
       references RM_USER (ID) on delete restrict on update restrict;
 
