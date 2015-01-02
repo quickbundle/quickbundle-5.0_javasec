@@ -73,7 +73,7 @@ public class ScrollableStatementHandlerInterceptor implements Interceptor {
 		metaStatementHandler.setValue("delegate.rowBounds.offset", RowBounds.NO_ROW_OFFSET);
 		metaStatementHandler.setValue("delegate.rowBounds.limit", RowBounds.NO_ROW_LIMIT);
 		if (log.isDebugEnabled()) {
-			log.debug("生成分页SQL : " + boundSql.getSql());
+			log.debug("Generating scrollable SQL : " + boundSql.getSql());
 		}
 		return invocation.proceed();
 	}

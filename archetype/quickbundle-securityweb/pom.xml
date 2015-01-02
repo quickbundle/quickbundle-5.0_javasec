@@ -56,8 +56,8 @@
 		<url>http://quickbundle.org</url>
 	</organization>
 	<issueManagement>
-		<system>Bugzilla</system>
-		<url>http://bugs.quickbundle.org</url>
+		<system>Github Issues</system>
+		<url>https://github.com/quickbundle/javasec/issues</url>
 	</issueManagement>
 	<scm>
 		<connection>scm:git:https://github.com/quickbundle/javasec.git</connection>
@@ -454,6 +454,10 @@ encoding/tools.bat=GBK]]>
 					<artifactId>bctsp-jdk14</artifactId>
 					<groupId>org.bouncycastle</groupId>
 				</exclusion>
+				<exclusion>
+					<artifactId>jfreechart</artifactId>
+					<groupId>jfree</groupId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -689,6 +693,12 @@ encoding/tools.bat=GBK]]>
 			<groupId>org.apache.xmlbeans</groupId>
 			<artifactId>xmlbeans</artifactId>
 			<version>2.6.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>stax</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.ws.xmlschema</groupId>
