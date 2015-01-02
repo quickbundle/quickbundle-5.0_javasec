@@ -153,7 +153,7 @@ function logout_onClick() {
 	</div>
 	<div class="right"> 
 	  	<img src="<%=request.getContextPath()%>/images/default/m_home.gif"   align="middle"></img><a href="<%=request.getContextPath()%>/index.jsp" target="_parent"><bean:message key="qb.homepage"/></a>&nbsp;&nbsp;
-	  	<a href="#" onclick="window.open('<%=request.getContextPath()%>/orgauth/changePassword.jsp')">改密码</a>
+	  	<a href="#" onclick="window.open('<%=request.getContextPath()%>/orgauth/changePassword.jsp')"><bean:message key="qb.change_password"/></a>
 	  	<img src="<%=request.getContextPath()%>/images/default/m_logout.gif" align="middle"></img><span onclick="javascript:logout_onClick()" style="cursor:pointer"><bean:message key="qb.logout"/></span>
 	</div>
 </div>

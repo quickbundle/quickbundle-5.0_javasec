@@ -30,16 +30,14 @@ node_monitor_log = insFld(foldersTree, gFld ("&nbsp;监控日志", "", "ftv2fold
 	rmCodeGenerationRmLogType_maintenance = insDoc(node_monitor_log, gLnk("0","&nbsp;日志类型", "<%=request.getContextPath()%>/RmLogTypeAction.do?cmd=queryAll", "ftv2link.gif"));
 	rmCodeGenerationRmLog_maintenance = insDoc(node_monitor_log, gLnk("0","&nbsp;日志", "<%=request.getContextPath()%>/RmLogAction.do?cmd=queryAll&RM_ORDER_STR=ACTION_DATE DESC", "ftv2link.gif"));
 	//org_log end
-	
-//node_print = insFld(foldersTree, gFld ("&nbsp;打印", "", "ftv2folderopen.gif", "ftv2folderclosed.gif"));
-//	node_print_jasperreport = insDoc(node_print, gLnk("0","&nbsp;Applet打印", "<%=request.getContextPath()%>/third/jasperreport/printer.jsp", "ftv2link.gif"));
-//	node_print_WebBrowser = insDoc(node_print, gLnk("0","&nbsp;Js打印", "<%=request.getContextPath()%>/jsp/support/print/WebBrowserPrint.jsp", "ftv2link.gif"));
 
 node_extendFunction = insFld(foldersTree, gFld ("&nbsp;扩展功能", "", "ftv2folderopen.gif", "ftv2folderclosed.gif"));
 	rmCodeGenerationRmCodeType_maintenance = insDoc(node_extendFunction, gLnk("0","&nbsp;编码表", "<%=request.getContextPath()%>/RmCodeTypeAction.do?cmd=queryAll", "ftv2link.gif"));	
 	rmCodeGenerationRmAffix_maintenance = insDoc(node_extendFunction, gLnk("0","&nbsp;附件", "<%=request.getContextPath()%>/RmAffixAction.do?cmd=queryAll", "ftv2link.gif"));
-	
+
+/*
 node_profiler = insFld(foldersTree, gFld ("&nbsp;性能分析", "", "ftv2folderopen.gif", "ftv2folderclosed.gif"));
-	node_sqlProfiler = insDoc(node_profiler, gLnk("0","&nbsp;Request分析器", "<%=request.getContextPath()%>/admin/log/request_profiler.py", "ftv2link.gif"));
+    node_sqlProfiler = insDoc(node_profiler, gLnk("0","&nbsp;Request分析器", "<%=request.getContextPath()%>/admin/log/request_profiler.py", "ftv2link.gif"));
     node_sqlProfiler = insDoc(node_profiler, gLnk("0","&nbsp;SQL分析器", "<%=request.getContextPath()%>/admin/log/sql_profiler.py", "ftv2link.gif"));
     node_sqlProfiler = insDoc(node_profiler, gLnk("0","&nbsp;Method分析器", "<%=request.getContextPath()%>/admin/log/method_profiler.py", "ftv2link.gif"));
+*/
