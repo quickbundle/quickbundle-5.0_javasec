@@ -352,7 +352,6 @@
 
 <%--start 生成页面汇总，正式部署前删除以下代码 --%>
 <div id="div_funcNode" style="padding:20px 10px 10px 0px; display:none" align="right">
-	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/modules/affix/rmaffix/ajax/listRmAffix.jsp">ExtJS</a>
 	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/modules/affix/rmaffix/util/statisticRmAffix_chart.jsp">图表统计</a>
 	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/modules/affix/rmaffix/util/statisticRmAffix_ofc.jsp">Flash图表</a>
 	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/RmAffixAction.do?cmd=statistic">交叉统计</a>

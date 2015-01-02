@@ -225,7 +225,6 @@
 
 <%--begin 生成页面汇总，正式部署前删除以下代码 --%>
 <div id="div_funcNode" style="padding:20px 10px 10px 0px; display:none" align="right">
-	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/message/ajax">Ajax</a>
 	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/message/statistic/chart">图表统计</a>
 	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/message/statistic/flash">Flash图表</a>
 	<a class="aul" target="_blank" href="<%=request.getContextPath()%>/message/statistic/table">交叉统计</a>
