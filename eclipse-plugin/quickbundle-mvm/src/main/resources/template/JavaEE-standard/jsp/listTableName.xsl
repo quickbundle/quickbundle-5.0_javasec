@@ -190,8 +190,8 @@
 										<xsl:value-of select="$charLt"/>a href="javascript:;" class="collapse"><xsl:value-of select="$charLt"/>/a>
 									<xsl:value-of select="$charLt"/>/div>
 						<xsl:value-of select="$charLt"/>/div>
-						<xsl:value-of select="$charLt"/>div class="portlet-body">
-							<xsl:value-of select="$charLt"/>table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+						<xsl:value-of select="$charLt"/>div class="portlet-body no-more-tables">
+							<xsl:value-of select="$charLt"/>table class="table-bordered table-striped table-condensed cf">
 								<xsl:value-of select="$charLt"/>thead>
 									<xsl:value-of select="$charLt"/>tr>
 									<xsl:value-of select="$charLt"/>th style="width: 40px">选择<xsl:value-of select="$charLt"/>/th>
