@@ -130,7 +130,7 @@
 						method="post">
 						<xsl:value-of select="$charLt"/>div class="control-group">
 							<xsl:value-of select="$charLt"/>div class="controls">
-								<xsl:apply-templates mode="buildTableColumn_queryInput_newadd"/>
+								<xsl:apply-templates mode="buildTableColumn_newinsertInput"/>
 								<xsl:value-of select="$charLt"/>p>
 									<xsl:value-of select="$charLt"/>input type="submit" class="btn blue btn-block" value="提交" />
 								<xsl:value-of select="$charLt"/>/p>

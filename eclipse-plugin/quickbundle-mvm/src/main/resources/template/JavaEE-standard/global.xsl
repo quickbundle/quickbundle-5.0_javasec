@@ -184,6 +184,131 @@
 		</xsl:if>
 	</xsl:template>
 	
+	<!--新版insertTableXslt-->
+	<xsl:template match="column" mode="buildTableColumn_newinsertInput">
+		<xsl:param name="columnName" select="@columnName"/>
+		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
+		<xsl:param name="columnNameFormatLower" select="lower-case($columnNameFormat)"/>
+		<xsl:param name="humanDisplayTypeKeyword" select="str:substring-before2(@humanDisplayTypeKeyword, '=')"/>
+		<xsl:if test="not($columnName=$tablePk) and @isBuild='true' and not(@humanDisplayType='default' and @dataType='java.lang.String' and (../column[$columnName=concat(@columnName, '_name')]/@humanDisplayType='rm.listReference' or ../column[$columnName=concat(@columnName, '_NAME')]/@humanDisplayType='rm.listReference' or ../column[$columnName=concat(@columnName, '_name')]/@humanDisplayType='rm.orgReference' or ../column[$columnName=concat(@columnName, '_NAME')]/@humanDisplayType='rm.orgReference'))">
+			<xsl:choose>
+				<!--首先处理rm.dictionary.select(人性化展现方式)-->
+				<xsl:when test="@humanDisplayType='rm.dictionary.select'">
+				
+				<xsl:value-of select="$charLt"/>div class="input-prepend">
+				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+				<xsl:value-of select="$charLt"/>%=RmJspHelper.getSelectField("<xsl:value-of select="$columnNameFormatLower"/>", -1, RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>), "", "inputName='" + <xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>") + "'", true) %>
+				<xsl:value-of select="$charLt"/>/div>
+				</xsl:when>
+				<!--首先处理rm.dictionary.checkbox(人性化展现方式)-->
+				<xsl:when test="@humanDisplayType='rm.dictionary.checkbox'">
+				<xsl:value-of select="$charLt"/>div class="input-prepend">
+				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+				<xsl:value-of select="$charLt"/>input type="checkbox" class="rm_checkbox" hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_rmCheckbox"/><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"/>
+				<xsl:value-of select="$charLt"/>/div>
+				</xsl:when>
+				<!--处理rm.fckEditor(html编辑器)-->
+				<xsl:when test="@humanDisplayType='rm.fckEditor'">
+					<xsl:value-of select="$charLt"/>tr>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:if test="@nullable='NO'">
+						<xsl:value-of select="$charLt"/>span class="style_required_red">* <xsl:value-of select="$charLt"/>/span></xsl:if>
+					<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td colspan="3">
+			<xsl:value-of select="$charLt"/>textarea class="textarea_fckEditor" cols="60" rows="5" name="<xsl:value-of select="$columnNameFormatLower"/>" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" maxLength="<xsl:if test="@maxLength div 2 >= 1">
+						<xsl:value-of select="format-number(floor(@maxLength div 2),'#')"/>
+					</xsl:if>
+					<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>" <xsl:if test="@nullable='NO'">validate="notNull;"</xsl:if>><xsl:value-of select="$charLt"/>/textarea>
+		<xsl:value-of select="$charLt"/>/td>
+	<xsl:value-of select="$charLt"/>/tr>
+	</xsl:when>
+				<!--处理rm.listReference(列表参照)-->
+				<xsl:when test="@humanDisplayType='rm.listReference'">
+					<xsl:value-of select="$charLt"/>tr>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:if test="@nullable='NO'">
+						<xsl:value-of select="$charLt"/>span class="style_required_red">* <xsl:value-of select="$charLt"/>/span></xsl:if>
+					<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td>
+			<xsl:value-of select="$charLt"/>input type="text" class="text_field_reference" <xsl:if test="@nullable='NO'">validate='notNull;'</xsl:if> hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"><xsl:value-of select="$charLt"/>img class="refButtonClass" src="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.<xsl:value-of select="$columnNameFormatLower"/>, form.<xsl:value-of select="$columnNameFormatLower"/>_name), '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/', '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="$humanDisplayTypeKeyword"/>/reference?referenceInputType=radio');"/>
+		<xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td><xsl:value-of select="$charLt"/>/td>
+	<xsl:value-of select="$charLt"/>/tr>
+	</xsl:when>
+				<!--处理rm.orgReference(组织结构参照)-->
+				<xsl:when test="@humanDisplayType='rm.orgReference'">
+					<xsl:value-of select="$charLt"/>tr>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:if test="@nullable='NO'">
+						<xsl:value-of select="$charLt"/>span class="style_required_red">* <xsl:value-of select="$charLt"/>/span></xsl:if>
+					<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td>
+			<xsl:value-of select="$charLt"/>input type="text" class="text_field_reference" <xsl:if test="@nullable='NO'">validate='notNull;'</xsl:if> hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"><xsl:value-of select="$charLt"/>img class="refButtonClass" src="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/images/09.gif" onclick="javascript:getPartyWindow(new Array(form.<xsl:value-of select="$columnNameFormatLower"/>, form.<xsl:value-of select="$columnNameFormatLower"/>_name), '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/', '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/ut/orgauth/tree/org.jsp?enableCookie=true<xsl:value-of select="$charAmp"/>inputType=radio');"/>
+		<xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td><xsl:value-of select="$charLt"/>/td>
+	<xsl:value-of select="$charLt"/>/tr>
+	</xsl:when>
+				<!--处理rm.affix(多附件上传)-->
+				<xsl:when test="@humanDisplayType='rm.affix'">
+					<xsl:value-of select="$charLt"/>tr>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:if test="@nullable='NO'">
+						<xsl:value-of select="$charLt"/>span class="style_required_red">* <xsl:value-of select="$charLt"/>/span></xsl:if>
+					<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td colspan="3">
+			<xsl:value-of select="$charLt"/>input type="text" class="rm_affix" bs_keyword="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME%>" record_id="<xsl:value-of select="$charLt"/>%=isModify ? resultVo.get<xsl:value-of select="str:upperFirst($tablePkFormatLower)"/>() : ""%>" name="<xsl:value-of select="$columnNameFormatLower"/>" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="false" maxLength="<xsl:if test="@maxLength div 2 >= 1">
+						<xsl:value-of select="format-number(floor(@maxLength div 2),'#')"/>
+					</xsl:if>
+					<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>" />
+		<xsl:value-of select="$charLt"/>/td>
+	<xsl:value-of select="$charLt"/>/tr>
+	</xsl:when>
+				<!--处理default(默认)-->
+				<xsl:when test="@humanDisplayType='default' or @humanDisplayType=''">
+					<xsl:choose>
+						<!--处理textarea，大于1000个字符-->
+						<xsl:when test="@dataType='java.lang.String' and @maxLength&gt;=1000">
+							<xsl:value-of select="$charLt"/>div class="input-prepend">
+										<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+										<xsl:value-of select="$charLt"/>input class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" type="text" maxLength="<xsl:if test="@maxLength div 2 >= 1">
+							 <xsl:value-of select="format-number(floor(@maxLength div 2),'#')"/>
+							</xsl:if>
+							<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>"/>
+							<xsl:value-of select="$charLt"/>/div>
+						</xsl:when>
+						<!--处理时间参照-->
+						<xsl:when test="@dataType='java.sql.Timestamp' or @dataType='java.sql.Date'">
+							<xsl:value-of select="$charLt"/>div class="input-prepend">
+											<xsl:value-of select="$charLt"/>div class="control-group">
+												<xsl:value-of select="$charLt"/>div class="controls">
+													<xsl:value-of select="$charLt"/>div class="controls">
+														<xsl:value-of select="$charLt"/>span class="add-on">时间<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>input name="<xsl:value-of select="$columnNameFormatLower"/>_from" class="m-wrap m-ctrl-medium date-picker" readonly size="16" type="text" value="" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" />
+													<xsl:value-of select="$charLt"/>/div>
+												<xsl:value-of select="$charLt"/>/div>
+											<xsl:value-of select="$charLt"/>/div>
+										<xsl:value-of select="$charLt"/>/div>
+							</xsl:when>
+						<!--处理数字-->
+						<xsl:when test="@dataType='java.math.BigDecimal' or @dataType='java.lang.Long' or @dataType='java.lang.Integer'">
+							<xsl:value-of select="$charLt"/>div class="input-prepend">
+							<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span>
+							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>_from" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" /><xsl:value-of select="$charNbsp"/>到<xsl:value-of select="$charNbsp"/>
+						<xsl:value-of select="$charLt"/>/div>
+						</xsl:when>
+						<!--默认其它类型的字段。处理普通的text，小于1000个字符-->
+						<xsl:otherwise>
+							<xsl:value-of select="$charLt"/>div class="input-prepend">
+										<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+										<xsl:value-of select="$charLt"/>input class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" type="text" maxLength="<xsl:if test="@maxLength div 2 >= 1">
+							 <xsl:value-of select="format-number(floor(@maxLength div 2),'#')"/>
+							</xsl:if>
+							<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>"/>
+							<xsl:value-of select="$charLt"/>/div>
+					</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+	
 	<!--新版ajax更新-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_neweditajax">
 		<xsl:param name="columnName" select="@columnName"/>
@@ -207,20 +332,6 @@
 		<xsl:if test="not($columnName=$tablePk) and @isBuild_list='true'">
 		<xsl:value-of select="$charLt"/>div class="input-prepend">
 									<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>input class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" id="<xsl:value-of select="$columnNameFormatLower"/>" type="text"  />
-								<xsl:value-of select="$charLt"/>/div>
-		</xsl:if>
-	</xsl:template>
-	
-	
-	<!--新版新增-->
-	<xsl:template match="column" mode="buildTableColumn_queryInput_newadd">
-		<xsl:param name="columnName" select="@columnName"/>
-		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
-		<xsl:param name="columnNameFormatLower" select="lower-case($columnNameFormat)"/>
-		<xsl:param name="humanDisplayTypeKeyword" select="str:substring-before2(@humanDisplayTypeKeyword, '=')"/>
-		<xsl:if test="not($columnName=$tablePk) and @isBuild_list='true'">
-		<xsl:value-of select="$charLt"/>div class="input-prepend">
-									<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>input class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" type="text"  />
 								<xsl:value-of select="$charLt"/>/div>
 		</xsl:if>
 	</xsl:template>
@@ -314,8 +425,10 @@
 						<xsl:when test="@dataType='java.math.BigDecimal' or @dataType='java.lang.Long' or @dataType='java.lang.Integer'">
 						<xsl:value-of select="$charLt"/>div class="input-prepend">
 							<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span>
-							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>_from" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" /><xsl:value-of select="$charNbsp"/>到<xsl:value-of select="$charNbsp"/>
-							到
+							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>_from" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" />
+							<xsl:value-of select="$charLt"/>/div>
+							<xsl:value-of select="$charNbsp"/>到<xsl:value-of select="$charNbsp"/>
+							<xsl:value-of select="$charLt"/>div class="input-prepend">
 							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>_to" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" />
 						<xsl:value-of select="$charLt"/>/div>
 						</xsl:when>
