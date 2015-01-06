@@ -184,7 +184,7 @@
 		</xsl:if>
 	</xsl:template>
 	
-	
+	<!--新版ajax更新-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_neweditajax">
 		<xsl:param name="columnName" select="@columnName"/>
 		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
@@ -198,7 +198,7 @@
 		</xsl:if>
 	</xsl:template>
 	
-	
+	<!--新版修改-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_newupdate">
 		<xsl:param name="columnName" select="@columnName"/>
 		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
@@ -212,7 +212,7 @@
 	</xsl:template>
 	
 	
-	
+	<!--新版新增-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_newadd">
 		<xsl:param name="columnName" select="@columnName"/>
 		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
@@ -225,7 +225,7 @@
 		</xsl:if>
 	</xsl:template>
 	
-	
+	<!--新版列表第一段-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_newlisttr">
 		<xsl:param name="columnName" select="@columnName"/>
 		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
@@ -235,7 +235,7 @@
                                                                     <xsl:value-of select="$charLt"/>th><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/th>
 		</xsl:if>
 	</xsl:template>
-	
+	<!--新版列表第二段-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_newlisttr2">
 		<xsl:param name="columnName" select="@columnName"/>
 		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
@@ -259,7 +259,7 @@
 	
 	
 	
-	
+	<!--新版处理各列的循环查询输入框-->
 	<xsl:template match="column" mode="buildTableColumn_queryInput_newversion">
 		<xsl:param name="columnName" select="@columnName"/>
 		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
@@ -269,11 +269,10 @@
 				<xsl:choose>
 				<!--首先处理rm.dictionary.select checkbox(人性化展现方式)-->
 				<xsl:when test="@humanDisplayType='rm.dictionary.select'  or @humanDisplayType='rm.dictionary.checkbox'">
-				
 				<xsl:value-of select="$charLt"/>div class="input-prepend">
-							<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
-								<xsl:value-of select="$charLt"/>%=RmJspHelper.getSelectField("<xsl:value-of select="$columnNameFormatLower"/>", -1, RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>), "", "inputName='" + <xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>") + "'", true) %>
-							<xsl:value-of select="$charLt"/>/div>
+				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+				<xsl:value-of select="$charLt"/>%=RmJspHelper.getSelectField("<xsl:value-of select="$columnNameFormatLower"/>", -1, RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>), "", "inputName='" + <xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>") + "'", true) %>
+				<xsl:value-of select="$charLt"/>/div>
 			</xsl:when>
 				<!--处理rm.listReference(列表参照)-->
 				<xsl:when test="@humanDisplayType='rm.listReference'">
@@ -281,7 +280,9 @@
 			</xsl:when>
 				<!--处理rm.orgReference(组织结构参照)-->
 				<xsl:when test="@humanDisplayType='rm.orgReference'">
+				<xsl:value-of select="$charLt"/>div class="input-prepend">
 					<xsl:value-of select="$charLt"/>input type="text" class="text_field_reference" hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"><xsl:value-of select="$charLt"/>img class="refButtonClass" src="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/images/09.gif" onclick="javascript:getPartyWindow(new Array(form.<xsl:value-of select="$columnNameFormatLower"/>, form.<xsl:value-of select="$columnNameFormatLower"/>_name), '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/', '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/ut/orgauth/tree/org.jsp?enableCookie=true<xsl:value-of select="$charAmp"/>inputType=radio');"/>
+			<xsl:value-of select="$charLt"/>/div>
 			</xsl:when>
 				<!--处理default(默认)-->
 				<xsl:when test="@humanDisplayType='default' or @humanDisplayType='rm.fckEditor' or @humanDisplayType=''">
@@ -311,22 +312,26 @@
 						</xsl:when>
 						<!--处理数字-->
 						<xsl:when test="@dataType='java.math.BigDecimal' or @dataType='java.lang.Long' or @dataType='java.lang.Integer'">
+						<xsl:value-of select="$charLt"/>div class="input-prepend">
+							<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span>
 							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>_from" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" /><xsl:value-of select="$charNbsp"/>到<xsl:value-of select="$charNbsp"/>
+							到
 							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>_to" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" />
+						<xsl:value-of select="$charLt"/>/div>
 						</xsl:when>
 						<!--其他字段都按此处理。处理普通的text，小于1000个字符-->
 						<xsl:otherwise>
-												<xsl:value-of select="$charLt"/>div class="input-prepend">
+									<xsl:value-of select="$charLt"/>div class="input-prepend">
 										<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
 										<xsl:value-of select="$charLt"/>input class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" type="text" maxLength="<xsl:if test="@maxLength div 2 >= 1">
 							 <xsl:value-of select="format-number(floor(@maxLength div 2),'#')"/>
 							</xsl:if>
 							<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>"/>
+							<xsl:value-of select="$charLt"/>/div>
 						</xsl:otherwise>
 						</xsl:choose>
 						</xsl:when>
 						</xsl:choose>
-									<xsl:value-of select="$charLt"/>/div>
 		</xsl:if>
 	</xsl:template>
 	

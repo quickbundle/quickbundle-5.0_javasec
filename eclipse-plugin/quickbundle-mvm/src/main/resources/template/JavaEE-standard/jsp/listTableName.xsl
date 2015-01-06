@@ -9,6 +9,8 @@
 <xsl:value-of select="$charLt"/>%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <xsl:value-of select="$charLt"/>%@ page import="<xsl:value-of select="$javaPackageTableDir"/>.<xsl:value-of select="$ITableNameConstants"/>" %>
 <xsl:value-of select="$charLt"/>%@page import="org.quickbundle.base.web.page.RmPageVo"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.project.RmGlobalReference"%>
+<xsl:value-of select="$charLt"/>%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
 <xsl:value-of select="$charLt"/>%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <xsl:value-of select="$charLt"/>%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <xsl:value-of select="$charLt"/>%@ page trimDirectiveWhitespaces="true"%>
@@ -170,6 +172,7 @@
 										<xsl:value-of select="$charLt"/>p>
 											<xsl:value-of select="$charLt"/>input type="submit" class="btn blue btn-block" value="查询" />
 										<xsl:value-of select="$charLt"/>/p>
+										<xsl:value-of select="$charLt"/>/div>
 									<xsl:value-of select="$charLt"/>/div>
 								<xsl:value-of select="$charLt"/>/form>
 							<xsl:value-of select="$charLt"/>/div>
