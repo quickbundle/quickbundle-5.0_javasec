@@ -3,22 +3,17 @@
 - [Introduction 介绍](#introduction)
     - [Version 版本](#version)
     - [Changelog](Changelog.md)
-- [Supported 兼容性](#supported-web-browsers)
-- [Contributing 出一份力](#contributing)
+- [Supported 兼容性](#supported)
+- [Contributing 我要贡献](#contributing)
 - [Issues 发现问题](#issues)
 - [Installation 安装](#installation)
 - [Quick Start 快速上手](#quick-start)
 - [Architecture 架构](#architecture)
 - [Web Security Web安全性](#web-security)
-- [Maintenance 运维](#maintenance)
-    - [Creating Backups](#creating-backups)
-    - [Restoring Backups](#restoring-backups)
-    - [Automated Backups](#automated-backups)
-    - [Shell Access](#shell-access)
-- [Mobile](#mobile)
+- [Mobile 手机端](#mobile)
 - [Upgrading 更新](#upgrading)
-- [Announcements](https://github.com/quickbundle/javasec/issues/1)
-- [References](#references)
+- [Announcements 公告](https://github.com/quickbundle/javasec/issues/1)
+- [References 参考](#references)
 
 # Introduction
 
@@ -88,19 +83,22 @@ In your issue report please make sure you provide the following information:
 
 ##编译打包
 #### 一键编译quickbundle-5.0.0插件的方式一（推荐）
-eclipse/plugins目录格式，直接复制到Eclipse下，安装快
+eclipse/plugins目录格式，直接复制到Eclipse/links下，安装快。要求是eclipse的JavaEE/jee版，同时Eclipse版本>=3.7
 
 		1，git clone https://github.com/quickbundle/javasec
 		2，先安装基础jar包和必要组件到$M2_REPO。
-			mvn install 【第二次执行可以加上离线参数-o，加快编译，即mvn install -o】如果报错，请执行多次
+			cd javasec		   
+			mvn install 【注：第一次执行需要下载大量maven资源，第二次执行可以加上离线参数-o以加快编译，即mvn install -o】
+			【注：如果报错，请尝试执行多次mvn install】
 		3，打包。
-			mvn package
+			mvn clean package
 		4，安装插件包。
-			复制build/build-securityweb/target/eclipse目录到$ECLIPSE_HOME/links/org.quickbundle目录
+			复制javasec/build/build-securityweb/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_5.0.0目录【注：在$ECLIPSE_HOME目录下新建links目录】。
+			最终结构如下：$ECLIPSE_HOME/links/javasec_5.0.0/eclipse/plugins/...
 		5，重启Eclipse即可
 		
 #### 一键编译quickbundle-5.0.0插件的方式二(不推荐)
-updatesite格式的安装版，安装到Eclipse时较慢
+updatesite格式的安装版，安装到Eclipse时较慢。但安装时会自动下载所需的依赖插件，要求Eclipse版本>=3.7
 
 		1，使用Linux下的ln -s(或windows下的junction)，把qb-archetype/quickbundle-rmwebdemo目录软链接到qb-core/eclipse-plugin/quickbundle-gp/t/j1目录。
 		2，安装maven-3.0.5，在qb-core目录下，执行mvn install，即可安装到$M2_REPO/org/quickbundle/org.quickbundle.mda.updatesite/4.0.0/org.quickbundle.mda.updatesite-4.0.0.zip。
