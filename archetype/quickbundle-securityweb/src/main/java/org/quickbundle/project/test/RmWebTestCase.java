@@ -14,7 +14,15 @@ package org.quickbundle.project.test;
 import junit.framework.TestCase;
 
 import org.quickbundle.base.beans.factory.RmBeanFactory;
+import org.quickbundle.base.web.servlet.RmHolderServlet;
+import org.quickbundle.project.init.CustomSystemProperties;
 import org.quickbundle.project.init.InitDatabaseHelper;
+import org.quickbundle.project.init.LoadProjectConfig;
+import org.quickbundle.project.listener.RmContextLoaderListener;
+import org.quickbundle.tools.support.log.RmLogHelper;
+import org.quickbundle.tools.support.path.RmPathHelper;
+import org.slf4j.Logger;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * 功能、用途、现存BUG:
@@ -25,6 +33,10 @@ import org.quickbundle.project.init.InitDatabaseHelper;
  * @since 1.0.0
  */
 public class RmWebTestCase extends TestCase {
+	private static Logger getLogger() {
+		return RmLogHelper.getLogger(RmWebTestCase.class);
+	}
+	
 	protected void setUp() throws Exception {
 	    init();
 	}
@@ -33,7 +45,17 @@ public class RmWebTestCase extends TestCase {
      * 初始化log4j和Spring配置
      */
     public final synchronized static void init() {
+		String initWarRootMsg = RmPathHelper.initWarRoot();
+		
+		//更新RmConfig配置
+		CustomSystemProperties.getInstance().init();
+		LoadProjectConfig.initRmConfig();
+		
+
         RmBeanFactory.getBeanFactory();
-        InitDatabaseHelper.initDatabaseProductName();
+		InitDatabaseHelper.initDatabase();
+		
+		LoadProjectConfig.initClusterConfig();
+
     }
 }
