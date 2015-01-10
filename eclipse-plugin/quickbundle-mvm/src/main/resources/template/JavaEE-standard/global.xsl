@@ -363,7 +363,7 @@
 						</xsl:if>
 		
 										<xsl:if test="not($columnName=$tablePk) and @isBuild_list='true'">
-																				<xsl:value-of select="$charLt"/>td><xsl:value-of select="$charLt"/>c:out value="${list.<xsl:value-of select="$columnNameFormatLower"/>}"><xsl:value-of select="$charLt"/>/c:out><xsl:value-of select="$charLt"/>/td>
+																				<xsl:value-of select="$charLt"/>td align="center"><xsl:value-of select="$charLt"/>c:out value="${list.<xsl:value-of select="$columnNameFormatLower"/>}"><xsl:value-of select="$charLt"/>/c:out><xsl:value-of select="$charLt"/>/td>
 										</xsl:if>
 		</xsl:template>
 	
@@ -387,7 +387,10 @@
 			</xsl:when>
 				<!--处理rm.listReference(列表参照)-->
 				<xsl:when test="@humanDisplayType='rm.listReference'">
+				<xsl:value-of select="$charLt"/>div class="input-prepend">
+				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
 					<xsl:value-of select="$charLt"/>input type="text" class="m-wrap" hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"><xsl:value-of select="$charLt"/>img class="refButtonClass" src="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.<xsl:value-of select="$columnNameFormatLower"/>, form.<xsl:value-of select="$columnNameFormatLower"/>_name), '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/', '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="$humanDisplayTypeKeyword"/>/reference?referenceInputType=radio');"/>
+				<xsl:value-of select="$charLt"/>/div>
 			</xsl:when>
 				<!--处理rm.orgReference(组织结构参照)-->
 				<xsl:when test="@humanDisplayType='rm.orgReference'">
