@@ -365,6 +365,7 @@ public class RmJspHelper implements ICoreConstants {
             if (strCompare == null)
                 strCompare = "";
             returnString.append("<select name='" + strName + "' ");
+            returnString.append("class=" + "\"" + "small m-wrap" + "\"" + " " + "tabindex=" + "\"" + 1 + "\"");
             returnString.append(strProperty);
             returnString.append(" >\r\n");
             if(hasEmptyValue) {
@@ -465,6 +466,7 @@ public class RmJspHelper implements ICoreConstants {
             	strCompare = new String[0];
             }
             returnString.append("<select multiple name='" + strName + "' ");
+            returnString.append("class=" + "\"" + "small m-wrap" + "\"" + " " + "tabindex=" + "\"" + 1 + "\"");
             returnString.append(strProperty);
             returnString.append(" >\r\n");
 
