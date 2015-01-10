@@ -11,17 +11,15 @@
 package org.quickbundle.tools.support.path;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
 import java.net.URLDecoder;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.quickbundle.base.web.servlet.RmHolderServlet;
@@ -97,10 +95,14 @@ public class RmPathHelper {
 		}
 		if (defaultRealPath != null) {
 			return new File(defaultRealPath);
-		} else {
-			File fileClasses = new File(getClassRootPath(RmBaseConfig.class));
-			return findParentDir(fileClasses, "WEB-INF").getParentFile();
 		}
+		File fileClasses = new File(getClassRootPath(RmBaseConfig.class));
+		if(fileClasses.toString().indexOf("WEB-INF") > -1){
+			return findParentDir(fileClasses, "WEB-INF").getParentFile();
+		} else if(fileClasses.toString().indexOf("target/test-classes") > -1) {
+			return findParentDirContainerFile(fileClasses, "WEB-INF");
+		}
+		return null;
 	}
 
 	/**
@@ -171,6 +173,32 @@ public class RmPathHelper {
 		if (fileKey.equals(file.getName())) {
 			return file;
 		} else if (file.getParentFile() != null) {
+			return findParentDir(file.getParentFile(), fileKey);
+		} else {
+			return file.getParentFile();
+		}
+	}
+	
+	/**
+	 * 功能: 递归的寻找父目录中第一个自身等于或子目录包含fileKey的目录
+	 * 
+	 * @param file
+	 * @param fileKey
+	 * @return
+	 */
+	public static File findParentDirContainerFile(File file, final String fileKey) {
+		if (fileKey.equals(file.getName())) {
+			return file;
+		}
+		File[] guessFileKeys = file.listFiles(new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				return fileKey.equals(name);
+			}
+		});
+		if(guessFileKeys.length > 0) {
+			return file;
+		}
+		if (file.getParentFile() != null) {
 			return findParentDir(file.getParentFile(), fileKey);
 		} else {
 			return file.getParentFile();
