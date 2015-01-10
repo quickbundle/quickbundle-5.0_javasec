@@ -1,5 +1,5 @@
 /*
- * 创建日期 2005-5-29
+ * 閸掓稑缂撻弮銉︽埂 2005-5-29
  */
 package org.quickbundle.tools.helper;
 
@@ -26,16 +26,16 @@ import org.quickbundle.tools.support.log.RmLogHelper;
 
 
 /**
- * @author   帮助实现一些有关Jsp页面的处理
+ * @author   鐢喖濮�鐐靛箛娑擄拷绨洪張澶婂彠Jsp妞ょ敻娼伴惃鍕樀閻烇拷
  */
 public class RmJspHelper implements ICoreConstants {
 
     /**
-     * 从表单中获取值，从ISO转到RmConfig.defaultEncode()默认编码，如果是null则返回""
+     * 娴犲氦銆冮崡鏇氳厬閼惧嘲褰囬崐纭风礉娴犲丢SO鏉烆剙鍩孯mConfig.defaultEncode()姒涙顓荤紓鏍垳閿涘苯顪嗛弸婊勬Цnull閸掓瑨绻戦崶锟�
      * 
      * @param request HttpServletRequest
-     * @param name 需要获取的input名字
-     * @return 表单中的实际内容
+     * @param name 闂囷拷顪呴懢宄板絿閻ㄥ埇nput閸氬秴鐡�
+     * @return 鐞涖劌宕熸稉顓犳畱鐎圭偤妾崘鍛啇
      */
     public static String getParameter(HttpServletRequest request, String name) {
         String strValue = request.getParameter(name);
@@ -54,7 +54,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 先从request.getAttribute，没有的话再从request.getParameter取
+     * 閸旂喕鍏� 閸忓牅绮爎equest.getAttribute閿涘本鐥呴張澶屾畱鐠囨繂鍟�禒宸杄quest.getParameter閸欙拷
      *
      * @param request
      * @param key
@@ -62,14 +62,13 @@ public class RmJspHelper implements ICoreConstants {
      */
     public static String getValueFromRequest_attributeParameter(HttpServletRequest request, String key) {
         String value = null;
-        if(request.getAttribute(key) != null) {  //如果request.getAttribute中有，就不取request.getParameter
+        if(request.getAttribute(key) != null) {  //婵″倹鐏塺equest.getAttribute娑擃厽婀侀敍灞芥皑娑撳秴褰噐equest.getParameter
             value = request.getAttribute(key).toString();
         } else {
-        	//如果有多个key值，取最后一个
-        	if(request.getParameterValues(key) != null && request.getParameterValues(key).length > 1) {
+        	//婵″倹鐏夐張澶婎檵娑撶尛ey閸婄》绱濋崣鏍ㄦ付閸氬簼绔存稉锟�        	if(request.getParameterValues(key) != null && request.getParameterValues(key).length > 1) {
         		value = request.getParameterValues(key)[request.getParameterValues(key).length-1];
         	} else {
-                value = request.getParameter(key);  //从request的parameter获得
+                value = request.getParameter(key);  //娴犲窎equest閻ㄥ埦arameter閼惧嘲绶�
         	}
 
         }
@@ -77,11 +76,11 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 从表单中获取整数值，如果是null或 "null"，则过滤为0
+     * 娴犲氦銆冮崡鏇氳厬閼惧嘲褰囬弫瀛樻殶閸婄》绱濇俊鍌涚亯閺勭棴ull閹达拷"null"閿涘苯鍨潻鍥ㄦ姢娑擄拷
      * 
      * @param request-->HttpServletRequest
-     * @param name-->需要获取的input名字
-     * @return 表单中的实际内容
+     * @param name-->闂囷拷顪呴懢宄板絿閻ㄥ埇nput閸氬秴鐡�
+     * @return 鐞涖劌宕熸稉顓犳畱鐎圭偤妾崘鍛啇
      */
     public static int getParameterInt(HttpServletRequest request, String name) {
         String strValue = request.getParameter(name);
@@ -100,7 +99,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 如果有一个参数重复提交，取最后一个，J2EE默认取第一个
+     * 閸旂喕鍏� 婵″倹鐏夐張澶夌娑擃亜寮弫浼村櫢婢跺秵褰佹禍銈忕礉閸欐牗娓堕崥搴濈娑擃亷绱滼2EE姒涙顓婚崣鏍儑娑擄拷閲�
      *
      * @param request
      * @param name
@@ -120,13 +119,10 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 将某字符替换为某字符串, 例如将 \n替换为 <br>
+     * 鐏忓棙鐓囩�妤冾儊閺囨寧宕叉稉鐑樼厙鐎涙顑佹稉锟�娓氬顪嗙亸锟絓n閺囨寧宕叉稉锟�br>
      * 
-     * @param pStr 被处理的字符串
-     * @param pC 被替换的字符
-     * @param rep 替换后的字符串
-     * @return 字符串
-     */
+     * @param pStr 鐞氼偄顦甸悶鍡欐畱鐎涙顑佹稉锟�     * @param pC 鐞氼偅娴涢幑銏㈡畱鐎涙顑�
+     * @param rep 閺囨寧宕查崥搴ｆ畱鐎涙顑佹稉锟�     * @return 鐎涙顑佹稉锟�     */
     public static String replaceAllChar2String(String pStr, char pC, String rep) throws Exception {
         java.text.StringCharacterIterator sciter = new java.text.StringCharacterIterator(pStr);
         StringBuilder rt = new StringBuilder();
@@ -141,11 +137,9 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 将String输出处理, 用于直接显示在Jsp页面
+     * 鐏忓摖tring鏉堟挸鍤径鍕倞, 閻劋绨惄瀛樺复閺勫墽銇氶崷鈫梥p妞ょ敻娼�
      * 
-     * @param pStr-->被处理的字符串
-     * @return 字符串
-     */
+     * @param pStr-->鐞氼偄顦甸悶鍡欐畱鐎涙顑佹稉锟�     * @return 鐎涙顑佹稉锟�     */
     public static String filterJspString(String pStr) throws Exception {
         pStr = replaceAllChar2String(pStr, '<', "&lt;");
         pStr = replaceAllChar2String(pStr, '>', "&gt;");
@@ -155,11 +149,9 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 将String输出处理, 用于直接显示在Jsp页面中的textarea中
+     * 鐏忓摖tring鏉堟挸鍤径鍕倞, 閻劋绨惄瀛樺复閺勫墽銇氶崷鈫梥p妞ょ敻娼版稉顓犳畱textarea娑擄拷
      * 
-     * @param pStr-->被处理的字符串
-     * @return 字符串
-     */
+     * @param pStr-->鐞氼偄顦甸悶鍡欐畱鐎涙顑佹稉锟�     * @return 鐎涙顑佹稉锟�     */
     public static String filterJspString4Textarea(String pStr) throws Exception {
         pStr = replaceAllChar2String(pStr, '<', "&lt;");
         pStr = replaceAllChar2String(pStr, '>', "&gt;");
@@ -168,7 +160,7 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 弹出信息，确认后跳转到上一页
+     * 瀵懓鍤穱鈩冧紖閿涘瞼鈥樼拋銈呮倵鐠哄疇娴嗛崚棰佺瑐娑擄拷銆�
      * 
      * @param out
      * @param msg
@@ -191,8 +183,7 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 弹出信息，确认后跳转到doAfterStr指定页面并且覆盖父页面
-     * 
+     * 瀵懓鍤穱鈩冧紖閿涘瞼鈥樼拋銈呮倵鐠哄疇娴嗛崚鐧瞣AfterStr閹稿洤鐣炬い鐢告桨楠炴湹绗栫憰鍡欐磰閻栧爼銆夐棃锟�     * 
      * @param out
      * @param msg
      * @param doAfterStr
@@ -216,7 +207,7 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 弹出信息，确认后跳转到doAfterStr指定页面
+     * 瀵懓鍤穱鈩冧紖閿涘瞼鈥樼拋銈呮倵鐠哄疇娴嗛崚鐧瞣AfterStr閹稿洤鐣炬い鐢告桨
      * 
      * @param out
      * @param msg
@@ -240,7 +231,7 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 弹出信息，确认后关闭页面
+     * 瀵懓鍤穱鈩冧紖閿涘瞼鈥樼拋銈呮倵閸忔娊妫存い鐢告桨
      * 
      * @param out
      * @param msg
@@ -263,14 +254,14 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 实现从Map到二位数组的转换
+     * 鐎圭偟骞囨禒宥產p閸掗绨╂担宥嗘殶缂佸嫮娈戞潪顒佸床
      *
      * @return
      */
     private static IObject2Object map2StringArray() {
         return new IObject2Object() {
             /**
-             * 实现从Map到二位数组的转换
+             * 鐎圭偟骞囨禒宥產p閸掗绨╂担宥嗘殶缂佸嫮娈戞潪顒佸床
              *
              * @param thisObj
              * @return
@@ -294,31 +285,26 @@ public class RmJspHelper implements ICoreConstants {
     
     
     /**
-     * 创建一个select,接受Map
+     * 閸掓稑缂撴稉锟介嚋select,閹恒儱褰圡ap
      * 
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param mOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param hasEmptyValue 是否有""空字符串 
-     * @return select的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param mOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param hasEmptyValue 閺勵垰鎯侀張锟�缁屽搫鐡х粭锔胯 
+     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectField(String strName, int nDisplaySize, Map mOptionValue, String strCompare, String strProperty, boolean hasEmptyValue) {
     	return getSelectField(strName, nDisplaySize, mOptionValue,map2StringArray(), strCompare, strProperty, hasEmptyValue, null);
     }
     
     /**
-     * 创建一个select,接受Map
+     * 閸掓稑缂撴稉锟介嚋select,閹恒儱褰圡ap
      * 
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param mOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param hasEmptyValue 是否有""空字符串 
-     * @param pleaseSelectStr hasEmptyValue==true时，指定""对应的显示名称
-     * @return select的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param mOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param hasEmptyValue 閺勵垰鎯侀張锟�缁屽搫鐡х粭锔胯 
+     * @param pleaseSelectStr hasEmptyValue==true閺冭绱濋幐鍥х暰""鐎电懓绨查惃鍕▔缁�搫鎮曠粔锟�     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectField(String strName, int nDisplaySize, Map mOptionValue, String strCompare, String strProperty, boolean hasEmptyValue, String pleaseSelectStr) {
         if (mOptionValue != null) {
@@ -329,33 +315,26 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 创建一个select，接受Object和IObject2Object
+     * 閸掓稑缂撴稉锟介嚋select閿涘本甯撮崣妗筨ject閸滃瓥Object2Object
      * 
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param thisObj 要显示的option列表
-     * @param objectHandler 把object变成String[][]的回调实现
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param hasEmptyValue 是否有""空字符串
-     * @param pleaseSelectStr hasEmptyValue==true时，指定""对应的显示名称
-     * @return select的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param thisObj 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param objectHandler 閹跺bject閸欐ɑ鍨歋tring[][]閻ㄥ嫬娲栫拫鍐ㄧ杽閻滐拷
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param hasEmptyValue 閺勵垰鎯侀張锟�缁屽搫鐡х粭锔胯
+     * @param pleaseSelectStr hasEmptyValue==true閺冭绱濋幐鍥х暰""鐎电懓绨查惃鍕▔缁�搫鎮曠粔锟�     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectField(String strName, int nDisplaySize, Object thisObj, IObject2Object objectHandler, String strCompare, String strProperty, boolean hasEmptyValue, String pleaseSelectStr) {
     	return getSelectField(strName,nDisplaySize,(String[][])objectHandler.object2Object(thisObj),strCompare,strProperty, hasEmptyValue, pleaseSelectStr);
     }
     
     /**
-     * 创建一个select，接受二维数组
-     * 
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param aOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param hasEmptyValue 是否有""空字符串
-     * @param pleaseSelectStr hasEmptyValue==true时，指定""对应的显示名称
-     * @return select的HTML代码
+     * 閸掓稑缂撴稉锟介嚋select閿涘本甯撮崣妞剧癌缂佸瓨鏆熺紒锟�     * 
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param aOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param hasEmptyValue 閺勵垰鎯侀張锟�缁屽搫鐡х粭锔胯
+     * @param pleaseSelectStr hasEmptyValue==true閺冭绱濋幐鍥х暰""鐎电懓绨查惃鍕▔缁�搫鎮曠粔锟�     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectField(String strName, int nDisplaySize, String[][] aOptionValue, String strCompare, String strProperty, boolean hasEmptyValue, String pleaseSelectStr) {
         StringBuffer returnString = new StringBuffer();
@@ -365,6 +344,7 @@ public class RmJspHelper implements ICoreConstants {
             if (strCompare == null)
                 strCompare = "";
             returnString.append("<select name='" + strName + "' ");
+            returnString.append("class=" + "\"" + "small m-wrap" + "\"" + " " + "tabindex=" + "\"" + 1 + "\"");
             returnString.append(strProperty);
             returnString.append(" >\r\n");
             if(hasEmptyValue) {
@@ -374,7 +354,7 @@ public class RmJspHelper implements ICoreConstants {
                 }
                 returnString.append(">");
                 if(pleaseSelectStr == null) {
-                	returnString.append("--请选择--");
+                	returnString.append("--鐠囩兘锟介幏锟�");
                 } else {
                 	returnString.append(pleaseSelectStr);
                 }
@@ -388,8 +368,7 @@ public class RmJspHelper implements ICoreConstants {
                     if (tempKey.equals(strCompare)) {
                         returnString.append(" selected ");
                     }
-                    //截去超长的字符
-                    if (tempValue != null && tempValue.length() > nDisplaySize && nDisplaySize >= 0) {
+                    //閹搭亜骞撶搾鍛存毐閻ㄥ嫬鐡х粭锟�                    if (tempValue != null && tempValue.length() > nDisplaySize && nDisplaySize >= 0) {
                         tempValue = tempValue.substring(0, nDisplaySize);
                     }
                     returnString.append(">" + tempValue + "</option>\r\n");
@@ -404,15 +383,13 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 创建一个select多选，接受Map
+     * 閸掓稑缂撴稉锟介嚋select婢舵岸锟介敍灞惧复閸欐〉ap
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param mOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param showType 展示类型  0，排斥；1，显示；2，都显示，但strCompare要被选中
-     * @return select的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param mOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param showType 鐏炴洜銇氱猾璇茬�  0閿涘本甯撻弬銉幢1閿涘本妯夌粈鐚寸幢2閿涘矂鍏橀弰鍓с仛閿涘奔绲緎trCompare鐟曚浇顤嗛柅澶夎厬
+     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectFieldMultiple(String strName, int nDisplaySize, Map mOptionValue, String[] strCompare, String strProperty, int showType) {
         if (mOptionValue != null) {
@@ -423,16 +400,14 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 创建一个select多选，接受Object和IObject2Object
+     * 閸掓稑缂撴稉锟介嚋select婢舵岸锟介敍灞惧复閸欐」bject閸滃瓥Object2Object
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param thisObj 要显示的option列表
-     * @param objectHandler 把object变成String[][]的回调实现
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param showType 展示类型  0，排斥；1，显示；2，都显示，但strCompare要被选中
-     * @return select的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param thisObj 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param objectHandler 閹跺bject閸欐ɑ鍨歋tring[][]閻ㄥ嫬娲栫拫鍐ㄧ杽閻滐拷
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param showType 鐏炴洜銇氱猾璇茬�  0閿涘本甯撻弬銉幢1閿涘本妯夌粈鐚寸幢2閿涘矂鍏橀弰鍓с仛閿涘奔绲緎trCompare鐟曚浇顤嗛柅澶夎厬
+     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectFieldMultiple(String strName, int nDisplaySize, Object thisObj, IObject2Object objectHandler, String[] strCompare, String strProperty, int showType) {
         if(thisObj != null && objectHandler != null) {
@@ -443,15 +418,13 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 创建一个select多选，接受二维数组
+     * 閸旂喕鍏� 閸掓稑缂撴稉锟介嚋select婢舵岸锟介敍灞惧复閸欐ぞ绨╃紒瀛樻殶缂侊拷
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param aOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @param showType 展示类型  0:排斥strCompare；1:只显示strCompare；2:都显示，strCompare要被选中
-     * @return select的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param aOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @param showType 鐏炴洜銇氱猾璇茬�  0:閹烘帗鏋約trCompare閿涳拷:閸欘亝妯夌粈绨妕rCompare閿涳拷:闁姤妯夌粈鐚寸礉strCompare鐟曚浇顤嗛柅澶夎厬
+     * @return select閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getSelectFieldMultiple(String strName, int nDisplaySize, String[][] aOptionValue, String[] strCompare, String strProperty, int showType) {
         if (showType != 0 && showType != 1 && showType != 2)
@@ -472,7 +445,7 @@ public class RmJspHelper implements ICoreConstants {
                 for (int i = 0; i < aOptionValue.length; i++) {
                     String tempKey = aOptionValue[i][0];
                     String tempValue = aOptionValue[i][1];
-                    /* 截去超长的字符 */
+                    /* 閹搭亜骞撶搾鍛存毐閻ㄥ嫬鐡х粭锟�/
                     if (tempValue != null && tempValue.length() > nDisplaySize && nDisplaySize >= 0) {
                         tempValue = tempValue.substring(0, nDisplaySize);
                     }
@@ -515,14 +488,12 @@ public class RmJspHelper implements ICoreConstants {
     }
 
     /**
-     * 功能:  创建一个radio列表，多选，接受Map
+     * 閸旂喕鍏�  閸掓稑缂撴稉锟介嚋radio閸掓銆冮敍灞筋檵闁绱濋幒銉ュ綀Map
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param mOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @return radio的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param mOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @return radio閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getRadioField(String strName, int nDisplaySize, Map mOptionValue, String strCompare, String strProperty) {
         if (mOptionValue != null) {
@@ -533,15 +504,13 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 接受Object和IObject2Object，生成表单创建一个radio列表，多选
+     * 閸旂喕鍏� 閹恒儱褰圤bject閸滃瓥Object2Object閿涘瞼鏁撻幋鎰�閸楁洖鍨卞杞扮娑撶尯adio閸掓銆冮敍灞筋檵闁拷
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param thisObj 要显示的option列表
-     * @param objectHandler 把object变成String[][]的回调实现
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @return radio的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param thisObj 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param objectHandler 閹跺bject閸欐ɑ鍨歋tring[][]閻ㄥ嫬娲栫拫鍐ㄧ杽閻滐拷
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @return radio閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getRadioField(String strName, int nDisplaySize, Object thisObj, IObject2Object objectHandler, String strCompare, String strProperty) {
         if(thisObj != null && objectHandler != null) {
@@ -552,14 +521,12 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 创建一个radio列表
+     * 閸旂喕鍏� 閸掓稑缂撴稉锟介嚋radio閸掓銆�
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param aOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @return radio的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param aOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @return radio閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getRadioField(String strName, int nDisplaySize, String[][] aOptionValue, String strCompare, String strProperty) {
         StringBuffer returnStr = new StringBuffer();
@@ -576,7 +543,7 @@ public class RmJspHelper implements ICoreConstants {
                     if (!"".equals(returnStr.toString())) {
                         returnStr.append("&nbsp;&nbsp;");
                     }
-                    /* 截去超长的字符 */
+                    /* 閹搭亜骞撶搾鍛存毐閻ㄥ嫬鐡х粭锟�/
                     if (tempValue != null && tempValue.length() > nDisplaySize && nDisplaySize >= 0) {
                         tempValue = tempValue.substring(0, nDisplaySize);
                     }
@@ -597,14 +564,12 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 创建一个Checkbox列表，多选，接受Map
+     * 閸旂喕鍏� 閸掓稑缂撴稉锟介嚋Checkbox閸掓銆冮敍灞筋檵闁绱濋幒銉ュ綀Map
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param mOptionValue 要显示的option列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @return checkbox的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param mOptionValue 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @return checkbox閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getCheckboxField(String strName, int nDisplaySize, Map mOptionValue, String[] strCompare, String strProperty) {
         if (mOptionValue != null) {
@@ -615,15 +580,13 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 接受Object和IObject2Object，生成表单创建一个Checkbox列表，多选
+     * 閸旂喕鍏� 閹恒儱褰圤bject閸滃瓥Object2Object閿涘瞼鏁撻幋鎰�閸楁洖鍨卞杞扮娑撶嫝heckbox閸掓銆冮敍灞筋檵闁拷
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param thisObj 要显示的option列表
-     * @param objectHandler 把object变成String[][]的回调实现
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @return checkbox的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param thisObj 鐟曚焦妯夌粈铏规畱option閸掓銆�
+     * @param objectHandler 閹跺bject閸欐ɑ鍨歋tring[][]閻ㄥ嫬娲栫拫鍐ㄧ杽閻滐拷
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @return checkbox閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getCheckboxField(String strName, int nDisplaySize, Object thisObj, IObject2Object objectHandler, String[] strCompare, String strProperty) {
         if(thisObj != null && objectHandler != null) {
@@ -635,14 +598,12 @@ public class RmJspHelper implements ICoreConstants {
     
 
     /**
-     * 功能: 创建一个Checkbox列表
+     * 閸旂喕鍏� 閸掓稑缂撴稉锟介嚋Checkbox閸掓銆�
      *
-     * @param strName 名称
-     * @param nDisplaySize 显示的长度，超过则截取
-     * @param aOptionValue 要显示的radio列表
-     * @param strCompare 要比较的字符串
-     * @param strProperty 额外的属性,例如"onchange='change()'"
-     * @return checkbox的HTML代码
+     * @param strName 閸氬秶袨
+     * @param nDisplaySize 閺勫墽銇氶惃鍕毐鎼达讣绱濈搾鍛扮箖閸掓瑦鍩呴崣锟�     * @param aOptionValue 鐟曚焦妯夌粈铏规畱radio閸掓銆�
+     * @param strCompare 鐟曚焦鐦潏鍐畱鐎涙顑佹稉锟�     * @param strProperty 妫版繂顧囬惃鍕潣閹拷娓氬顪�onchange='change()'"
+     * @return checkbox閻ㄥ嚗TML娴狅絿鐖�
      */
     public static String getCheckboxField(String strName, int nDisplaySize, String[][] aOptionValue, String[] strCompare, String strProperty) {
         StringBuffer returnStr = new StringBuffer();
@@ -659,8 +620,7 @@ public class RmJspHelper implements ICoreConstants {
                     if (!"".equals(returnStr.toString())) {
                         returnStr.append("&nbsp;&nbsp;");
                     }
-                    //截去超长的字符
-                    if (tempValue != null && tempValue.length() > nDisplaySize && nDisplaySize >= 0) {
+                    //閹搭亜骞撶搾鍛存毐閻ㄥ嫬鐡х粭锟�                    if (tempValue != null && tempValue.length() > nDisplaySize && nDisplaySize >= 0) {
                         tempValue = tempValue.substring(0, nDisplaySize);
                     }
                     returnStr.append("<input type='checkbox' name='" + strName + "' value='" + tempKey + "' ");
@@ -680,7 +640,7 @@ public class RmJspHelper implements ICoreConstants {
     }
 	
 	/**
-	 * 功能: 从request中获取session，如果没有session会自动创建新session
+	 * 閸旂喕鍏� 娴犲窎equest娑擃叀骞忛崣鏉漞ssion閿涘苯顪嗛弸婊勭梾閺堝』ession娴兼俺鍤滈崝銊ュ灡瀵ょ儤鏌妔ession
 	 *
 	 * @param request
 	 * @return
@@ -690,10 +650,10 @@ public class RmJspHelper implements ICoreConstants {
 	}
 	
 	/**
-	 * 功能: 从request中获取session，根据create判断是否创建新session
+	 * 閸旂喕鍏� 娴犲窎equest娑擃叀骞忛崣鏉漞ssion閿涘本鐗撮幑鐢eate閸掋倖鏌囬弰顖氭儊閸掓稑缂撻弬鐨奺ssion
 	 *
 	 * @param request
-	 * @param create 当session为null，如果true则自动创建新session，如果false返回null
+	 * @param create 瑜版悞ession娑撶皠ull閿涘苯顪嗛弸娓ue閸掓瑨鍤滈崝銊ュ灡瀵ょ儤鏌妔ession閿涘苯顪嗛弸娓嘺lse鏉╂柨娲杗ull
 	 * @return
 	 */
 	public static HttpSession getSession(ServletRequest request, boolean create) {
@@ -707,7 +667,7 @@ public class RmJspHelper implements ICoreConstants {
 	}
 	
 	/**
-	 * 功能: 从request获取服务器根的http地址，如http://127.0.0.1:9999
+	 * 閸旂喕鍏� 娴犲窎equest閼惧嘲褰囬張宥呭閸ｃ劍鐗撮惃鍒猼tp閸︽澘娼冮敍灞筋渾http://127.0.0.1:9999
 	 *
 	 * @param request
 	 * @return
@@ -718,7 +678,7 @@ public class RmJspHelper implements ICoreConstants {
 	}
 	
 	/**
-	 * 功能: 从request获取war应用的http地址，如http://127.0.0.1:9999/rmweb
+	 * 閸旂喕鍏� 娴犲窎equest閼惧嘲褰噖ar鎼存梻鏁ら惃鍒猼tp閸︽澘娼冮敍灞筋渾http://127.0.0.1:9999/rmweb
 	 *
 	 * @param request
 	 * @return
@@ -729,7 +689,7 @@ public class RmJspHelper implements ICoreConstants {
 	}
 	
     /**
-     * 根据总记录数重新计算PageVo，并用偏移值调整PageVo
+     * 閺嶈宓侀幀鏄忣唶瑜版洘鏆熼柌宥嗘煀鐠侊紕鐣籔ageVo閿涘苯鑻熼悽銊ヤ焊缁夎锟界拫鍐╂殻PageVo
      *
      * @param request
      * @param modifyCount
@@ -748,8 +708,7 @@ public class RmJspHelper implements ICoreConstants {
             RmLogHelper.getLogger(RmJspHelper.class).error(e.toString());
         }
         RmPageVo pageVo = new RmPageVo(recordCount, pageSize);
-        //第几页
-        int currentPage = 1;
+        //缁楊剙鍤戞い锟�        int currentPage = 1;
         String uri = request.getRequestURI();
         boolean rememberPage = false;
         try {
@@ -782,7 +741,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 获取RmPageVo
+     * 閸旂喕鍏� 閼惧嘲褰嘡mPageVo
      *
      * @param request
      * @return
@@ -796,7 +755,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 从request中获得排序关键字
+     * 娴犲窎equest娑擃叀骞忓妤佸笓鎼村繐鍙ч柨顔肩摟
      * @param request
      * @return
      */
@@ -813,7 +772,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 从 request 获取可能为多个值的数组表示, 所有的""会被忽略
+     * 娴狅拷request 閼惧嘲褰囬崣顖濆厴娑撳搫顧嬫稉顏勶拷閻ㄥ嫭鏆熺紒鍕�缁�拷 閹碉拷婀侀惃锟�娴兼俺顤嗚箛鐣屾殣
      *
      * @param request
      * @param inputName
@@ -838,7 +797,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 从 request 获取可能为多个值的数组表示, 所有的""会被忽略
+     * 娴狅拷request 閼惧嘲褰囬崣顖濆厴娑撳搫顧嬫稉顏勶拷閻ㄥ嫭鏆熺紒鍕�缁�拷 閹碉拷婀侀惃锟�娴兼俺顤嗚箛鐣屾殣
      *
      * @param request
      * @param inputName
@@ -854,7 +813,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 从 request 获取可能为多个值的数组表示，""也是有效的单个值，null会返回0数组
+     * 閸旂喕鍏� 娴狅拷request 閼惧嘲褰囬崣顖濆厴娑撳搫顧嬫稉顏勶拷閻ㄥ嫭鏆熺紒鍕�缁�尨绱�"娑旂喐妲搁張澶嬫櫏閻ㄥ嫬宕熸稉顏勶拷閿涘ull娴兼俺绻戦崶锟介弫鎵矋
      * 
      * @param request
      * @param inputName
@@ -873,7 +832,7 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 功能: 返回alert代码
+     * 閸旂喕鍏� 鏉╂柨娲朼lert娴狅絿鐖�
      *
      * @param str
      * @return
@@ -888,11 +847,10 @@ public class RmJspHelper implements ICoreConstants {
     }
     
     /**
-     * 回写表单
+     * 閸ョ偛鍟撶悰銊ュ礋
      *
      * @param mRequest
-     * @param ignoreName 定义哪些key值的input不回写
-     * @return
+     * @param ignoreName 鐎规矮绠熼崫顏冪昂key閸婅偐娈慽nput娑撳秴娲栭崘锟�     * @return
      */
     public static String setupFormElementAuthorize(Map mAuthorize) {
         if(mAuthorize == null) {
@@ -924,9 +882,9 @@ public class RmJspHelper implements ICoreConstants {
     public static void setProfile(HttpServletRequest request, HttpServletResponse response, String key, String value, int cookieAge) {
         request.setAttribute(key, value);
         
-        //TODO 导致sessionid失效 IE8
+        //TODO 鐎佃壈鍤essionid婢惰鲸鏅�IE8
     	if(!"1".equals(request.getAttribute("RM_RESPONSE_WRITE_BACK"))) {
-            //回写原来的cookie
+            //閸ョ偛鍟撻崢鐔告降閻ㄥ垻ookie
         	Cookie[] aCookie = request.getCookies();
         	if(aCookie != null) {
         		for(Cookie c : aCookie) {
@@ -943,8 +901,7 @@ public class RmJspHelper implements ICoreConstants {
         try {
             response.addCookie(cookie);
 		} catch (Exception e) {
-			//不处理cookie的异常
-		}
+			//娑撳秴顦甸悶鍝籵okie閻ㄥ嫬绱撶敮锟�		}
     }
     
     public static String getProfile(HttpServletRequest request, String key) {
@@ -967,7 +924,7 @@ public class RmJspHelper implements ICoreConstants {
     public static void clearProfile(HttpServletRequest request, HttpServletResponse response, String key) {
     	request.removeAttribute(key);
     	if(!"1".equals(request.getAttribute("RM_RESPONSE_WRITE_BACK"))) {
-            //回写原来的cookie
+            //閸ョ偛鍟撻崢鐔告降閻ㄥ垻ookie
         	Cookie[] aCookie = request.getCookies();
         	if(aCookie != null) {
         		for(Cookie c : aCookie) {
@@ -988,11 +945,10 @@ public class RmJspHelper implements ICoreConstants {
     
     /**
 	 * 
-	 * 功能: 在跳往指定页面前alert一个信息
+	 * 閸旂喕鍏� 閸︺劏鐑﹀锟藉瘹鐎规岸銆夐棃銏犲alert娑擄拷閲滄穱鈩冧紖
 	 *
 	 * @param response
-	 * @param alertStr alert的信息
-	 * @param forwardPath 想要跳往的页面url
+	 * @param alertStr alert閻ㄥ嫪淇婇幁锟�	 * @param forwardPath 閹疇顪呯捄鍐茬窔閻ㄥ嫰銆夐棃顣況l
 	 */
 	public static void goUrlWithAlert(HttpServletRequest request, HttpServletResponse response, String alertStr, String forwardPath) {
 	    try {
