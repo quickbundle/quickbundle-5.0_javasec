@@ -363,7 +363,7 @@
 						</xsl:if>
 		
 										<xsl:if test="not($columnName=$tablePk) and @isBuild_list='true'">
-																				<xsl:value-of select="$charLt"/>td><xsl:value-of select="$charLt"/>c:out value="${list.<xsl:value-of select="$columnNameFormatLower"/>}"><xsl:value-of select="$charLt"/>/c:out><xsl:value-of select="$charLt"/>/td>
+																				<xsl:value-of select="$charLt"/>td align="center"><xsl:value-of select="$charLt"/>c:out value="${list.<xsl:value-of select="$columnNameFormatLower"/>}"><xsl:value-of select="$charLt"/>/c:out><xsl:value-of select="$charLt"/>/td>
 										</xsl:if>
 		</xsl:template>
 	
