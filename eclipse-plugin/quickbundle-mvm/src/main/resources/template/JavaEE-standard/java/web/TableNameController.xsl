@@ -98,7 +98,7 @@ public class <xsl:value-of select="$tableFormatNameUpperFirst"/>Controller imple
     
     @RequestMapping(value = "modify/{id}")
     public String updateForm1(@PathVariable("id") String id, Model model) {
-        DemoVo bean = demoService.get(new Long(id));
+        <xsl:value-of select="$TableNameVo"/> bean = <xsl:value-of select="$tableFormatNameLowerFirst"/>Service.get(new <xsl:value-of select="$tablePkClass"/>(id));
         model.addAttribute(REQUEST_BEAN, bean);  //把vo放入request
         model.addAttribute("action", "update");
         return "<xsl:value-of select="$jspSourceTableDir"/>/modify<xsl:value-of select="$tableFormatNameUpperFirst"/>";
