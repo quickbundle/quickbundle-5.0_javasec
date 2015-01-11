@@ -79,7 +79,7 @@ public class RmMessageController implements IRmMessageConstants {
         model.addAttribute(REQUEST_QUERY_CONDITION, queryCondition);
         model.addAttribute(REQUEST_BEANS, beans);  //把结果集放入request
         model.addAttribute(REQUEST_WRITE_BACK_FORM_VALUES, RmVoHelper.getMapFromRequest((HttpServletRequest) request));  //回写表单
-		return "message/listRmMessage";
+		return "message/formRmMessage";
 	}
 	
 	/**
@@ -92,6 +92,14 @@ public class RmMessageController implements IRmMessageConstants {
 		return "message/insertRmMessage";
 	}
     
+	@RequestMapping(value = "modify/{id}")
+    public String updateForm1(@PathVariable("id") String id, Model model) {
+    	RmMessageVo bean = rmMessageService.get(new Long(id));
+        model.addAttribute(REQUEST_BEAN, bean);  //把vo放入request
+        model.addAttribute("action", "update");
+        return "cipher/rmmessage/modifyRmMessage";
+    }
+	
 	/**
 	 * 从页面表单获取信息注入vo，并插入单条记录
 	 */
