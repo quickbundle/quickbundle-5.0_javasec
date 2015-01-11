@@ -37,7 +37,6 @@
 		</files>
 		<files filesType="config" outputPath="${webAppName}/jsp">
 			<file xsltPath="JavaEE-standard/config/funcTree_default.xsl" outputFile="funcTree_default.jsp" afterKeyWord="language=&quot;java&quot; %>" bundleCode="main"/>
-			<file xsltPath="JavaEE-standard/config/tree_default.xsl" outputFile="ajax/tree_default.jsp" afterKeyWord="language=&quot;java&quot; %>" bundleCode="ajax"/>
 		</files>
 		<files filesType="other" outputPath="src/main/java">
 			<file xsltPath="JavaEE-standard/other/IRmCodeConstants.xsl" outputFile="org/quickbundle/modules/code/IRmCodeConstants.java" afterKeyWord="//start dictionary define" rowIsUnique="true"/>
