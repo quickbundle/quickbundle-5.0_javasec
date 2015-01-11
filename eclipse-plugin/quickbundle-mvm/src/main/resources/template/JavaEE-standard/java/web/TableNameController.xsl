@@ -114,6 +114,11 @@ public class <xsl:value-of select="$tableFormatNameUpperFirst"/>Controller imple
         return "<xsl:value-of select="$jspSourceTableDir"/>/insert<xsl:value-of select="$tableFormatNameUpperFirst"/>";
     }
     
+    @RequestMapping(value = "add")
+    public String add() {
+    return "<xsl:value-of select="$jspSourceTableDir"/>/add<xsl:value-of select="$tableFormatNameUpperFirst"/>";
+    }
+    
     /**
      * 从页面表单获取信息注入vo，并插入单条记录
      */

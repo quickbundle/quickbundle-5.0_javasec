@@ -29,23 +29,6 @@
 			<xsl:value-of select="$charLt"/>div id="portlet-config-edit" class="modal hide">
 			<xsl:value-of select="$charLt"/>/div>
 			<xsl:value-of select="$charLt"/>div id="portlet-config-add" class="modal hide">
-				<xsl:value-of select="$charLt"/>div class="modal-header">
-					<xsl:value-of select="$charLt"/>button data-dismiss="modal" class="close" type="button"><xsl:value-of select="$charLt"/>/button>
-					<xsl:value-of select="$charLt"/>h3>新增<xsl:value-of select="$charLt"/>/h3>
-				<xsl:value-of select="$charLt"/>/div>
-				<xsl:value-of select="$charLt"/>div class="modal-body">
-					<xsl:value-of select="$charLt"/>form action="<xsl:value-of select="$charLt"></xsl:value-of>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/insert"
-						method="post">
-						<xsl:value-of select="$charLt"/>div class="control-group">
-							<xsl:value-of select="$charLt"/>div class="controls">
-								<xsl:apply-templates mode="buildTableColumn_newinsertInput"/>
-								<xsl:value-of select="$charLt"/>p>
-									<xsl:value-of select="$charLt"/>input type="submit" class="btn blue btn-block" value="提交" />
-								<xsl:value-of select="$charLt"/>/p>
-							<xsl:value-of select="$charLt"/>/div>
-						<xsl:value-of select="$charLt"/>/div>
-					<xsl:value-of select="$charLt"/>/form>
-				<xsl:value-of select="$charLt"/>/div>
 			<xsl:value-of select="$charLt"/>/div>
 			<xsl:value-of select="$charLt"/>div class="container-fluid">
 				<xsl:value-of select="$charLt"/>div class="row-fluid">
@@ -97,7 +80,7 @@
 							<xsl:value-of select="$charLt"/>div class="tools">
 										<xsl:value-of select="$charLt"/>a href="#" onclick="update();" data-toggle="modal" class="config"><xsl:value-of select="$charLt"/>/a> 
 										<xsl:value-of select="$charLt"/>a href="javascript:;" onclick="_delete();" class="halflings-icon white trash"><xsl:value-of select="$charLt"/>/a>
-										<xsl:value-of select="$charLt"/>a href="#portlet-config-add" data-toggle="modal" class="halflings-icon white file"><xsl:value-of select="$charLt"/>/a> 
+										<xsl:value-of select="$charLt"/>a href="" onclick="add();" data-toggle="modal" class="halflings-icon white file"><xsl:value-of select="$charLt"/>/a> 
 										<xsl:value-of select="$charLt"/>a href="javascript:;" class="collapse"><xsl:value-of select="$charLt"/>/a>
 									<xsl:value-of select="$charLt"/>/div>
 						<xsl:value-of select="$charLt"/>/div>
@@ -205,6 +188,11 @@
 	function list_onClick() {
         form.action="<xsl:value-of select="$charLt"></xsl:value-of>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>";
 		form.submit();
+	}
+	
+	function add() {
+		$("#portlet-config-edit").modal("show");
+		$("#portlet-config-edit").load("<xsl:value-of select="$charLt"></xsl:value-of>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/add");
 	}
 	<xsl:value-of select="$charLt"/>/script>
 <xsl:value-of select="$charLt"/>/body>
