@@ -131,20 +131,6 @@ public class <xsl:value-of select="$tableFormatNameUpperFirst"/>Controller imple
 		return "redirect:/<xsl:value-of select="@tableDirName"/>";
 	}
     
-    
-    @RequestMapping(value = "get/{id}")
-    public void get(@PathVariable("id") String id, HttpServletRequest request, HttpServletResponse reponse) {
-        <xsl:value-of select="$TableNameVo"/> bean = <xsl:value-of select="$tableFormatNameLowerFirst"/>Service.get(new Long(id));        
-        try {
-        	reponse.setContentType("text/json; charset=UTF-8");
-			JacksonJsonUtil.beanToJson(bean);
-			PrintWriter out = reponse.getWriter();
-			out.write(JacksonJsonUtil.beanToJson(bean));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
-    
     /**
      * 从页面的表单获取单条记录id，查出这条记录的值，并跳转到修改页面
      */
