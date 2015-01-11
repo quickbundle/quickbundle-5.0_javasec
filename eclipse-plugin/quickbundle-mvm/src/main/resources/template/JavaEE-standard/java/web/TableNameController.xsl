@@ -92,7 +92,7 @@ public class <xsl:value-of select="$tableFormatNameUpperFirst"/>Controller imple
         model.addAttribute(REQUEST_QUERY_CONDITION, queryCondition);
         model.addAttribute(REQUEST_BEANS, beans);  //把结果集放入request
         model.addAttribute(REQUEST_WRITE_BACK_FORM_VALUES, RmVoHelper.getMapFromRequest((HttpServletRequest) request));  //回写表单
-        return "<xsl:value-of select="$jspSourceTableDir"/>/list<xsl:value-of select="$tableFormatNameUpperFirst"/>";
+        return "<xsl:value-of select="$jspSourceTableDir"/>/form<xsl:value-of select="$tableFormatNameUpperFirst"/>";
     }
     
     
