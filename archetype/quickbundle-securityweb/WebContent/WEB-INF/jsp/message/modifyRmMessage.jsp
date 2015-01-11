@@ -2,8 +2,8 @@
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@ page import="org.quickbundle.tools.helper.RmVoHelper" %>
 <%@ page import="org.quickbundle.tools.helper.RmStringHelper" %>
-<%@ page import="com.cipher.rmmessage.vo.RmMessageVo" %>
-<%@ page import="com.cipher.rmmessage.IRmMessageConstants" %>
+<%@ page import="org.quickbundle.modules.message.vo.RmMessageVo" %>
+<%@ page import="org.quickbundle.modules.message.IRmMessageConstants" %>
 
 <%  //取出本条记录
     RmMessageVo resultVo = null;  //定义一个临时的vo变量
@@ -21,7 +21,7 @@
 					<h3>修改</h3>
 				</div>
 				<div class="modal-body">
-					<form action="<%=request.getContextPath()%>/rmmessage/update" method="post">
+					<form action="<%=request.getContextPath()%>/message/update" method="post">
 						<div class="control-group">
 							<div class="controls">
 							<div class="input-prepend">

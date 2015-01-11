@@ -38,7 +38,7 @@
 						class="selected"></span>
 				</a>
 					<ul class="sub-menu">
-						<li><a href="<%=request.getContextPath()%>/rmmessage"><%=IRmMessageConstants.TABLE_NAME%></a></li>
+						<li><a href="<%=request.getContextPath()%>/message"><%=IRmMessageConstants.TABLE_NAME%></a></li>
 					</ul></li>
 				<li class=""><a href="javascript:;"> <i
 						class="icon-bookmark-empty"></i> <span class="title">功能1</span> <span
@@ -103,7 +103,7 @@
 					<h3>新增</h3>
 				</div>
 				<div class="modal-body">
-					<form action="<%=request.getContextPath()%>/rmmessage/insert"
+					<form action="<%=request.getContextPath()%>/message/insert"
 						method="post">
 						<div class="control-group">
 							<div class="controls">
@@ -114,11 +114,8 @@
 					<div class="input-prepend">
 							<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%></span>
 							<input type="text" class="m-wrap" name="sender_id" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%>" value="" columnSize="" decimalDigits="0" />&nbsp;到&nbsp;</div>
-						<div class="input-prepend">
-					<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%></span>
-			<input type="text" class="m-wrap"  hiddenInputId="parent_message_id" name="parent_message_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%>" value="" /><input type="hidden" name="parent_message_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.parent_message_id, form.parent_message_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>/rmmessage/reference?referenceInputType=radio');"/>
-	</div>
-	<div class="input-prepend">
+						
+					<div class="input-prepend">
 										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("owner_org_id")%></span> 
 										<input class="m-wrap" name="owner_org_id" type="text" maxLength="25"/>
 							</div>
