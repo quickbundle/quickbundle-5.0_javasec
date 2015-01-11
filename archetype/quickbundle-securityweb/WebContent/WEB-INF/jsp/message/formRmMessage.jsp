@@ -149,7 +149,7 @@
 							</div>
 					<div class="input-prepend">
 					<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%></span>
-			<input type="text" class="m-wrap"  hiddenInputId="modify_user_id" name="modify_user_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%>" value="" /><input type="hidden" name="modify_user_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.modify_user_id, form.modify_user_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>//reference?referenceInputType=radio');"/>
+			<input type="text" class="m-wrap"  hiddenInputId="modify_user_id" name="modify_user_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%>" value="" /><input type="hidden" name="modify_user_id">
 	</div>
 	<p>
 									<input type="submit" class="btn blue btn-block" value="提交" />
@@ -185,7 +185,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
-								<form action="<%=request.getContextPath()%>/rmmessage" method="post">
+								<form action="<%=request.getContextPath()%>/message" method="post">
 									<div class="control-group">
 									<div class="controls">
 										<div class="input-prepend">
@@ -220,7 +220,7 @@
 							</div>
 						<div class="input-prepend">
 				<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%></span> 
-					<input type="text" class="m-wrap" hiddenInputId="modify_user_id" name="modify_user_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%>" value="" /><input type="hidden" name="modify_user_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.modify_user_id, form.modify_user_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>//reference?referenceInputType=radio');"/>
+					<input type="text" class="m-wrap" hiddenInputId="modify_user_id" name="modify_user_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%>" value="" /><input type="hidden" name="modify_user_id">
 				</div>
 			<p>
 											<input type="submit" class="btn blue btn-block" value="查询" />
