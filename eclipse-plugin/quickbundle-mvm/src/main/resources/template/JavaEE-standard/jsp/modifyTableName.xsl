@@ -36,7 +36,7 @@
 							<xsl:value-of select="$charLt"/>div class="controls">
 							<xsl:apply-templates mode="buildTableColumn_detailDisplay_newversion"/>
 								<xsl:value-of select="$charLt"/>p>
-									<xsl:value-of select="$charLt"/>input id="id" name="id" type="hidden" /> <xsl:value-of select="$charLt"/>input type="submit" class="btn blue btn-block" value="提交" />
+									<xsl:value-of select="$charLt"/>input id="id" name="id" type="hidden" value="${bean.<xsl:value-of select="$tablePkFormatLower"/>}" /> <xsl:value-of select="$charLt"/>input type="submit" class="btn blue btn-block" value="提交" />
 								<xsl:value-of select="$charLt"/>/p>
 							<xsl:value-of select="$charLt"/>/div>
 						<xsl:value-of select="$charLt"/>/div>
