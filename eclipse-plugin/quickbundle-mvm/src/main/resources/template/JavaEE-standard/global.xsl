@@ -23,7 +23,7 @@
  * 版本历史: </xsl:text><xsl:value-of select="format-dateTime(current-dateTime(),'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]')"/><xsl:text>, 创建1.0.0版 (</xsl:text><xsl:value-of select="$authorNameVar"/>)<xsl:text>
  */</xsl:text>
 	</xsl:function>
-	<!--自定义函数，获得某个Class的JavaDoc注释，调用java文件或concat字符串实现-->
+	<!--自定义函数，获得某个Class的JavaDoc注释，   调用java文件或concat字符串实现-->
 	<xsl:function name="str:getClassComment">
 		<xsl:param name="authorNameVar" as="xs:string"/>
 <xsl:text>/**
