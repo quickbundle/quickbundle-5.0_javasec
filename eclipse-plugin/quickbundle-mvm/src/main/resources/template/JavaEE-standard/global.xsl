@@ -563,21 +563,22 @@
 				<xsl:value-of select="$charLt"/>div class="input-prepend">
 				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
 				<xsl:value-of select="$charLt"/>%=RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>, resultVo.get<xsl:value-of select="str:upperFirst($columnNameFormatLower)"/>())%><xsl:value-of select="$charNbsp"/>
+				<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" value="<xsl:value-of select="$charLt"/>%=RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>, resultVo.get<xsl:value-of select="str:upperFirst($columnNameFormatLower)"/>())%><xsl:value-of select="$charNbsp"/>"<xsl:value-of select="$charNbsp"/>
 				<xsl:value-of select="$charLt"/>/div>
+				
 			</xsl:when>
 				<!--处理rm.affix不做处理-->
 				<xsl:when test="@humanDisplayType='rm.affix'">
 					<xsl:value-of select="$charLt"/>div class="input-prepend">
-		<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
-		<xsl:value-of select="$charLt"/>span class="rm_affix" bs_keyword="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME%>" record_id="<xsl:value-of select="$charLt"/>%=resultVo.get<xsl:value-of select="str:upperFirst($tablePkFormatLower)"/>()%>">${bean.<xsl:value-of select="$columnNameFormatLower"/>}<xsl:value-of select="$charNbsp"/>
-					<xsl:value-of select="$charLt"/>/span>
+					<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+					<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" bs_keyword="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME%>" record_id="<xsl:value-of select="$charLt"/>%=resultVo.get<xsl:value-of select="str:upperFirst($tablePkFormatLower)"/>()%>">${bean.<xsl:value-of select="$columnNameFormatLower"/>}<xsl:value-of select="$charNbsp"/>
 	<xsl:value-of select="$charLt"/>/div>
 	</xsl:when>
 				<!--处理textarea，大于1000个字符-->
 				<xsl:when test="not(@humanDisplayType='rm.dictionary.select' or @humanDisplayType='rm.dictionary.checkbox') and @dataType='java.lang.String' and @maxLength &gt;= 1000">
 					<xsl:value-of select="$charLt"/>div class="input-prepend">
 		<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
-		${<xsl:value-of select="$columnNameFormatLower"/>}
+		<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" value="${bean.<xsl:value-of select="$columnNameFormatLower"/>}"<xsl:value-of select="$charNbsp"/>
 	<xsl:value-of select="$charLt"/>/div>
 	</xsl:when>
 				<xsl:otherwise>
@@ -588,7 +589,7 @@
 					</xsl:if>
 					<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>"/>
 					<xsl:value-of select="$charLt"/>/div>
-	</xsl:otherwise>
+				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>
 	</xsl:template>
