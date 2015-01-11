@@ -95,6 +95,15 @@ public class <xsl:value-of select="$tableFormatNameUpperFirst"/>Controller imple
         return "<xsl:value-of select="$jspSourceTableDir"/>/list<xsl:value-of select="$tableFormatNameUpperFirst"/>";
     }
     
+    
+    @RequestMapping(value = "modify/{id}")
+    public String updateForm1(@PathVariable("id") String id, Model model) {
+        DemoVo bean = demoService.get(new Long(id));
+        model.addAttribute(REQUEST_BEAN, bean);  //把vo放入request
+        model.addAttribute("action", "update");
+        return "<xsl:value-of select="$jspSourceTableDir"/>/modify<xsl:value-of select="$tableFormatNameUpperFirst"/>";
+    }
+    
     /**
      * 跳转到新增页
      */

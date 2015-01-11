@@ -277,7 +277,7 @@
 			return false;
 		}
 		$("#portlet-config-edit").modal("show");
-		$("#portlet-config-edit").load("<xsl:value-of select="$charLt"></xsl:value-of>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/update1/" + updateDate);
+		$("#portlet-config-edit").load("<xsl:value-of select="$charLt"></xsl:value-of>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>/modify/" + updateDate);
 	}
 	function list_onClick() {
         form.action="<xsl:value-of select="$charLt"></xsl:value-of>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>";
