@@ -17,12 +17,12 @@
 <xsl:value-of select="$charLt"/>!DOCTYPE html>
 <xsl:value-of select="$charLt"/>html lang="en">
 <xsl:value-of select="$charLt"/>head>
-<xsl:value-of select="$charLt"/>%@ include file="/jsp/cipher/global.jsp" %>
+<xsl:value-of select="$charLt"/>%@ include file="/jsp/bootstrap/global.jsp" %>
 <xsl:value-of select="$charLt"/>meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <xsl:value-of select="$charLt"/>title><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME%><xsl:value-of select="$charLt"/>/title>
 <xsl:value-of select="$charLt"/>/head>
 <xsl:value-of select="$charLt"/>body class="page-header-fixed page-sidebar-closed">
-<xsl:value-of select="$charLt"/>jsp:include page="/jsp/cipher/header.jsp"><xsl:value-of select="$charLt"/>/jsp:include>
+<xsl:value-of select="$charLt"/>jsp:include page="/jsp/bootstrap/header.jsp"><xsl:value-of select="$charLt"/>/jsp:include>
 <xsl:value-of select="$charLt"/>div class="page-container row-fluid">
 <xsl:value-of select="$charLt"/>jsp:include page="/jsp/bootstrap/item.jsp"><xsl:value-of select="$charLt"/>/jsp:include>
 			<xsl:value-of select="$charLt"/>div class="page-content">
