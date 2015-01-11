@@ -24,86 +24,9 @@
 <xsl:value-of select="$charLt"/>body class="page-header-fixed page-sidebar-closed">
 <xsl:value-of select="$charLt"/>jsp:include page="/jsp/cipher/header.jsp"><xsl:value-of select="$charLt"/>/jsp:include>
 <xsl:value-of select="$charLt"/>div class="page-container row-fluid">
-<xsl:value-of select="$charLt"/>div class="page-sidebar nav-collapse collapse">
-			<xsl:value-of select="$charLt"/>ul class="page-sidebar-menu">
-				<xsl:value-of select="$charLt"/>li>
-					<xsl:value-of select="$charLt"/>div class="sidebar-toggler hidden-phone"><xsl:value-of select="$charLt"/>/div>
-				<xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li>
-					<xsl:value-of select="$charLt"/>form class="sidebar-search">
-						<xsl:value-of select="$charLt"/>div class="input-box">
-							<xsl:value-of select="$charLt"/>a href="javascript:;" class="remove"><xsl:value-of select="$charLt"/>/a> <xsl:value-of select="$charLt"/>input type="text"
-								placeholder="Search..." /> <xsl:value-of select="$charLt"/>input type="button" class="submit"
-								value=" " />
-						<xsl:value-of select="$charLt"/>/div>
-					<xsl:value-of select="$charLt"/>/form>
-				<xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li class=" "><xsl:value-of select="$charLt"/>a href="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/jsp/cipher_index.jsp"> <xsl:value-of select="$charLt"/>i
-						class="icon-home"><xsl:value-of select="$charLt"/>/i> <xsl:value-of select="$charLt"/>span class="title">首页<xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li class="start active "><xsl:value-of select="$charLt"/>a href="javascript:;"> <xsl:value-of select="$charLt"/>i
-						class="icon-cogs"><xsl:value-of select="$charLt"/>/i> <xsl:value-of select="$charLt"/>span class="title">控制台<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>span
-						class="selected"><xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a>
-					<xsl:value-of select="$charLt"/>ul class="sub-menu">
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="@tableDirName"/>"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME%><xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-					<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li class=""><xsl:value-of select="$charLt"/>a href="javascript:;"> <xsl:value-of select="$charLt"/>i
-						class="icon-bookmark-empty"><xsl:value-of select="$charLt"/>/i> <xsl:value-of select="$charLt"/>span class="title">功能1<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>span
-						class="arrow "><xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a>
-					<xsl:value-of select="$charLt"/>ul class="sub-menu">
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="ui_general.html">功能1菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-					<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li class=""><xsl:value-of select="$charLt"/>a href="javascript:;"> <xsl:value-of select="$charLt"/>i class="icon-table"><xsl:value-of select="$charLt"/>/i>
-						<xsl:value-of select="$charLt"/>span class="title">功能2<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>span class="arrow "><xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a>
-					<xsl:value-of select="$charLt"/>ul class="sub-menu">
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="form_layout.html"> 功能2菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="form_samples.html"> 功能2菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-					<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li class=""><xsl:value-of select="$charLt"/>a href="javascript:;"> <xsl:value-of select="$charLt"/>i
-						class="icon-briefcase"><xsl:value-of select="$charLt"/>/i> <xsl:value-of select="$charLt"/>span class="title">功能3<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>span
-						class="arrow "><xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a>
-					<xsl:value-of select="$charLt"/>ul class="sub-menu">
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="page_timeline.html"> <xsl:value-of select="$charLt"/>i class="icon-time">
-							<xsl:value-of select="$charLt"/>/i>功能3菜单
-						<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-					<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-				<xsl:value-of select="$charLt"/>li class=""><xsl:value-of select="$charLt"/>a href="javascript:;"> <xsl:value-of select="$charLt"/>i class="icon-gift"><xsl:value-of select="$charLt"/>/i>
-						<xsl:value-of select="$charLt"/>span class="title">功能4<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>span class="arrow "><xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a>
-					<xsl:value-of select="$charLt"/>ul class="sub-menu">
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="extra_profile.html"> 功能4菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-					<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-					
-					<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a class="active" href="javascript:;"> <xsl:value-of select="$charLt"/>i
-						class="icon-sitemap"><xsl:value-of select="$charLt"/>/i> <xsl:value-of select="$charLt"/>span class="title">功能5<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>span
-						class="arrow "><xsl:value-of select="$charLt"/>/span>
-				<xsl:value-of select="$charLt"/>/a>
-					<xsl:value-of select="$charLt"/>ul class="sub-menu">
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="javascript:;"> 功能5菜单 <xsl:value-of select="$charLt"/>span class="arrow"><xsl:value-of select="$charLt"/>/span>
-						<xsl:value-of select="$charLt"/>/a>
-							<xsl:value-of select="$charLt"/>ul class="sub-menu">
-								<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#">功能5菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-								<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#">功能5菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-								<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#">功能5菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-							<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="javascript:;"> 功能5菜单 <xsl:value-of select="$charLt"/>span class="arrow"><xsl:value-of select="$charLt"/>/span>
-						<xsl:value-of select="$charLt"/>/a>
-							<xsl:value-of select="$charLt"/>ul class="sub-menu">
-								<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#">功能5菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-								<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#">功能5菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-								<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#">功能5菜单<xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-							<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-						<xsl:value-of select="$charLt"/>li><xsl:value-of select="$charLt"/>a href="#"> 功能5菜单 <xsl:value-of select="$charLt"/>/a><xsl:value-of select="$charLt"/>/li>
-					<xsl:value-of select="$charLt"/>/ul><xsl:value-of select="$charLt"/>/li>
-			<xsl:value-of select="$charLt"/>/ul>
-			<xsl:value-of select="$charLt"/>/div>
+<xsl:value-of select="$charLt"/>jsp:include page="/jsp/bootstrap/item.jsp"><xsl:value-of select="$charLt"/>/jsp:include>
 			<xsl:value-of select="$charLt"/>div class="page-content">
 			<xsl:value-of select="$charLt"/>div id="portlet-config-edit" class="modal hide">
-				
 			<xsl:value-of select="$charLt"/>/div>
 			<xsl:value-of select="$charLt"/>div id="portlet-config-add" class="modal hide">
 				<xsl:value-of select="$charLt"/>div class="modal-header">
