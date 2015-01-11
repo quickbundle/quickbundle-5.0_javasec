@@ -21,6 +21,7 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/cipher/bootstrap-fileupload.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/cipher/checkbox/checkbox.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/cipher/table-advanced.js"></script>
+
 <link href="<%=request.getContextPath()%>/css/cipher/datepicker.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/cipher/bootstrap-fileupload.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/cipher/bootstrap.min.css" rel="stylesheet" type="text/css"/>

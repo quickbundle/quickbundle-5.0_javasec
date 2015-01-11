@@ -124,7 +124,7 @@
 							<input type="text" class="m-wrap" name="template_id" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%>" value="" columnSize="" decimalDigits="0" />&nbsp;到&nbsp;</div>
 						<div class="input-prepend">
 						<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%></span>
-			<input type="text" class="m-wrap" bs_keyword="<%=IRmMessageConstants.TABLE_NAME%>" record_id="" name="is_affix" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%>" value="false" maxLength="1" />
+			<input type="text" class="m-wrap" bs_keyword="<%=IRmMessageConstants.TABLE_NAME%>" record_id="" name="is_affix" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%>" value="1" readonly="readonly" maxLength="1" />
 	</div>
 	<div class="input-prepend">
 										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("record_id")%></span> 

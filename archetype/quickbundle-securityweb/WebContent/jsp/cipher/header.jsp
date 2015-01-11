@@ -38,7 +38,7 @@
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="extra_profile.html"><i class="icon-user"></i>个人资料</a></li>
-							<li><a href="login.html"><i class="icon-key"></i>退出</a></li>
+							<li><a href="<%=request.getContextPath()%>/RmLoginAction.do?cmd=logout&toUrl=/project/sample/login/login.jsp"><i class="icon-key"></i>退出</a></li>
 						</ul></li>
 					<!-- END USER LOGIN DROPDOWN -->
 				</ul>
