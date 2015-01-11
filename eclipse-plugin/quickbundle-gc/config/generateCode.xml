@@ -145,5 +145,6 @@
 		<bundle code="importExport" name="导出导入页" null="true" checked="true" depend="main">Excel导出、导入功能</bundle>
 		<bundle code="reference" name="参照页" null="true" checked="true" depend="main">作为列表查询的参照页</bundle>
 		<bundle code="statistic" name="统计页" null="true" checked="true" depend="main">图表统计、二维表格统计</bundle>
+		<bundle code="bootstrap" name="Bootstrap" null="true" checked="true">Bootstrap风格的完整页面</bundle>
 	</customBundleCode>
 </rules>
