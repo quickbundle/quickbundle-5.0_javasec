@@ -225,14 +225,14 @@
 				<xsl:when test="@humanDisplayType='rm.listReference'">
 					<xsl:value-of select="$charLt"/>div class="input-prepend">
 					<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span>
-			<xsl:value-of select="$charLt"/>input type="text" class="m-wrap" <xsl:if test="@nullable='NO'">validate='notNull;'</xsl:if> hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"><xsl:value-of select="$charLt"/>img class="refButtonClass" src="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.<xsl:value-of select="$columnNameFormatLower"/>, form.<xsl:value-of select="$columnNameFormatLower"/>_name), '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/', '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/<xsl:value-of select="$humanDisplayTypeKeyword"/>/reference?referenceInputType=radio');"/>
+			<xsl:value-of select="$charLt"/>input type="text" class="m-wrap" <xsl:if test="@nullable='NO'">validate='notNull;'</xsl:if> hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>">
 	<xsl:value-of select="$charLt"/>/div>
 	</xsl:when>
 				<!--处理rm.orgReference(组织结构参照)-->
 				<xsl:when test="@humanDisplayType='rm.orgReference'">
 					<xsl:value-of select="$charLt"/>div class="input-prepend">
 		<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span>
-			<xsl:value-of select="$charLt"/>input type="text" class="m-wrap" <xsl:if test="@nullable='NO'">validate='notNull;'</xsl:if> hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>"><xsl:value-of select="$charLt"/>img class="refButtonClass" src="<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/images/09.gif" onclick="javascript:getPartyWindow(new Array(form.<xsl:value-of select="$columnNameFormatLower"/>, form.<xsl:value-of select="$columnNameFormatLower"/>_name), '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/', '<xsl:value-of select="$charLt"/>%=request.getContextPath()%>/ut/orgauth/tree/org.jsp?enableCookie=true<xsl:value-of select="$charAmp"/>inputType=radio');"/>
+			<xsl:value-of select="$charLt"/>input type="text" class="m-wrap" <xsl:if test="@nullable='NO'">validate='notNull;'</xsl:if> hiddenInputId="<xsl:value-of select="$columnNameFormatLower"/>" name="<xsl:value-of select="$columnNameFormatLower"/>_name" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" /><xsl:value-of select="$charLt"/>input type="hidden" name="<xsl:value-of select="$columnNameFormatLower"/>">
 	<xsl:value-of select="$charLt"/>/div>
 	</xsl:when>
 				<!--处理rm.affix(多附件上传)-->
@@ -563,7 +563,7 @@
 				<xsl:value-of select="$charLt"/>div class="input-prepend">
 				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
 				<xsl:value-of select="$charLt"/>%=RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>, resultVo.get<xsl:value-of select="str:upperFirst($columnNameFormatLower)"/>())%><xsl:value-of select="$charNbsp"/>
-				<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" value="<xsl:value-of select="$charLt"/>%=RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>, resultVo.get<xsl:value-of select="str:upperFirst($columnNameFormatLower)"/>())%><xsl:value-of select="$charNbsp"/>"<xsl:value-of select="$charNbsp"/>
+				<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" value="<xsl:value-of select="$charLt"/>%=RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>, resultVo.get<xsl:value-of select="str:upperFirst($columnNameFormatLower)"/>())%>" /><xsl:value-of select="$charNbsp"/>"<xsl:value-of select="$charNbsp"/>
 				<xsl:value-of select="$charLt"/>/div>
 				
 			</xsl:when>
@@ -578,7 +578,7 @@
 				<xsl:when test="not(@humanDisplayType='rm.dictionary.select' or @humanDisplayType='rm.dictionary.checkbox') and @dataType='java.lang.String' and @maxLength &gt;= 1000">
 					<xsl:value-of select="$charLt"/>div class="input-prepend">
 		<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
-		<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" value="${bean.<xsl:value-of select="$columnNameFormatLower"/>}"<xsl:value-of select="$charNbsp"/>
+		<xsl:value-of select="$charLt"/>input class="m-wrap" type="text" value="${bean.<xsl:value-of select="$columnNameFormatLower"/>}" /><xsl:value-of select="$charNbsp"/>
 	<xsl:value-of select="$charLt"/>/div>
 	</xsl:when>
 				<xsl:otherwise>
