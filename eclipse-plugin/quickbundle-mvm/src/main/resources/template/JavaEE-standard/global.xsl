@@ -281,7 +281,7 @@
 													<xsl:value-of select="$charLt"/>div class="controls">
 														<xsl:value-of select="$charLt"/>span class="add-on">时间<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>input name="<xsl:value-of select="$columnNameFormatLower"/>" class="m-wrap m-ctrl-medium date-picker" readonly size="16" type="text" value="" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" />
 													<xsl:value-of select="$charLt"/>/div>
-											<xsl:value-of select="$charLt"/>/div>
+												<xsl:value-of select="$charLt"/>/div>
 										<xsl:value-of select="$charLt"/>/div>
 							</xsl:when>
 						<!--处理数字-->
