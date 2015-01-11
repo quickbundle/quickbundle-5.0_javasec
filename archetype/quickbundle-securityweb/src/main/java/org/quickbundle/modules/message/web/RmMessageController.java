@@ -33,7 +33,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- * list					 /message
+ * bootstrap main			/message => formRmMessage.jsp
+ * bootstrap 				/message/add|modify|remove|get
+ * 
+ * 
+ * list					 /message/list
  * insert page		GET	 /message/insert
  * insert action	POST /message/insert
  * update page		GET  /message/update/{id}
@@ -323,4 +327,14 @@ public class RmMessageController implements IRmMessageConstants {
     	redirectAttributes.addAttribute("message_id", message_id);
     	return "redirect:/message/rm_m_message_user";
     }
+
+    /**
+     * 从页面表单获取信息注入vo，并修改单条记录
+     */
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String modify(HttpServletRequest request, @Valid RmMessageVo vo, Errors errors,RedirectAttributes redirectAttributes) {
+		update(request, vo, errors);
+		return "redirect:/message";
+	}
+
 }
