@@ -11,8 +11,8 @@ html .halflings {
 }
 @font-face {
   font-family: 'Glyphicons';
-  src: url('../../images/cipher/glyphicons-regular.eot');
-  src: url('../../images/cipher/glyphicons-regular.eot') format('embedded-opentype'), url('../../images/cipher/glyphicons-regular.woff') format('woff'), url('../../images/cipher/glyphicons-regular.ttf') format('truetype'), url('../../images/cipher/glyphicons-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../../images/bootstrap/glyphicons-regular.eot');
+  src: url('../../images/bootstrap/glyphicons-regular.eot') format('embedded-opentype'), url('../../images/bootstrap/glyphicons-regular.woff') format('woff'), url('../../images/bootstrap/glyphicons-regular.ttf') format('truetype'), url('../../images/bootstrap/glyphicons-regular.svg#glyphicons_halflingsregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1302,7 +1302,7 @@ html .halflings {
   height: 48px;
   line-height: 48px;
   vertical-align: text-top;
-  background-image: url(../../images/cipher/glyphicons.png);
+  background-image: url(../../images/bootstrap/glyphicons.png);
   background-position: 0 0;
   background-repeat: no-repeat;
   vertical-align: top;
@@ -1311,13 +1311,13 @@ html .halflings {
   *margin-right: .3em;
 }
 .no-inlinesvg .glyphicons-icon {
-  background-image: url(../../images/cipher/glyphicons.png);
+  background-image: url(../../images/bootstrap/glyphicons.png);
 }
 .glyphicons-icon.white {
-  background-image: url(../../images/cipher/glyphicons-white.svg);
+  background-image: url(../../images/bootstrap/glyphicons-white.svg);
 }
 .no-inlinesvg .glyphicons-icon.white {
-  background-image: url(../../images/cipher/glyphicons-white.png);
+  background-image: url(../../images/bootstrap/glyphicons-white.png);
 }
 .glyphicons-icon.glass {
   background-position: 4px 11px;

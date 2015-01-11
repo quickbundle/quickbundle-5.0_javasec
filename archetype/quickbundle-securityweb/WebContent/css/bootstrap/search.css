@@ -219,7 +219,7 @@ Search Page
   color: #fff;
   padding: 15px;
   position: absolute;
-  background: url(../../images/cipher/bg-opacity.png);
+  background: url(../../images/bootstrap/bg-opacity.png);
 }
 
 .booking-offer .booking-offer-in em {
@@ -331,7 +331,7 @@ Search Page
   padding: 5px 0;
   text-align: left;
   position: absolute;
-  background: url(../../images/cipher/bg-opacity.png);  
+  background: url(../../images/bootstrap/bg-opacity.png);  
 }
 
 .search-images li a:hover span {

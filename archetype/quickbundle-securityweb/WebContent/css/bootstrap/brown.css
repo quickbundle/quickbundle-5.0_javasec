@@ -208,17 +208,17 @@ Footer Layouts (new in v1.3)
 Gritter Notifications 
 ***/
 .gritter-top {
-  background: url(../../plugins/gritter/images/ciphers/gritter-brown.png) no-repeat left -30px !important;
+  background: url(../../plugins/gritter/images/bootstraps/gritter-brown.png) no-repeat left -30px !important;
 }
 .gritter-bottom {
-  background: url(../../plugins/gritter/images/ciphers/gritter-brown.png) no-repeat left bottom !important;
+  background: url(../../plugins/gritter/images/bootstraps/gritter-brown.png) no-repeat left bottom !important;
 }
 .gritter-item {
   display: block;
-  background: url(../../plugins/gritter/images/ciphers/gritter-brown.png) no-repeat left -40px !important;
+  background: url(../../plugins/gritter/images/bootstraps/gritter-brown.png) no-repeat left -40px !important;
 }
 .gritter-close {
-  background: url(../../plugins/gritter/images/ciphers/gritter-brown.png) no-repeat left top !important;
+  background: url(../../plugins/gritter/images/bootstraps/gritter-brown.png) no-repeat left top !important;
 }
 .gritter-title {
   text-shadow: none !important;
@@ -230,7 +230,7 @@ Gritter Notifications
 .gritter-light .gritter-bottom,
 .gritter-light .gritter-top,
 .gritter-light .gritter-close {
-  background-image: url(../../plugins/gritter/images/ciphers/gritter-light.png) !important;
+  background-image: url(../../plugins/gritter/images/bootstraps/gritter-light.png) !important;
 }
 .gritter-item-wrapper a {
   color: #b18d65;

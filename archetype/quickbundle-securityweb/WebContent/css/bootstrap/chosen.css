@@ -88,7 +88,7 @@
   width: 12px;
   height: 13px;
   font-size: 1px;
-  background: url("../../images/cipher/chosen-sprite.png") right top no-repeat;
+  background: url("../../images/bootstrap/chosen-sprite.png") right top no-repeat;
 }
 .chzn-container-single .chzn-single abbr:hover {
   background-position: right -11px;
@@ -102,7 +102,7 @@
   width: 18px;
 }
 .chzn-container-single .chzn-single div b {
-  background: url("../../images/cipher/chosen-sprite.png") no-repeat 0 2px;
+  background: url("../../images/bootstrap/chosen-sprite.png") no-repeat 0 2px;
   display: block;
   width: 100%;
   height: 100%;
@@ -228,7 +228,7 @@
   width: 12px;
   height: 13px;
   font-size: 1px;
-  background: url("../../images/cipher/chosen-sprite.png") right top no-repeat;
+  background: url("../../images/bootstrap/chosen-sprite.png") right top no-repeat;
 }
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
   background-position: right -11px;
@@ -322,10 +322,10 @@
   bottom: 0;
 }
 .chzn-container .chzn-results-scroll-down span {
-  background: url("../../images/cipher/chosen-sprite.png") no-repeat -4px -3px;
+  background: url("../../images/bootstrap/chosen-sprite.png") no-repeat -4px -3px;
 }
 .chzn-container .chzn-results-scroll-up span {
-  background: url("../../images/cipher/chosen-sprite.png") no-repeat -22px -3px;
+  background: url("../../images/bootstrap/chosen-sprite.png") no-repeat -22px -3px;
 }
 .chzn-container-multi .chzn-results {
   margin: 4px;

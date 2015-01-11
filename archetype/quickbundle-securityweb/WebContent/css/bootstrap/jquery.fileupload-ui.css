@@ -36,7 +36,7 @@
   width: 200px;
 }
 .progress-animated .bar {
-  background: url(../../images/cipher/progressbar.gif) !important;
+  background: url(../../images/bootstrap/progressbar.gif) !important;
   filter: none;
 }
 .fileupload-loading {
@@ -44,7 +44,7 @@
   left: 50%;
   width: 128px;
   height: 128px;
-  background: url(../../images/cipher/loading.gif) center no-repeat;
+  background: url(../../images/bootstrap/loading.gif) center no-repeat;
   display: none;
 }
 .fileupload-processing .fileupload-loading {

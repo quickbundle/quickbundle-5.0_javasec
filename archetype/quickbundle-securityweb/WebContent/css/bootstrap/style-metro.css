@@ -222,7 +222,7 @@ Metro icons
   margin-top: 4px;
   line-height: 14px;  
   vertical-align: top;
-  background-image: url(../../images/cipher/syncfusion-icons.png);
+  background-image: url(../../images/bootstrap/syncfusion-icons.png);
   background-position: 0 0;
   background-repeat: no-repeat; 
 }
@@ -233,13 +233,13 @@ Metro icons
   height: 30px; 
   margin: 6px;
   vertical-align: top;
-  background-image: url(../../images/cipher/syncfusion-icons.png);
+  background-image: url(../../images/bootstrap/syncfusion-icons.png);
   background-position: 0 0px;
   background-repeat: no-repeat; 
 }
 
 .m-icon-white {
-  background-image: url(../../images/cipher/syncfusion-icons-white.png);
+  background-image: url(../../images/bootstrap/syncfusion-icons-white.png);
 }
 
 /*  Misc */

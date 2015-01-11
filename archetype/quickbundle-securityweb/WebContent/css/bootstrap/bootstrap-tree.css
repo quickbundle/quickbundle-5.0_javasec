@@ -42,7 +42,7 @@ a.tree-toggle-icon-only {
   line-height: 16px;
   vertical-align: middle;
   display: inline-block;
-  background: url("../../images/cipher/bstree-halflings.png") no-repeat;
+  background: url("../../images/bootstrap/bstree-halflings.png") no-repeat;
   background-position: 0 -22px;
 }
 
@@ -52,7 +52,7 @@ a.tree-toggle {
   line-height: 16px;
   vertical-align: middle;
   display: inline-block;
-  background: url("../../images/cipher/bstree-halflings.png") no-repeat;
+  background: url("../../images/bootstrap/bstree-halflings.png") no-repeat;
   background-position: 0 -22px;
 }
 a.tree-toggle.closed, a.tree-toggle-icon-only.closed {
