@@ -97,13 +97,13 @@ public class RmMessageController implements IRmMessageConstants {
     	RmMessageVo bean = rmMessageService.get(new Long(id));
         model.addAttribute(REQUEST_BEAN, bean);  //把vo放入request
         model.addAttribute("action", "update");
-        return "cipher/rmmessage/modifyRmMessage";
+        return "message/modifyRmMessage";
     }
 	
 	/**
 	 * 从页面表单获取信息注入vo，并插入单条记录
 	 */
-	@RequestMapping(value = "insert", method = RequestMethod.POST, 
+	/*@RequestMapping(value = "insert", method = RequestMethod.POST, 
 			consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> insert(HttpServletRequest request, @Valid RmMessageVo vo, Errors errors) {
@@ -114,6 +114,13 @@ public class RmMessageController implements IRmMessageConstants {
         Map<String, String> result = new HashMap<String, String>();
         result.put("message", "新增成功: " + vo.getId());
 		return new ResponseEntity<Map<String, String>>(result, HttpStatus.CREATED);
+	}*/
+	
+	@RequestMapping(value = "insert", method = RequestMethod.POST)
+	public String insert(HttpServletRequest request, @Valid RmMessageVo vo, Errors errors,RedirectAttributes redirectAttributes) {
+        RmVoHelper.markCreateStamp(request,vo);  //打创建时间,IP戳
+        rmMessageService.insert(vo);  //插入单条记录
+		return "redirect:/message";
 	}
 	
 	/**
