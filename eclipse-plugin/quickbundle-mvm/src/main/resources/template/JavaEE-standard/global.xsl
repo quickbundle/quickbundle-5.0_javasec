@@ -568,6 +568,54 @@
 			</xsl:choose>
 		</xsl:if>
 	</xsl:template>
+	
+	
+	<!--新版处理各列的循环detail展现-->
+	<xsl:template match="column" mode="buildTableColumn_detailDisplay_newversion">
+		<xsl:param name="columnName" select="@columnName"/>
+		<xsl:param name="columnNameFormat" select="str:filter(@columnName,@filterKeyword,@filterType)"/>
+		<xsl:param name="columnNameFormatLower" select="lower-case($columnNameFormat)"/>
+		<xsl:param name="humanDisplayTypeKeyword" select="str:substring-before2(@humanDisplayTypeKeyword, '=')"/>
+		<xsl:if test="not($columnName=$tablePk) and @isBuild='true'">
+			<xsl:choose>
+				<!--处理rm.dictionary.select checkbox(人性化展现方式)-->
+				<xsl:when test="@humanDisplayType='rm.dictionary.select' or @humanDisplayType='rm.dictionary.checkbox'">
+				<xsl:value-of select="$charLt"/>div class="input-prepend">
+				<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+				<xsl:value-of select="$charLt"/>%=RmGlobalReference.get(<xsl:value-of select="$ITableNameConstants"/>.DICTIONARY_<xsl:value-of select="$humanDisplayTypeKeyword"/>, resultVo.get<xsl:value-of select="str:upperFirst($columnNameFormatLower)"/>())%><xsl:value-of select="$charNbsp"/>
+				<xsl:value-of select="$charLt"/>/div>
+			</xsl:when>
+				<!--处理rm.affix不做处理-->
+				<xsl:when test="@humanDisplayType='rm.affix'">
+					<xsl:value-of select="$charLt"/>tr>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>：<xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td colspan="3"><xsl:value-of select="$charLt"/>span class="rm_affix" bs_keyword="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_NAME%>" record_id="<xsl:value-of select="$charLt"/>%=resultVo.get<xsl:value-of select="str:upperFirst($tablePkFormatLower)"/>()%>">${bean.<xsl:value-of select="$columnNameFormatLower"/>}<xsl:value-of select="$charNbsp"/>
+					<xsl:value-of select="$charLt"/>/span><xsl:value-of select="$charLt"/>/td>
+	<xsl:value-of select="$charLt"/>/tr>
+	</xsl:when>
+				<!--处理textarea，大于1000个字符-->
+				<xsl:when test="not(@humanDisplayType='rm.dictionary.select' or @humanDisplayType='rm.dictionary.checkbox') and @dataType='java.lang.String' and @maxLength &gt;= 1000">
+					<xsl:value-of select="$charLt"/>tr>
+		<xsl:value-of select="$charLt"/>td align="right"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>：<xsl:value-of select="$charLt"/>/td>
+		<xsl:value-of select="$charLt"/>td colspan="3">${<xsl:value-of select="$columnNameFormatLower"/>}<xsl:value-of select="$charNbsp"/>
+					<xsl:value-of select="$charLt"/>/td>
+	<xsl:value-of select="$charLt"/>/tr>
+	</xsl:when>
+				<xsl:otherwise>
+				<xsl:value-of select="$charLt"/>div class="input-prepend">
+					<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span> 
+					<xsl:value-of select="$charLt"/>input class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" id="<xsl:value-of select="$columnNameFormatLower"/>" type="text" value ="${bean.<xsl:value-of select="$columnNameFormatLower"/>}" maxLength="<xsl:if test="@maxLength div 2 >= 1">
+					<xsl:value-of select="format-number(floor(@maxLength div 2),'#')"/>
+					</xsl:if>
+					<xsl:if test="@maxLength div 2 &lt; 1">1</xsl:if>"/>
+					<xsl:value-of select="$charLt"/>/div>
+	</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+	
+	
+	
 	<!--处理各列的循环detail展现-->
 	<xsl:template match="column" mode="buildTableColumn_detailDisplay">
 		<xsl:param name="columnName" select="@columnName"/>
