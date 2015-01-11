@@ -290,7 +290,7 @@
 						<xsl:when test="@dataType='java.math.BigDecimal' or @dataType='java.lang.Long' or @dataType='java.lang.Integer'">
 							<xsl:value-of select="$charLt"/>div class="input-prepend">
 							<xsl:value-of select="$charLt"/>span class="add-on"><xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%><xsl:value-of select="$charLt"/>/span>
-							<xsl:value-of select="$charLt"/>input type="text" class="text_field_half" name="<xsl:value-of select="$columnNameFormatLower"/>" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" /><xsl:value-of select="$charNbsp"/>到<xsl:value-of select="$charNbsp"/>
+							<xsl:value-of select="$charLt"/>input type="text" class="m-wrap" name="<xsl:value-of select="$columnNameFormatLower"/>" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" value="" columnSize="<xsl:value-of select="@columnSize"/>" decimalDigits="<xsl:value-of select="@decimalDigits"/>" /><xsl:value-of select="$charNbsp"/>到<xsl:value-of select="$charNbsp"/>
 						<xsl:value-of select="$charLt"/>/div>
 						</xsl:when>
 						<!--默认其它类型的字段。处理普通的text，小于1000个字符-->
