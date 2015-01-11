@@ -277,12 +277,10 @@
 						<!--处理时间参照-->
 						<xsl:when test="@dataType='java.sql.Timestamp' or @dataType='java.sql.Date'">
 							<xsl:value-of select="$charLt"/>div class="input-prepend">
-											<xsl:value-of select="$charLt"/>div class="control-group">
 												<xsl:value-of select="$charLt"/>div class="controls">
 													<xsl:value-of select="$charLt"/>div class="controls">
 														<xsl:value-of select="$charLt"/>span class="add-on">时间<xsl:value-of select="$charLt"/>/span> <xsl:value-of select="$charLt"/>input name="<xsl:value-of select="$columnNameFormatLower"/>" class="m-wrap m-ctrl-medium date-picker" readonly size="16" type="text" value="" inputName="<xsl:value-of select="$charLt"/>%=<xsl:value-of select="$ITableNameConstants"/>.TABLE_COLUMN_DISPLAY.get("<xsl:value-of select="$columnNameFormatLower"/>")%>" />
 													<xsl:value-of select="$charLt"/>/div>
-												<xsl:value-of select="$charLt"/>/div>
 											<xsl:value-of select="$charLt"/>/div>
 										<xsl:value-of select="$charLt"/>/div>
 							</xsl:when>
