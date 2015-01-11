@@ -25,6 +25,8 @@
 			<file xsltPath="JavaEE-standard/jsp/importTableName.xsl" outputFile="importTableName.jsp" bundleCode="importExport"/>
 			<file xsltPath="JavaEE-standard/jsp/insertTableName.xsl" outputFile="insertTableName.jsp" bundleCode="main"/>
 			<file xsltPath="JavaEE-standard/jsp/listTableName.xsl" outputFile="listTableName.jsp" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/jsp/formTableName.xsl" outputFile="formTableName.jsp" bundleCode="main"/>
+			<file xsltPath="JavaEE-standard/jsp/modifyTableName.xsl" outputFile="modifyTableName.jsp" bundleCode="main"/>
 		</files>
 		<files filesType="config" outputPath="src/main/resources/config">
 			<file xsltPath="JavaEE-standard/config/jdbc.xsl" outputFile="jdbc.properties" afterKeyWord="NOT_EXIST_POSITION"/>
