@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
-<%@ page import="org.quickbundle.modules.message.IRmMessageConstants" %>
+<%@ page import="com.cipher.rmmessage.IRmMessageConstants" %>
 <%@page import="org.quickbundle.base.web.page.RmPageVo"%>
 <%@page import="org.quickbundle.project.RmGlobalReference"%>
 <%@page import="org.quickbundle.tools.helper.RmJspHelper"%>
@@ -13,7 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><%=IRmMessageConstants.TABLE_NAME%></title>
 </head>
-<body class="page-header-fixed">
+<body class="page-header-fixed page-sidebar-closed">
 <jsp:include page="/jsp/cipher/header.jsp"></jsp:include>
 <div class="page-container row-fluid">
 <div class="page-sidebar nav-collapse collapse">
@@ -38,7 +38,7 @@
 						class="selected"></span>
 				</a>
 					<ul class="sub-menu">
-						<li><a href="<%=request.getContextPath()%>/message"><%=IRmMessageConstants.TABLE_NAME%></a></li>
+						<li><a href="<%=request.getContextPath()%>/rmmessage"><%=IRmMessageConstants.TABLE_NAME%></a></li>
 					</ul></li>
 				<li class=""><a href="javascript:;"> <i
 						class="icon-bookmark-empty"></i> <span class="title">功能1</span> <span
@@ -95,45 +95,7 @@
 			</div>
 			<div class="page-content">
 			<div id="portlet-config-edit" class="modal hide">
-				<div class="modal-header">
-					<button data-dismiss="modal" class="close" type="button"></button>
-					<h3>修改</h3>
-				</div>
-				<div class="modal-body">
-					<form action="<%=request.getContextPath()%>/message/update" method="post">
-						<div class="control-group">
-							<div class="controls">
-							<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("biz_keyword")%></span> <input class="m-wrap" name="biz_keyword" id="biz_keyword" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%></span> <input class="m-wrap" name="sender_id" id="sender_id" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%></span> <input class="m-wrap" name="parent_message_id" id="parent_message_id" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("owner_org_id")%></span> <input class="m-wrap" name="owner_org_id" id="owner_org_id" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%></span> <input class="m-wrap" name="template_id" id="template_id" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%></span> <input class="m-wrap" name="is_affix" id="is_affix" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("record_id")%></span> <input class="m-wrap" name="record_id" id="record_id" type="text"  />
-								</div>
-		<div class="input-prepend">
-									<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("message_xml_context")%></span> <input class="m-wrap" name="message_xml_context" id="message_xml_context" type="text"  />
-								</div>
-		<p>
-									<input id="id" name="id" type="hidden" /> <input type="submit" class="btn blue btn-block" value="提交" />
-								</p>
-							</div>
-						</div>
-					</form>
-				</div>
+				
 			</div>
 			<div id="portlet-config-add" class="modal hide">
 				<div class="modal-header">
@@ -141,7 +103,7 @@
 					<h3>新增</h3>
 				</div>
 				<div class="modal-body">
-					<form action="<%=request.getContextPath()%>/message/insert"
+					<form action="<%=request.getContextPath()%>/rmmessage/insert"
 						method="post">
 						<div class="control-group">
 							<div class="controls">
@@ -151,27 +113,23 @@
 							</div>
 					<div class="input-prepend">
 							<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%></span>
-							<input type="text" class="text_field_half" name="sender_id_from" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%>" value="" columnSize="" decimalDigits="0" />&nbsp;到&nbsp;</div>
-						<tr>
-		<td align="right"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%></td>
-		<td>
-			<input type="text" class="text_field_reference"  hiddenInputId="parent_message_id" name="parent_message_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%>" value="" /><input type="hidden" name="parent_message_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.parent_message_id, form.parent_message_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>/rmmessage/reference?referenceInputType=radio');"/>
-		</td>
-		<td align="right"></td>
-		<td></td>
-	</tr>
+							<input type="text" class="m-wrap" name="sender_id" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%>" value="" columnSize="" decimalDigits="0" />&nbsp;到&nbsp;</div>
+						<div class="input-prepend">
+					<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%></span>
+			<input type="text" class="m-wrap"  hiddenInputId="parent_message_id" name="parent_message_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%>" value="" /><input type="hidden" name="parent_message_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.parent_message_id, form.parent_message_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>/rmmessage/reference?referenceInputType=radio');"/>
+	</div>
 	<div class="input-prepend">
 										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("owner_org_id")%></span> 
 										<input class="m-wrap" name="owner_org_id" type="text" maxLength="25"/>
 							</div>
 					<div class="input-prepend">
 							<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%></span>
-							<input type="text" class="text_field_half" name="template_id_from" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%>" value="" columnSize="" decimalDigits="0" />&nbsp;到&nbsp;</div>
+							<input type="text" class="m-wrap" name="template_id" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%>" value="" columnSize="" decimalDigits="0" />&nbsp;到&nbsp;</div>
 						<div class="input-prepend">
-										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%></span> 
-										<input class="m-wrap" name="is_affix" type="text" maxLength="1"/>
-							</div>
-					<div class="input-prepend">
+						<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%></span>
+			<input type="text" class="m-wrap" bs_keyword="<%=IRmMessageConstants.TABLE_NAME%>" record_id="" name="is_affix" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%>" value="false" maxLength="1" />
+	</div>
+	<div class="input-prepend">
 										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("record_id")%></span> 
 										<input class="m-wrap" name="record_id" type="text" maxLength="25"/>
 							</div>
@@ -179,7 +137,24 @@
 										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("message_xml_context")%></span> 
 										<input class="m-wrap" name="message_xml_context" type="text" maxLength="32767"/>
 							</div>
-						<p>
+						<div class="input-prepend">
+				<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("usable_status")%></span> 
+				<%=RmJspHelper.getSelectField("usable_status", -1, RmGlobalReference.get(IRmMessageConstants.DICTIONARY_RM_ADMIN_TYPE), "", "inputName='" + IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("usable_status") + "'", true) %>
+				</div>
+				<div class="input-prepend">
+												<div class="controls">
+														<span class="add-on">时间</span> <input name="modify_date" class="m-wrap m-ctrl-medium date-picker" readonly size="16" type="text" value="" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_date")%>" />
+												</div>
+										</div>
+							<div class="input-prepend">
+										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_ip")%></span> 
+										<input class="m-wrap" name="modify_ip" type="text" maxLength="22"/>
+							</div>
+					<div class="input-prepend">
+					<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%></span>
+			<input type="text" class="m-wrap"  hiddenInputId="modify_user_id" name="modify_user_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%>" value="" /><input type="hidden" name="modify_user_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.modify_user_id, form.modify_user_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>//reference?referenceInputType=radio');"/>
+	</div>
+	<p>
 									<input type="submit" class="btn blue btn-block" value="提交" />
 								</p>
 							</div>
@@ -213,7 +188,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
-								<form action="<%=request.getContextPath()%>/message" method="post">
+								<form action="<%=request.getContextPath()%>/rmmessage" method="post">
 									<div class="control-group">
 									<div class="controls">
 										<div class="input-prepend">
@@ -221,37 +196,36 @@
 										<input class="m-wrap" name="biz_keyword" type="text" maxLength="25"/>
 							</div>
 						<div class="input-prepend">
-							<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%></span>
-							<input type="text" class="text_field_half" name="sender_id_from" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%>" value="" columnSize="" decimalDigits="0" />
-							</div>
-							&nbsp;到&nbsp;<div class="input-prepend">
-							<input type="text" class="text_field_half" name="sender_id_to" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%>" value="" columnSize="" decimalDigits="0" />
-						</div>
-						<input type="text" class="text_field_reference" hiddenInputId="parent_message_id" name="parent_message_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%>" value="" /><input type="hidden" name="parent_message_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.parent_message_id, form.parent_message_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>/rmmessage/reference?referenceInputType=radio');"/>
-			<div class="input-prepend">
-										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("owner_org_id")%></span> 
-										<input class="m-wrap" name="owner_org_id" type="text" maxLength="25"/>
-							</div>
-						<div class="input-prepend">
-							<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%></span>
-							<input type="text" class="text_field_half" name="template_id_from" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%>" value="" columnSize="" decimalDigits="0" />
-							</div>
-							&nbsp;到&nbsp;<div class="input-prepend">
-							<input type="text" class="text_field_half" name="template_id_to" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%>" value="" columnSize="" decimalDigits="0" />
-						</div>
-						<div class="input-prepend">
-										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%></span> 
-										<input class="m-wrap" name="is_affix" type="text" maxLength="1"/>
-							</div>
-						<div class="input-prepend">
-										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("record_id")%></span> 
-										<input class="m-wrap" name="record_id" type="text" maxLength="25"/>
-							</div>
-						<div class="input-prepend">
 										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("message_xml_context")%></span> 
 										<input class="m-wrap" name="message_xml_context" type="text" maxLength="32767"/>
 							</div>
-						<p>
+						<div class="input-prepend">
+				<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("usable_status")%></span> 
+				<%=RmJspHelper.getSelectField("usable_status", -1, RmGlobalReference.get(IRmMessageConstants.DICTIONARY_RM_ADMIN_TYPE), "", "inputName='" + IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("usable_status") + "'", true) %>
+				</div>
+			<div class="input-prepend">
+												<div class="controls">
+													<div class="controls">
+														<span class="add-on">时间</span> <input name="modify_date_from" class="m-wrap m-ctrl-medium date-picker" readonly size="16" type="text" value="" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_date")%>" />
+													</div>
+											</div>
+										</div>到&nbsp;<div class="input-prepend">
+												<div class="controls">
+													<div class="controls">
+														<span class="add-on">时间</span> 
+														<input name="modify_date_to" class="m-wrap m-ctrl-medium date-picker" readonly size="16" type="text" value="" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_date")%>" />
+													</div>
+											</div>
+										</div>
+						<div class="input-prepend">
+										<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_ip")%></span> 
+										<input class="m-wrap" name="modify_ip" type="text" maxLength="22"/>
+							</div>
+						<div class="input-prepend">
+				<span class="add-on"><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%></span> 
+					<input type="text" class="m-wrap" hiddenInputId="modify_user_id" name="modify_user_id_name" inputName="<%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%>" value="" /><input type="hidden" name="modify_user_id"><img class="refButtonClass" src="<%=request.getContextPath()%>/images/09.gif" onclick="javascript:getReference(new Array(form.modify_user_id, form.modify_user_id_name), '<%=request.getContextPath()%>/', '<%=request.getContextPath()%>//reference?referenceInputType=radio');"/>
+				</div>
+			<p>
 											<input type="submit" class="btn blue btn-block" value="查询" />
 										</p>
 										</div>
@@ -269,7 +243,7 @@
 								<i class="icon-globe"></i>列表
 							</div>
 							<div class="tools">
-										<a href="" onclick="update();" data-toggle="modal" class="config"></a> 
+										<a href="#" onclick="update();" data-toggle="modal" class="config"></a> 
 										<a href="javascript:;" onclick="_delete();" class="halflings-icon white trash"></a>
 										<a href="#portlet-config-add" data-toggle="modal" class="halflings-icon white file"></a> 
 										<a href="javascript:;" class="collapse"></a>
@@ -281,13 +255,12 @@
 									<tr>
 									<th style="width: 40px">选择</th>
 									<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("biz_keyword")%></th>
-		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("sender_id")%></th>
-		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("parent_message_id")%></th>
-		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("owner_org_id")%></th>
-		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("template_id")%></th>
 		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("is_affix")%></th>
-		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("record_id")%></th>
 		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("message_xml_context")%></th>
+		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("usable_status")%></th>
+		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_date")%></th>
+		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_ip")%></th>
+		<th><%=IRmMessageConstants.TABLE_COLUMN_DISPLAY.get("modify_user_id")%></th>
 		</tr>
 								</thead>
 								<tbody>
@@ -301,14 +274,13 @@
 															</ins>
 														</div>
 													</td>
-						<td><c:out value="${list.biz_keyword}"></c:out></td>
-										<td><c:out value="${list.sender_id}"></c:out></td>
-										<td><c:out value="${list.parent_message_id}"></c:out></td>
-										<td><c:out value="${list.owner_org_id}"></c:out></td>
-										<td><c:out value="${list.template_id}"></c:out></td>
-										<td><c:out value="${list.is_affix}"></c:out></td>
-										<td><c:out value="${list.record_id}"></c:out></td>
-										<td><c:out value="${list.message_xml_context}"></c:out></td>
+						<td align="center"><c:out value="${list.biz_keyword}"></c:out></td>
+										<td align="center"><c:out value="${list.is_affix}"></c:out></td>
+										<td align="center"><c:out value="${list.message_xml_context}"></c:out></td>
+										<td align="center"><c:out value="${list.usable_status}"></c:out></td>
+										<td align="center"><c:out value="${list.modify_date}"></c:out></td>
+										<td align="center"><c:out value="${list.modify_ip}"></c:out></td>
+										<td align="center"><c:out value="${list.modify_user_id}"></c:out></td>
 										</tr>
 								 </c:forEach>
 								</tbody>
@@ -394,33 +366,8 @@
 	         });
 			return false;
 		}
-		 $("#portlet-config-edit").modal("show");
-		 $.ajax({
-             type: "GET",
-             url: "<%=request.getContextPath()%>/message/get/" + updateDate,
-             dataType: "json",
-             success: function(res) {
-             
-			$("#portlet-config-edit").find("input[id=id]").val(res.id);
-		
-			$("#portlet-config-edit").find("input[id=biz_keyword]").val(res.biz_keyword);
-		
-			$("#portlet-config-edit").find("input[id=sender_id]").val(res.sender_id);
-		
-			$("#portlet-config-edit").find("input[id=parent_message_id]").val(res.parent_message_id);
-		
-			$("#portlet-config-edit").find("input[id=owner_org_id]").val(res.owner_org_id);
-		
-			$("#portlet-config-edit").find("input[id=template_id]").val(res.template_id);
-		
-			$("#portlet-config-edit").find("input[id=is_affix]").val(res.is_affix);
-		
-			$("#portlet-config-edit").find("input[id=record_id]").val(res.record_id);
-		
-			$("#portlet-config-edit").find("input[id=message_xml_context]").val(res.message_xml_context);
-		
-            }
-         });
+		$("#portlet-config-edit").modal("show");
+		$("#portlet-config-edit").load("<%=request.getContextPath()%>/message/modify/" + updateDate);
 	}
 	function list_onClick() {
         form.action="<%=request.getContextPath()%>/message";
