@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ page import="com.cipher.rmmessage.IRmMessageConstants" %>
 <head>
 </head>
 <body>
@@ -17,7 +16,7 @@
 						</div>
 					</form>
 				</li>
-				<li class=" "><a href="<%=request.getContextPath()%>/jsp/cipher_index.jsp"> <i
+				<li class=" "><a href="<%=request.getContextPath()%>/jsp/bootstrap_index.jsp"> <i
 						class="icon-home"></i> <span class="title">首页</span>
 				</a></li>
 				<li class="start active "><a href="javascript:;"> <i
@@ -25,7 +24,7 @@
 						class="selected"></span>
 				</a>
 					<ul class="sub-menu">
-						<li><a href="<%=request.getContextPath()%>/message"><%=IRmMessageConstants.TABLE_NAME%></a></li>
+						<li><a href="<%=request.getContextPath()%>/message"></a></li>
 					</ul></li>
 				<li class=""><a href="javascript:;"> <i
 						class="icon-bookmark-empty"></i> <span class="title">功能1</span> <span

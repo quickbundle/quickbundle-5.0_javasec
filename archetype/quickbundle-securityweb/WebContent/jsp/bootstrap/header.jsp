@@ -8,14 +8,14 @@
 			<div class="container-fluid">
 				<!-- BEGIN LOGO -->
 				<a class="brand" href="index.html"> <img
-					src="<%=request.getContextPath()%>/images/cipher/logo.png"
+					src="<%=request.getContextPath()%>/images/bootstrap/logo.png"
 					alt="logo" />
 				</a>
 				<!-- END LOGO -->
 				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 				<a href="javascript:;" class="btn-navbar collapsed"
 					data-toggle="collapse" data-target=".nav-collapse"> <img
-					src="<%=request.getContextPath()%>/images/cipher/menu-toggler.png"
+					src="<%=request.getContextPath()%>/images/bootstrap/menu-toggler.png"
 					alt="" />
 				</a>
 				<ul class="nav pull-right">
@@ -32,7 +32,7 @@
 					<!-- BEGIN USER LOGIN DROPDOWN -->
 					<li class="dropdown user"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <img alt=""
-							src="<%=request.getContextPath()%>/images/cipher/avatar1_small.jpg" />
+							src="<%=request.getContextPath()%>/images/bootstrap/avatar1_small.jpg" />
 							<span class="username">Bob Nilson</span> <i
 							class="icon-angle-down"></i>
 					</a>
