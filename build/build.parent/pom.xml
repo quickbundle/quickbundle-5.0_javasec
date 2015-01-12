@@ -58,7 +58,7 @@
 								<exec executable="cmd.exe" dir="${basedir}" osfamily="windows" failonerror="true">
 									<arg line=" /c make.bat" />
 								</exec>
-								<exec executable="sh" dir="${basedir}" osfamily="unix" failonerror="true">
+								<exec executable="bash" dir="${basedir}" osfamily="unix" failonerror="true">
 									<arg line=" make.sh" />
 								</exec>
 							</target>
