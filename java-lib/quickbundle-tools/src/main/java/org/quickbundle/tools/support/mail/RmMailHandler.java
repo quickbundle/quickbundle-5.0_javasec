@@ -9,8 +9,8 @@
  *  
  */
 package org.quickbundle.tools.support.mail;
-
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
@@ -27,6 +27,9 @@ import javax.mail.internet.MimeUtility;
 
 import org.quickbundle.tools.support.log.RmLogHelper;
 
+import com.sun.mail.util.MailSSLSocketFactory;
+
+
 /**
  * 功能、用途、现存BUG:
  * 
@@ -42,6 +45,11 @@ public class RmMailHandler {
 	private String sendMailUser;
 	private String sendMailPassword;
 	private String mailFrom;
+	//增加mail端口  add by longsebo 2015-04-21
+	private String  port;
+	//增加ssl属性  add by longsebo 2015-04-21
+	private String  ssl;
+	
 	
 	Transport transport = null;
 
@@ -50,13 +58,17 @@ public class RmMailHandler {
 	 *            [0]mailSmtpHost--mail1.quickbundle.org,
 	 *            [1]sendMailUser--test, 
 	 *            [2]sendMailPassword--******,
-	 *            [3]mailFrom--noreply@quickbundle.org
+	 *            [3]mailFrom--noreply@quickbundle.org,
+	              [4]port--465,
+	 *            [5]ssl--true
 	 */
 	public RmMailHandler(String[] mailConfig) {
 		mailSmtpHost = mailConfig[0];
 		sendMailUser = mailConfig[1];
 		sendMailPassword = mailConfig[2];
 		mailFrom = mailConfig[3];
+		port = mailConfig[4];//add by longsebo 2015-04-21
+		ssl = mailConfig[5];//add by longsebo 2015-04-21
 	}
 
 	/**
@@ -73,7 +85,24 @@ public class RmMailHandler {
 			 */
 			String encoding = MimeUtility.mimeCharset(DEFAULT_MAIL_ENCODING);
 			Properties props = new Properties();
+	
 			// Setup mail server
+			//ssl 设置 //add by longsebo 2015-04-21
+			if("true".equals(ssl)){
+				MailSSLSocketFactory sf;
+				try {
+					 sf = new MailSSLSocketFactory();
+					 sf.setTrustAllHosts(true);
+					 props.put("mail.smtp.ssl.enable", "true");  
+					 props.put("mail.smtp.ssl.socketFactory", sf); 
+				} catch (GeneralSecurityException e) {
+					throw new RuntimeException("send mail:" + e.getMessage(), e);
+				}  
+			}
+			//smtp端口设置 //add by longsebo 2015-04-21
+			if(port!=null && port.trim().length()>0){
+			 props.put("mail.stmp.port", port);//stmp端口
+			}
 			props.put("mail.smtp.localhost", mailSmtpHost);
 			props.put("mail.smtp.host", mailSmtpHost);
 			props.put("mail.smtp.auth", "true"); // 这样才能通过验证
