@@ -17,7 +17,7 @@
 		<jdk.version>1.5</jdk.version>
 		<BUILD_ALIAS>Final</BUILD_ALIAS>
 		<basedir>./</basedir>
-		<tycho.version>1.2.0</tycho.version>
+		<tycho.version>0.22.0</tycho.version>
 	</properties>
 	
 	<repositories>
