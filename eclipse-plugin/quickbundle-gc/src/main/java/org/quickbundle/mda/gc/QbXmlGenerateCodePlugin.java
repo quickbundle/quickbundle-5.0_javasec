@@ -91,7 +91,8 @@ public class QbXmlGenerateCodePlugin extends AbstractUIPlugin {
      */
     public static Path getInstallLocation() {
         try {
-            URL url = getDefault().getDescriptor().getInstallURL();
+//            URL url = getDefault().getDescriptor().getInstallURL();
+        	URL url = getDefault().getBundle().getEntry("/");
             String s1 = Platform.resolve(url).getFile();
             if (s1.startsWith("/"))
                 s1 = s1.substring(1);

@@ -87,7 +87,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.34</version>
+			<version>5.1.47</version>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
@@ -151,12 +151,4 @@
 		</dependency>
 	</dependencies>
 
-	<repositories>
-		<repository>
-			<id>codelds</id>
-			<name>codelds for oracle jdbc driver</name>
-			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
-		</repository>
-	</repositories>
-	
 </project>

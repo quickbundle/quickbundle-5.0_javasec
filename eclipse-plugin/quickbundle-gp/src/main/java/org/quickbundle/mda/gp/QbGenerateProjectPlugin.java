@@ -84,7 +84,8 @@ public class QbGenerateProjectPlugin extends AbstractUIPlugin {
     public static Path getInstallLocation() {
         try {
         	//FileLocator.getBundleFile(Platform.getBundle(QbGenerateProjectPlugin.PLUGIN_ID)).getAbsolutePath()
-            URL url = getDefault().getDescriptor().getInstallURL();
+//            URL url = getDefault().getDescriptor().getInstallURL();
+        	URL url = getDefault().getBundle().getEntry("/");
             String s1 = Platform.resolve(url).getFile();
             if (s1.startsWith("/"))
                 s1 = s1.substring(1);
