@@ -10,3 +10,4 @@ WebContent/WEB-INF/classes
 WebContent/WEB-INF/lib
 WebContent/upload/*
 qalab.xml
+/target/

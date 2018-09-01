@@ -84,25 +84,6 @@
 		<outputDirectory>${war.dir}/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.9.1</version>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>src/main/java</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.7</version>
@@ -125,8 +106,18 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<warSourceDirectory>{war.dir}</warSourceDirectory>
+					<warSourceDirectory>${war.dir}</warSourceDirectory>
 					<includeEmptyDirs>true</includeEmptyDirs>
+			          <webResources>
+			            <resource>
+			              <!-- this is relative to the pom.xml directory -->
+			              <directory>${war.dir}</directory>
+			              <!-- the list has a default value of ** -->
+			              <includes>
+			                <include>**/*</include>
+			              </includes>
+			            </resource>
+			          </webResources>
 					<webXml>${war.dir}/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
@@ -136,7 +127,7 @@
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
-						<phase>compile</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -739,6 +730,11 @@ encoding/tools.bat=GBK]]>
 			<groupId>org.codehaus.woodstox</groupId>
 			<artifactId>stax2-api</artifactId>
 			<version>3.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
 		</dependency>
 		
 	<!-- Spring security -->
