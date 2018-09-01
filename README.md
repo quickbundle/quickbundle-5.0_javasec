@@ -37,7 +37,7 @@ JavaSec是一个以“快速开发”为目标的Web/Mobile应用开发平台，
 
 ## Version
 
-Current Version: **5.0.0**
+Current Version: **5.0.1**
 
 
 # Supported
@@ -82,7 +82,7 @@ In your issue report please make sure you provide the following information:
 # Installation
 
 ##编译打包
-#### 一键编译quickbundle-5.0.0插件的方式一（推荐）
+#### 一键编译quickbundle-5.0.1插件的方式一（推荐）
 eclipse/plugins目录格式，直接复制到Eclipse/links下，安装快。要求是eclipse的JavaEE/jee版，同时Eclipse版本>=3.7
 
 		1，git clone https://github.com/quickbundle/javasec
@@ -93,11 +93,11 @@ eclipse/plugins目录格式，直接复制到Eclipse/links下，安装快。要�
 		3，打包。
 			mvn clean package
 		4，安装插件包。
-			复制javasec/build/build-securityweb/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_5.0.0目录【注：在$ECLIPSE_HOME目录下新建links目录】。
-			最终结构如下：$ECLIPSE_HOME/links/javasec_5.0.0/eclipse/plugins/...
+			复制javasec/build/build-securityweb/target/eclipse目录，到$ECLIPSE_HOME/links/javasec_5.0.1目录【注：在$ECLIPSE_HOME目录下新建links目录】。
+			最终结构如下：$ECLIPSE_HOME/links/javasec_5.0.1/eclipse/plugins/...
 		5，重启Eclipse即可
 		
-#### 一键编译quickbundle-5.0.0插件的方式二(不推荐)
+#### 一键编译quickbundle-5.0.1插件的方式二(不推荐)
 updatesite格式的安装版，安装到Eclipse时较慢。但安装时会自动下载所需的依赖插件，要求Eclipse版本>=3.7
 
 		1，使用Linux下的ln -s(或windows下的junction)，把qb-archetype/quickbundle-rmwebdemo目录软链接到qb-core/eclipse-plugin/quickbundle-gp/t/j1目录。

@@ -1,8 +1,8 @@
-Manifest-Version: 5.0.0
+Manifest-Version: 5.0.1
 Bundle-ManifestVersion: 2
 Bundle-Name: org.quickbundle.mda.gp
 Bundle-SymbolicName: org.quickbundle.mda.gp;singleton:=true
-Bundle-Version: 5.0.0
+Bundle-Version: 5.0.1
 Bundle-Activator: org.quickbundle.mda.gp.QbGenerateProjectPlugin
 Bundle-Localization: plugin
 Eclipse-BundleShape: dir

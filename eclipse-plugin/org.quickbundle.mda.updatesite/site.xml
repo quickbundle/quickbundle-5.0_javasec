@@ -3,7 +3,7 @@
    <description name="Quickbundle Update Site" url="http://quickbundle.org/mda/update">
       Quickbundle Update Site
    </description>
-   <feature url="features/org.quickbundle.mda.feature_5.0.0.jar" id="org.quickbundle.mda.feature" version="5.0.0">
+   <feature url="features/org.quickbundle.mda.feature_5.0.1.jar" id="org.quickbundle.mda.feature" version="5.0.1">
       <category name="mda"/>
    </feature>
    <category-def name="mda" label="Quickbundle mda">

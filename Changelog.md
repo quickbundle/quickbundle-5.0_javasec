@@ -6,5 +6,5 @@
 - Replaced by Internet-style UI 替换为互联网风格UI
 - Greatly enhanced web security 大幅增强Web安全性
 
-####5.0.0
+####5.0.1
 - To be released

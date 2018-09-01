@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rules rulesVersion="5.0.0">
+<rules rulesVersion="5.0.1">
 	<codegen>
 		<!--定义要生成的文件列表，分java、jsp、配置文件3种-->
 		<files filesType="java" outputPath="src/main/java/${javaPackageDir}">

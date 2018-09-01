@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.quickbundle</groupId>
 	<artifactId>quickbundle-securityweb</artifactId>
-	<version>5.0.0</version>
+	<version>5.0.1</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -12,7 +12,7 @@
 		<war.dir>WebContent</war.dir>
 		<encoding>UTF-8</encoding>
 		<jdk.version>1.5</jdk.version>
-		<quickbundle.version>5.0.0</quickbundle.version>
+		<quickbundle.version>5.0.1</quickbundle.version>
 		<!-- 主要依赖库的版本定义 -->
 		<spring.version>4.0.8.RELEASE</spring.version>
 		<spring.security.version>3.2.5.RELEASE</spring.security.version>
@@ -40,7 +40,7 @@
 		<!-- if your database is not mysql, change to real target belowing -->
 		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
 		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
-		<jdbc.driver.version>5.1.34</jdbc.driver.version>
+		<jdbc.driver.version>5.1.47</jdbc.driver.version>
 	</properties>
 
 	<licenses>

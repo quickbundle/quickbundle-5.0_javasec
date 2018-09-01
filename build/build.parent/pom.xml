@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.quickbundle</groupId>
 	<artifactId>archetype-build.parent</artifactId>
-	<version>5.0.0</version>
+	<version>5.0.1</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -11,7 +11,7 @@
 		<jdk.version>1.5</jdk.version>
 		<basedir>./</basedir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<quickbundle.version>5.0.0</quickbundle.version>
+		<quickbundle.version>5.0.1</quickbundle.version>
 
 		<maven-assembly.version>2.5.3</maven-assembly.version>
 		<maven-antrun.version>1.7</maven-antrun.version>

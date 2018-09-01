@@ -1,8 +1,8 @@
-Manifest-Version: 5.0.0
+Manifest-Version: 5.0.1
 Bundle-ManifestVersion: 2
 Bundle-Name: org.quickbundle.mda.mvm
 Bundle-SymbolicName: org.quickbundle.mda.mvm;singleton:=true
-Bundle-Version: 5.0.0
+Bundle-Version: 5.0.1
 Eclipse-BundleShape: dir
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

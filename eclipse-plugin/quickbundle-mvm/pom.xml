@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.quickbundle</groupId>
 		<artifactId>org.quickbundle.mda.parent</artifactId>
-		<version>5.0.0</version>
+		<version>5.0.1</version>
 		<relativePath>../org.quickbundle.mda.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>org.quickbundle.mda.mvm</artifactId>
@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>org.quickbundle</groupId>
 			<artifactId>org.quickbundle.mda.libs</artifactId>
-			<version>5.0.0</version>
+			<version>5.0.1</version>
 		</dependency>
 	</dependencies>
 </project>

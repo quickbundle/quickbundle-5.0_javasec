@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.quickbundle</groupId>
 		<artifactId>org.quickbundle.mda.parent</artifactId>
-		<version>5.0.0</version>
+		<version>5.0.1</version>
 		<relativePath>../org.quickbundle.mda.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>org.quickbundle.mda.libs</artifactId>
@@ -57,7 +57,7 @@
 		<dependency>
 			<groupId>org.quickbundle</groupId>
 			<artifactId>quickbundle-tools</artifactId>
-			<version>5.0.0</version>
+			<version>5.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>

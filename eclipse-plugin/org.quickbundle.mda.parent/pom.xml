@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.quickbundle</groupId>
 	<artifactId>org.quickbundle.mda.parent</artifactId>
-	<version>5.0.0</version>
+	<version>5.0.1</version>
 	<packaging>pom</packaging>
 	
 	<!-- tycho requires maven >= 3.0 -->
@@ -17,7 +17,7 @@
 		<jdk.version>1.5</jdk.version>
 		<BUILD_ALIAS>Final</BUILD_ALIAS>
 		<basedir>./</basedir>
-		<tycho.version>0.22.0</tycho.version>
+		<tycho.version>1.2.0</tycho.version>
 	</properties>
 	
 	<repositories>

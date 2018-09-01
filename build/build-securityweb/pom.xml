@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>org.quickbundle</groupId>
 		<artifactId>archetype-build.parent</artifactId>
-		<version>5.0.0</version>
+		<version>5.0.1</version>
 		<relativePath>../build.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>build-securityweb</artifactId>

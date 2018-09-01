@@ -1,8 +1,8 @@
-Manifest-Version: 5.0.0
+Manifest-Version: 5.0.1
 Bundle-ManifestVersion: 2
 Bundle-Name: org.quickbundle.mda.gc
 Bundle-SymbolicName: org.quickbundle.mda.gc;singleton:=true
-Bundle-Version: 5.0.0
+Bundle-Version: 5.0.1
 Bundle-Activator: org.quickbundle.mda.gc.QbXmlGenerateCodePlugin
 Bundle-Localization: plugin
 Eclipse-BundleShape: dir

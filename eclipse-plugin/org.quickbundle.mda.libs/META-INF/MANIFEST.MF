@@ -1,8 +1,8 @@
-Manifest-Version: 5.0.0
+Manifest-Version: 5.0.1
 Bundle-ManifestVersion: 2
 Bundle-Name: org.quickbundle.mda.libs
 Bundle-SymbolicName: org.quickbundle.mda.libs;singleton:=true
-Bundle-Version: 5.0.0
+Bundle-Version: 5.0.1
 Eclipse-BundleShape: dir
 Export-Package: org.quickbundle.config,
  org.quickbundle.tools.helper,
@@ -24,7 +24,7 @@ Export-Package: org.quickbundle.config,
 Bundle-Vendor: quickbundle team
 Bundle-ClassPath: .,
  target/classes,
- lib/quickbundle-tools-5.0.0.jar,
+ lib/quickbundle-tools-5.0.1.jar,
  lib/dom4j-1.6.1.jar,
  lib/xml-apis-1.4.01.jar,
  lib/jaxen-1.1.6.jar,
@@ -43,7 +43,7 @@ Bundle-ClassPath: .,
  lib/ojdbc5.jar,
  lib/h2-1.4.184.jar,
  lib/mail-1.4.7.jar,
- lib/mysql-connector-java-5.1.34.jar,
+ lib/mysql-connector-java-5.1.47.jar,
  lib/slf4j-api-1.7.9.jar,
  lib/xercesImpl-2.11.0.jar,
  lib/commons-collections-3.2.1.jar

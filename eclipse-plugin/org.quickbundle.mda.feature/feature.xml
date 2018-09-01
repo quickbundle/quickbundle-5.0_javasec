@@ -2,7 +2,7 @@
 <feature
       id="org.quickbundle.mda.feature"
       label="Quickbundle mda"
-      version="5.0.0"
+      version="5.0.1"
       provider-name="Quickbundle">
 
    <description url="http://www.quickbundle.org">
